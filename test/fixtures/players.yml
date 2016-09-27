@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fio: MyString
+  bio: MyString
+  graduation_year: 1
+
+two:
+  fio: MyString
+  bio: MyString
+  graduation_year: 1
