@@ -4,5 +4,5 @@ class Team < ApplicationRecord
   has_many :matches_as_a_guest, class_name: 'Match', inverse_of: :guest_team
   has_many :goals
 
-  validates_presence_of :name
+  validates :name, presence: true, uniqueness: true
 end

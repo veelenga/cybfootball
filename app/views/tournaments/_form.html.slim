@@ -1,18 +1,7 @@
-= form_for @tournament, html: { class: "form form-horizontal tournament" } do |f|
-  .form-group
-    = f.label :no, :class => 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :no, :class => 'form-control'
-  .form-group
-    = f.label :description, :class => 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :description, :class => 'form-control'
-  .form-group
-    = f.label :date, :class => 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :date, :class => 'form-control'
-  .form-group
-    .col-lg-offset-2.col-lg-10
-      = f.submit nil, :class => 'btn btn-primary'
-      '
-      = link_to t('.cancel', :default => t("helpers.links.cancel")), tournaments_path, :class => 'btn'
+= bootstrap_form_for @tournament, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
+  = f.text_field :no
+  = f.text_field :description
+  = f.text_field :date
+  = f.form_group do
+    = f.submit :class => 'btn btn-primary'
+    = link_to t('.cancel', default: t('helpers.links.cancel')), tournaments_path, class: 'btn'
