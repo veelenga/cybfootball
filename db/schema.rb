@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927075032) do
+ActiveRecord::Schema.define(version: 20161010083703) do
+
+  create_table "goals", force: :cascade do |t|
+    t.integer  "kind",       default: 0
+    t.integer  "player_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "match_id"
+    t.integer  "team_id"
+    t.index ["match_id"], name: "index_goals_on_match_id"
+    t.index ["player_id"], name: "index_goals_on_player_id"
+    t.index ["team_id"], name: "index_goals_on_team_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "home_team_id"
+    t.integer  "guest_team_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["guest_team_id"], name: "index_matches_on_guest_team_id"
+    t.index ["home_team_id"], name: "index_matches_on_home_team_id"
+  end
 
   create_table "players", force: :cascade do |t|
     t.string   "fio"
@@ -18,6 +39,21 @@ ActiveRecord::Schema.define(version: 20160927075032) do
     t.integer  "graduation_year"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["fio"], name: "index_players_on_fio"
+  end
+
+  create_table "players_teams", id: false, force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "team_id"
+    t.index ["player_id"], name: "index_players_teams_on_player_id"
+    t.index ["team_id"], name: "index_players_teams_on_team_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_teams_on_name"
   end
 
 end
