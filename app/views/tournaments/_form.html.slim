@@ -1,18 +1,21 @@
-= form_for @tournament do |f|
-  - if @tournament.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@tournament.errors.count, "error")} prohibited this tournament from being saved:"
-      ul
-        - @tournament.errors.full_messages.each do |message|
-          li = message
-
-  .field
-    = f.label :no
-    = f.number_field :no
-  .field
-    = f.label :description
-    = f.text_field :description
-  .field
-    = f.label :date
-    = f.date_select :date
-  .actions = f.submit
+= form_for @tournament, html: { class: "form form-horizontal tournament" } do |f|
+  .form-group
+    = f.label :no, :class => 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :no, :class => 'form-control'
+    = f.error_span(:no)
+  .form-group
+    = f.label :description, :class => 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :description, :class => 'form-control'
+    = f.error_span(:description)
+  .form-group
+    = f.label :date, :class => 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :date, :class => 'form-control'
+    = f.error_span(:date)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil, :class => 'btn btn-primary'
+      '
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), tournaments_path, :class => 'btn'
