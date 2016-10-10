@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong No:
+  = @tournament.no
+p
+  strong Description:
+  = @tournament.description
+p
+  strong Date:
+  = @tournament.date
+
+= link_to 'Edit', edit_tournament_path(@tournament)
+'|
+= link_to 'Back', tournaments_path

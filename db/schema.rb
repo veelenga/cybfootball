@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010083703) do
+ActiveRecord::Schema.define(version: 20161010115402) do
 
   create_table "goals", force: :cascade do |t|
     t.integer  "kind",       default: 0
@@ -24,11 +24,21 @@ ActiveRecord::Schema.define(version: 20161010083703) do
     t.index ["team_id"], name: "index_goals_on_team_id"
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.integer  "tournament_id"
+    t.string   "name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["tournament_id"], name: "index_groups_on_tournament_id"
+  end
+
   create_table "matches", force: :cascade do |t|
     t.integer  "home_team_id"
     t.integer  "guest_team_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "group_id"
+    t.index ["group_id"], name: "index_matches_on_group_id"
     t.index ["guest_team_id"], name: "index_matches_on_guest_team_id"
     t.index ["home_team_id"], name: "index_matches_on_home_team_id"
   end
@@ -54,6 +64,14 @@ ActiveRecord::Schema.define(version: 20161010083703) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_teams_on_name"
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.integer  "no"
+    t.string   "description"
+    t.date     "date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
