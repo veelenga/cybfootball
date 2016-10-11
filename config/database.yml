@@ -14,5 +14,4 @@ test:
 
 production:
   <<: *default
-  username: cybfootball
   password: <%= ENV['CYBFOOTBALL_DATABASE_PASSWORD'] %>
