@@ -17,4 +17,4 @@
 
 - content_for :js_footer do
   javascript:
-    new InstantSearch().init()
+    new InstantSearch({ el: $('#player_search_by_fio'), url: "#{search_players_path}" })

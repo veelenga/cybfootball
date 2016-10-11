@@ -1,13 +1,16 @@
-window.InstantSearch = ->
-  init: (options) ->
-    $('input#player_search_by_fio').on 'input', (e) => @search(e)
+class window.InstantSearch
+  constructor: (options) ->
+    @search_field = options.el
+    @request_url = options.url
+
+    @search_field.on 'input', (e) => @search(e)
 
   search: (e) ->
     str = $('#player_search_by_fio').val()
 
     $.ajax(
       type: 'GET',
-      url: '/players/search',
+      url: @request_url,
       data_type: 'script',
       data: player: { fio: str }
     ).done( ->
