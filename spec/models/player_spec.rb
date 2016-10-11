@@ -18,4 +18,8 @@ RSpec.describe Player, type: :model do
   it 'is valid without graduation year' do
     expect(build :player, graduation_year: nil).to be_valid
   end
+
+  it 'assignes default attributes' do
+    expect(Player.new.graduation_year).not_to be_nil
+  end
 end

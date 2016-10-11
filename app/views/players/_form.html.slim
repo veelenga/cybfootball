@@ -1,7 +1,11 @@
 = bootstrap_form_for @player, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
-  = f.text_field :fio
-  = f.text_field :bio
-  = f.text_field :graduation_year
-  = f.form_group do
-    = f.submit class: 'btn btn-primary'
-    = link_to t('.cancel', default: t('helpers.links.cancel')), players_path, class: 'btn'
+  .col-sm-4
+    = image_tag @player.avatar.url(:thumb)
+  .col-sm-8
+    = f.file_field :avatar
+    = f.text_field :fio
+    = f.text_area :bio, rows: 4
+    = f.select :graduation_year, options_for_select(1990..Date.today.year + 7, @player.graduation_year), control_col: 'col-sm-2'
+    = f.form_group do
+      = f.submit class: 'btn btn-primary'
+      = link_to t('.cancel', default: t('helpers.links.cancel')), players_path, class: 'btn'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010115402) do
+ActiveRecord::Schema.define(version: 20161011063900) do
 
   create_table "goals", force: :cascade do |t|
     t.integer  "kind",       default: 0
@@ -45,10 +45,14 @@ ActiveRecord::Schema.define(version: 20161010115402) do
 
   create_table "players", force: :cascade do |t|
     t.string   "fio"
-    t.string   "bio"
+    t.text     "bio"
     t.integer  "graduation_year"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["fio"], name: "index_players_on_fio"
   end
 
