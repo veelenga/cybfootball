@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161011063900) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "goals", force: :cascade do |t|
     t.integer  "kind",       default: 0
     t.integer  "player_id"
@@ -19,9 +22,9 @@ ActiveRecord::Schema.define(version: 20161011063900) do
     t.datetime "updated_at",             null: false
     t.integer  "match_id"
     t.integer  "team_id"
-    t.index ["match_id"], name: "index_goals_on_match_id"
-    t.index ["player_id"], name: "index_goals_on_player_id"
-    t.index ["team_id"], name: "index_goals_on_team_id"
+    t.index ["match_id"], name: "index_goals_on_match_id", using: :btree
+    t.index ["player_id"], name: "index_goals_on_player_id", using: :btree
+    t.index ["team_id"], name: "index_goals_on_team_id", using: :btree
   end
 
   create_table "groups", force: :cascade do |t|
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20161011063900) do
     t.string   "name"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["tournament_id"], name: "index_groups_on_tournament_id"
+    t.index ["tournament_id"], name: "index_groups_on_tournament_id", using: :btree
   end
 
   create_table "matches", force: :cascade do |t|
@@ -38,9 +41,9 @@ ActiveRecord::Schema.define(version: 20161011063900) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "group_id"
-    t.index ["group_id"], name: "index_matches_on_group_id"
-    t.index ["guest_team_id"], name: "index_matches_on_guest_team_id"
-    t.index ["home_team_id"], name: "index_matches_on_home_team_id"
+    t.index ["group_id"], name: "index_matches_on_group_id", using: :btree
+    t.index ["guest_team_id"], name: "index_matches_on_guest_team_id", using: :btree
+    t.index ["home_team_id"], name: "index_matches_on_home_team_id", using: :btree
   end
 
   create_table "players", force: :cascade do |t|
@@ -53,21 +56,21 @@ ActiveRecord::Schema.define(version: 20161011063900) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.index ["fio"], name: "index_players_on_fio"
+    t.index ["fio"], name: "index_players_on_fio", using: :btree
   end
 
   create_table "players_teams", id: false, force: :cascade do |t|
     t.integer "player_id"
     t.integer "team_id"
-    t.index ["player_id"], name: "index_players_teams_on_player_id"
-    t.index ["team_id"], name: "index_players_teams_on_team_id"
+    t.index ["player_id"], name: "index_players_teams_on_player_id", using: :btree
+    t.index ["team_id"], name: "index_players_teams_on_team_id", using: :btree
   end
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_teams_on_name"
+    t.index ["name"], name: "index_teams_on_name", using: :btree
   end
 
   create_table "tournaments", force: :cascade do |t|
