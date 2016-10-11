@@ -9,6 +9,14 @@ class Player < ApplicationRecord
   has_attached_file :avatar, styles: { thumb: "300x300>" }, default_url: "/images/default_avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
+  def self.search(fio)
+    if fio.present?
+      where('lower(players.fio) LIKE ?', "%#{fio.downcase}%")
+    else
+      all
+    end
+  end
+
   private
 
   def set_default_attributes
