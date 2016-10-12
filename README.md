@@ -9,14 +9,9 @@
 
 ## Installation
 
-  1. Install `rvm` following the installation instuctions: https://rvm.io/
-  1. Install required version of ruby via `rvm`:
+  1. Install `ruby` of version **2.3.1**: https://www.ruby-lang.org/en/documentation/installation/
 
-  ```sh
-  $ rvm install ruby-2.3.1
-  ```
-
-  1. Install `postgresql` of version 9: https://wiki.postgresql.org/wiki/Detailed_installation_guides
+  1. Install `postgresql` of version **9**: https://wiki.postgresql.org/wiki/Detailed_installation_guides
 
   1. Clone repo and go to app root dir:
 
@@ -37,11 +32,12 @@
   ```sh
   $ bundle exec rake db:create
   $ bundle exec rake db:migrate
-  $ rspec
+  $ bundle exec rake db:migrate RAILS_ENV=test
+  $ bundle exec rspec
   ```
 
   1. Start app:
 
   ```sh
-  $ rails server
+  $ bundle exec rails server
   ```
