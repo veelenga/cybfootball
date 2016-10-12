@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
+gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
 
 group :development, :test do

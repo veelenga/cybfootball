@@ -2,7 +2,7 @@ class CreateTournamentsAndGroups < ActiveRecord::Migration[5.0]
   def change
     create_table :tournaments do |t|
       t.integer :no
-      t.string :description
+      t.text :description
       t.date :date
 
       t.timestamps
