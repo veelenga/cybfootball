@@ -13,7 +13,7 @@
   1. Install required version of ruby via `rvm`:
 
   ```sh
-  $ rvm install ruby-2.3.0
+  $ rvm install ruby-2.3.1
   ```
 
   1. Install `postgresql` of version 9: https://wiki.postgresql.org/wiki/Detailed_installation_guides
