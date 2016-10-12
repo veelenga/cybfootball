@@ -3,19 +3,22 @@ class window.InstantSearch
     @search_field = options.el
     @request_url = options.url
 
-    @search_field.on 'input', (e) => @search(e)
+    @search_field.on 'input', (e) => @delay(200, => @performSearch(e))
 
-  search: (e) ->
-    str = $('#player_search_by_fio').val()
+  performSearch: (e) ->
+    str = @search_field.val()
 
     $.ajax(
       type: 'GET',
+      timeout: 5000,
       url: @request_url,
       data_type: 'script',
       data: player: { fio: str }
-    ).done( ->
-      console.log 'instant search done'
     ).fail( (jqXHR, textStatus, errorThrown) ->
       console.log 'instant search failed'
       console.log errorThrown
     )
+
+  delay: (ms, func) ->
+    clearTimeout @timer
+    @timer = setTimeout func, ms
