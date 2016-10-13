@@ -7,18 +7,15 @@
     .col-xs-3.col-sm-2.col-md-1
       = link_to t('.new', default: t('helpers.links.new')), new_player_path, class: 'btn btn-primary'
     .col-xs-9.col-sm-4.input-group
-      input.form-control type='text' placeholder='Search' name='q'
+      input.form-control id='player_search' type='text' placeholder='Search' name='q'
       .input-group-btn
-        button.btn.btn-default type='submit'
+        button.btn.btn-default id='player_search_btn' type='submit'
           i.glyphicon.glyphicon-search
 
-  .panel-body
-    - @players.each do |player|
-      .col-xs-12.col-sm-6.col-md-3
-        .thumbnail
-          = link_to image_tag(player.avatar.url :thumb), player_path(player)
-          .caption
-            h4.text-center= player.fio
-            p= truncate player.bio
-            => link_to t('.edit', default: t("helpers.links.edit")), edit_player_path(player), class: 'btn btn-default btn-xs'
-            = link_to t('.destroy', default: t("helpers.links.destroy")), player_path(player), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-xs btn-danger'
+  .panel-body id='players'
+    = render 'players', players: @players
+
+- content_for :js_footer do
+  javascript:
+    search = new InstantSearch({ el: $('#player_search'), url: "#{search_players_path}" })
+    $('#player_search_btn').on('click', function(e) { search.performSearch(e) });
