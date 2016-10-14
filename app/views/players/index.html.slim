@@ -15,6 +15,22 @@
   .panel-body id='players'
     = render 'players', players: @players
 
+  .panel-footer
+    .row
+      .col-sm-3
+        | Per Page:
+        =<> link_to_unless_current '8',   { per: 8   }.merge!(page: params[:page])
+        | |
+        =<> link_to_unless_current '16',  { per: 16  }.merge!(page: params[:page])
+        | |
+        =<> link_to_unless_current '20',  { per: 20  }.merge!(page: params[:page])
+        | |
+        =<> link_to_unless_current '40',  { per: 40  }.merge!(page: params[:page])
+        | |
+        =<> link_to_unless_current '100', { per: 100 }.merge!(page: params[:page])
+      .col-sm-9
+        = paginate @players
+
 - content_for :js_footer do
   javascript:
     search = new InstantSearch({ el: $('#player_search'), url: "#{search_players_path}" })
