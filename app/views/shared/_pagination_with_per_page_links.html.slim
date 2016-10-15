@@ -1,0 +1,8 @@
+.per_page_links.col-sm-3
+  | Per page:
+  ==<> per_page_links list, values: opts[:per_pages], params: opts[:params], remote: opts[:remote]
+  br
+  | Total found:
+  =< list.total_count
+.paginator.col-sm-9
+  = paginate list, params: opts[:params], remote: opts[:remote]
