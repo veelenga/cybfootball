@@ -4,7 +4,9 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all.page(params[:page]).per(params[:per])
+    scope = Player.order(:created_at)
+    scope = scope.fio_like(params[:search]) if params[:search]
+    @players = scope.page(params[:page]).per(params[:per])
   end
 
   # GET /players/1
