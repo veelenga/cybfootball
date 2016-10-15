@@ -18,7 +18,7 @@
   .panel-footer
     .row
       .remote_pagination
-        = render 'shared/pagination_with_per_page_links', list: @players, opts: {params: params.slice(:search), remote: true}
+        = render 'shared/pagination_with_per_page_links', list: @players, opts: {params: params.slice(:search).to_unsafe_h, remote: true}
 
 - content_for :js_footer do
   javascript:
