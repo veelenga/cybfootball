@@ -1,4 +1,19 @@
+.navbar-brand {
+  padding: 0;
+  img {
+    margin-top: 5px;
+    margin-left: 5px;
+
+    height: 100px;
+
+    @media (max-width:767px) {
+      height: 40px;
+    }
+  }
+}
+
 .pagination {
   display: inline-block;
   margin: 0px;
 }
+
