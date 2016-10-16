@@ -1,26 +1,17 @@
-- model_class = Player
+- resource = Player.model_name.plural
 .page-header
-  h1=t '.title', default: model_class.model_name.human.pluralize.titleize
+  h1=t '.title', default: resource.titleize
 
 .panel.panel-default
   .panel-heading
     .col-xs-3.col-sm-2.col-md-1
       = link_to t('.new', default: t('helpers.links.new')), new_player_path, class: 'btn btn-primary'
     .col-xs-9.col-sm-4.input-group
-      input.form-control id='players_search' type='text' placeholder='Search' name='q'
-      .input-group-btn
-        button.btn.btn-default id='players_search_btn' type='submit'
-          i.glyphicon.glyphicon-search
+      = render 'shared/search_field', resource: resource
 
-  .panel-body id='players'
+  .panel-body id="#{resource}"
     = render 'list', players: @players
 
   .panel-footer
-    .row
-      .remote_pagination
+    .row.remote_pagination
         = render 'shared/pagination_with_per_page_links', list: @players, opts: {params: params.slice(:search).to_unsafe_h, remote: true}
-
-- content_for :js_footer do
-  javascript:
-    search = new InstantSearch({ el: $('#players_search'), url: "#{players_path}", params: ['per']})
-    $('#players_search_btn').on('click', function(e) { search.performSearch(e) });

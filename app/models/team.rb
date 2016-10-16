@@ -5,4 +5,6 @@ class Team < ApplicationRecord
   has_many :goals
 
   validates :name, presence: true, uniqueness: true
+
+  scope :by_name, ->(name) { where('lower(teams.name) LIKE ?', "%#{name.downcase}%")}
 end

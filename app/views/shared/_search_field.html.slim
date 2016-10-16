@@ -1,0 +1,11 @@
+- path = url_for resource
+- search = "#{resource}_search"
+
+input.form-control class="#{search}" type='text' placeholder='Search' autofocus='true'
+.input-group-btn
+  button.btn.btn-default class="#{search}_btn" type='submit'
+    i.glyphicon.glyphicon-search
+
+- content_for :js_footer do
+  javascript:
+    new InstantSearch({ el: $(".#{search}"), btn: $(".#{search}_btn"), url: "#{path}", with_params: ['per'] })

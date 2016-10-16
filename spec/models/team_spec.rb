@@ -25,4 +25,15 @@ RSpec.describe Team, type: :model do
     expect(team.inhouse_matches).to be_empty
     expect(team.matches_as_a_guest).not_to be_empty
   end
+
+  describe '.by_name' do
+    it 'does case insensitive search by name attribute' do
+      teams = []
+      teams << create(:team, name: 'Dream Team 1')
+      teams << create(:team, name: 'Dream Team 2')
+      expect(Team.by_name('Dream')).to match teams
+      expect(Team.by_name('team')).to match teams
+      expect(Team.by_name('wrong')).to match []
+    end
+  end
 end

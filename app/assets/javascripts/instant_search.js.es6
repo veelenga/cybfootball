@@ -1,9 +1,11 @@
 class InstantSearch {
-  constructor (options) {
-    this.search_field = options.el
-    this.request_url = options.url
-    this.request_params = options.params || []
+  constructor (opts) {
+    this.search_field   = opts.el
+    this.search_btn     = opts.btn
+    this.request_url    = opts.url
+    this.request_params = opts.with_params || []
 
+    this.search_btn.on('click', (e) => this.performSearch(e))
     this.search_field.on('input', (e) => this.delay(200, () => this.performSearch(e)))
   }
 

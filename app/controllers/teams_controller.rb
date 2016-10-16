@@ -4,7 +4,9 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.all
+    scope = Team.order(:created_at)
+    scope = scope.by_name params[:search] if params[:search]
+    @teams = scope.page(params[:page]).per(params[:per])
   end
 
   # GET /teams/1
