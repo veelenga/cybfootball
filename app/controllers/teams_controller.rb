@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_action :store_per_page, only: [:index]
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams

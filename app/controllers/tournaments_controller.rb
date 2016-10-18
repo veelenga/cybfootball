@@ -1,4 +1,5 @@
 class TournamentsController < ApplicationController
+  before_action :store_per_page, only: [:index]
   before_action :set_tournament, only: [:show, :edit, :update, :destroy]
 
   # GET /tournaments

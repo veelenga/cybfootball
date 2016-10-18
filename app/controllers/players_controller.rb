@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_action :store_per_page, only: [:index]
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
   # GET /players

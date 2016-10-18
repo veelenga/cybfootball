@@ -34,6 +34,7 @@ group :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
 end
 
 gem 'rails_12factor', group: :production
