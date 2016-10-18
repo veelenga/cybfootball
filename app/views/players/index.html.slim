@@ -1,6 +1,8 @@
 - resource = Player.model_name.plural
 .page-header
-  h1=t '.title', default: resource.titleize
+  h1
+    =t '.title', default: resource.titleize
+    i.fa.fa-user.pull-right
 
 .panel.panel-default
   .panel-heading

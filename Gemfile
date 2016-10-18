@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
 gem 'paperclip'
 gem 'kaminari'
+gem 'font-awesome-rails'
 
 gem 'sprockets-es6'
 gem 'babel-transpiler'
