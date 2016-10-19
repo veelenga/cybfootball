@@ -19,7 +19,7 @@ html lang="en"
 
 
   body
-    .navbar.navbar-inverse.navbar-static-top
+    #navigation.navbar.navbar-inverse.navbar-static-top
       .container
         .navbar-header
           button.navbar-toggle.pull-right type='button' data-toggle='collapse' data-target='.navbar-responsive-collapse'
@@ -34,8 +34,13 @@ html lang="en"
             li= link_to 'Teams', teams_path
             li= link_to 'Players', players_path
 
-    .container
+    #content.container
       .row
         .col-lg-12
           = yield
           = yield :js_footer
+
+    hr
+
+    #footer.container-fluid
+      = render 'layouts/footer'

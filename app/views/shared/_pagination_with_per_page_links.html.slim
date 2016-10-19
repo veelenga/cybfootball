@@ -1,6 +1,6 @@
 .per_page_links.col-sm-3
   | Per page:
-  ==<> per_page_links list, values: opts[:per_pages], params: opts[:params], remote: opts[:remote]
+  ==<> per_page_links list, values: opts[:per_pages], params: opts[:params], remote: opts[:remote], joiner: ' '
   br
   | Total found:
   =< list.total_count
