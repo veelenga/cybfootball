@@ -21,6 +21,11 @@
   .social-media {
     a {
       padding: 5px;
+      color: gray;
+
+      &:hover {
+        color: black;
+      }
     }
   }
 }
