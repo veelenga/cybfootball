@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :store_per_page, only: [:index]
+  before_action :store_per_page, only: [:index, :show]
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
@@ -13,6 +13,7 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
+    @team_players = @team.players.order(:fio).page(params[:page]).per(params[:per])
   end
 
   # GET /teams/new

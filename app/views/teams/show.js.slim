@@ -1,0 +1,7 @@
+| $('#team_players').html('
+= j render 'players/list', players: @team_players
+|');
+
+| $('.remote_pagination').html('
+= render 'shared/pagination_with_per_page_links', list: @team_players, opts: { remote: true }
+| ');

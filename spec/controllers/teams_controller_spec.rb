@@ -18,6 +18,12 @@ RSpec.describe TeamsController, type: :controller do
       get :show, params: {id: team.to_param}
       expect(assigns(:team)).to eq(team)
     end
+
+    it 'assigns the players of the team as @team_players' do
+      team = create :team, players: [build(:player)]
+      get :show, params: { id: team.to_param }
+      expect(assigns(:team_players)).to eq team.players
+    end
   end
 
   describe "GET #new" do

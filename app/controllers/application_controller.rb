@@ -4,8 +4,14 @@ class ApplicationController < ActionController::Base
   protected
 
   def store_per_page
-    per = JSON.parse(cookies[:per]) rescue nil
-    params[:per] ||= per[controller_path] if per.present?
-    cookies[:per] = JSON.generate({controller_path => params[:per]}.reverse_merge!(per || {})) if params[:per].present?
+    per = JSON.parse(cookies[:per]) rescue {}
+    params[:per] ||= per[page_name] if per.present?
+    cookies[:per] = JSON.generate({ page_name => params[:per] }.reverse_merge! per) if params[:per].present?
+  end
+
+  private
+
+  def page_name
+    @page_name ||= "#{controller_path}.#{action_name}"
   end
 end
