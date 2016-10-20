@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :tournaments
   resources :teams do
-    resources :players
+    member do
+      put 'update_players'
+    end
   end
   resources :players
 

@@ -36,4 +36,20 @@ RSpec.describe Team, type: :model do
       expect(Team.by_name('wrong')).to match []
     end
   end
+
+  describe '#update_players_list' do
+    let(:team) { Team.new }
+    let(:player) { Player.new }
+
+    it 'can add player' do
+      team.update_players_list(player, :add)
+      expect(team.players).to match [player]
+    end
+
+    it 'can delete player' do
+      team.players << player
+      team.update_players_list(player, :delete)
+      expect(team.players).to match []
+    end
+  end
 end
