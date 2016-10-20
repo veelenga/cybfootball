@@ -30,9 +30,18 @@ html lang="en"
             image.img-circle src='/images/logo.jpg'
         .navbar-collapse.collapse.navbar-responsive-collapse
           ul.nav.navbar-nav.navbar-right
-            li= link_to 'Tournaments', tournaments_path
-            li= link_to 'Teams', teams_path
-            li= link_to 'Players', players_path
+            li= link_to tournaments_path
+              i.fa.fa-trophy
+              '
+              | Tournaments
+            li= link_to teams_path
+              i.fa.fa-users
+              '
+              | Teams
+            li= link_to players_path
+              i.fa.fa-user
+              '
+              | Players
 
     #content.container
       .row

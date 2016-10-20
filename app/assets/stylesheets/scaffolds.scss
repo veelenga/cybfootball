@@ -1,13 +1,16 @@
-.navbar-brand {
-  padding: 0;
-  img {
-    margin-top: 5px;
-    margin-left: 5px;
+.navbar {
+  font-size: 16px;
+  .navbar-brand {
+    padding: 0;
+    img {
+      margin-top: 5px;
+      margin-left: 5px;
 
-    height: 100px;
+      height: 100px;
 
-    @media (max-width:767px) {
-      height: 40px;
+      @media (max-width:767px) {
+        height: 40px;
+      }
     }
   }
 }
