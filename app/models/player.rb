@@ -6,7 +6,7 @@ class Player < ApplicationRecord
 
   after_initialize :set_default_attributes, if: :new_record?
 
-  scope :fio_like, ->(fio) { where('lower(players.fio) LIKE ?', "%#{fio.downcase}%") }
+  scope :fio_like, ->(fio) { where('players.fio ~* ?', ".*#{fio}.*") }
 
   has_attached_file :avatar, styles: { thumb: "300x300>" }, default_url: "/images/default_avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/

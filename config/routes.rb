@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   resources :tournaments
   resources :teams do
-    member do
-      put 'update_players'
-    end
+    put 'update_players', on: :member
   end
-  resources :players
+  resources :players do
+    get 'autocomplete', on: :collection
+  end
 
   root to: 'tournaments#index'
 end

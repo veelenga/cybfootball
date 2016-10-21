@@ -35,6 +35,14 @@ RSpec.describe Team, type: :model do
       expect(Team.by_name('team')).to match teams
       expect(Team.by_name('wrong')).to match []
     end
+
+    it 'works on utf-8 inputs' do
+      team = create :team, name: 'Лабузь'
+      expect(Team.by_name('Л')).to match [team]
+      expect(Team.by_name('ь')).to match [team]
+      expect(Team.by_name('л')).to match [team]
+      expect(Team.by_name('c')).not_to match [team]
+    end
   end
 
   describe '#update_players_list' do

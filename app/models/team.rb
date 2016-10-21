@@ -6,7 +6,7 @@ class Team < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  scope :by_name, ->(name) { where('lower(teams.name) LIKE ?', "%#{name.downcase}%")}
+  scope :by_name, ->(name) { where('teams.name ~* ?', ".*#{name}.*")}
 
   def update_players_list(player, action)
     case action.try(:to_sym)

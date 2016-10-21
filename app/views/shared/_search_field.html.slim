@@ -8,4 +8,4 @@ input.form-control class="#{search}" type='text' placeholder='Search' autofocus=
 
 - content_for :js_footer do
   javascript:
-    new InstantSearch({ el: $(".#{search}"), btn: $(".#{search}_btn"), url: "#{path}", with_params: ['per'] })
+    new Search({ el: $(".#{search}"), btn: $(".#{search}_btn"), url: "#{path}", with_params: ['per'] })
