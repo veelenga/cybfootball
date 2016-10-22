@@ -8,15 +8,15 @@ class Tournament < ApplicationRecord
     uniqueness: true
 
   validates :date, presence: true,
-     inclusion: {
-       in: Date.new(1990,1,1)...1.years.from_now.to_date,
-       message: "should be from 1990 to " + 1.years.from_now.year.to_s + " year"
+    inclusion: {
+      in: Date.new(1990,1,1)...Date.new(Date.current.year + 2, 1, 1),
+      message: "should be from 1990 to #{Date.current.year + 1} year"
     },
-     format: {
-       with: /(19|20)\d{2}/i,
-       message: "should be a four-digit year"
-     },
-     uniqueness: true
+    format: {
+      with: /(19|20)\d{2}/i,
+      message: "should be a four-digit year"
+    },
+    uniqueness: true
 
   private
 
