@@ -1,15 +1,20 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:show, :edit, :update, :destroy]
+  before_action :store_per_page, only: [:index, :show]
+  before_action :set_team, only: [:show, :edit, :update, :destroy, :update_players]
+  before_action :set_player, only: [:update_players]
 
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.all
+    scope = Team.order(:created_at)
+    scope = scope.by_name params[:search] if params[:search]
+    @teams = scope.page(params[:page]).per(params[:per])
   end
 
   # GET /teams/1
   # GET /teams/1.json
   def show
+    @team_players = @team.players.order(:fio).page(params[:page]).per(params[:per])
   end
 
   # GET /teams/new
@@ -61,13 +66,23 @@ class TeamsController < ApplicationController
     end
   end
 
+  def update_players
+    @team.update_players_list @player, params[:player].try(:[], :action)
+    respond_to do |format|
+      format.html { redirect_to team_path(@team), notice: 'Player list successfully updated.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_team
-      @team = Team.find(params[:id])
+      @team = Team.find params[:id]
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def set_player
+      @player = Player.find params[:player].try(:[], :id)
+    end
+
     def team_params
       params.require(:team).permit(:name)
     end

@@ -1,9 +1,11 @@
 - model_class = Player
 .page-header
-  h1= @player.fio
+  h1
+    = @player.fio
+    i.fa.fa-user.pull-right
 
 .col-sm-4
-  = image_tag @player.avatar.url(:thumb)
+  = image_tag @player.avatar.url(:thumb), class: 'img-rounded'
 
 .col-sm-8
 p

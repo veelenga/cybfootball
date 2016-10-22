@@ -1,0 +1,7 @@
+| $('#players').html('
+= j render 'list', players: @players
+|');
+
+| $('.remote_pagination').html('
+= render 'shared/pagination_with_per_page_links', list: @players, opts: { params: params.slice(:search).to_unsafe_h, remote: true }
+| ');

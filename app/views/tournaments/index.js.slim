@@ -1,0 +1,7 @@
+| $('#tournaments').html('
+= j render 'list', tournaments: @tournaments
+|');
+
+| $('.remote_pagination').html('
+= render 'shared/pagination_with_per_page_links', list: @tournaments, opts: { params: params.slice(:search).to_unsafe_h, remote: true }
+| ');

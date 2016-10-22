@@ -5,7 +5,6 @@ gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
@@ -14,6 +13,13 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
 gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
+gem 'kaminari'
+gem 'font-awesome-rails'
+
+gem 'sprockets-es6'
+gem 'babel-transpiler'
+gem 'handlebars_assets'
+gem 'twitter-typeahead-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -26,12 +32,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-rspec', require: false
+  gem 'meta_request'
 end
 
 group :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
 end
 
 gem 'rails_12factor', group: :production

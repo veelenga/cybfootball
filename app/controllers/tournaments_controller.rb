@@ -1,10 +1,11 @@
 class TournamentsController < ApplicationController
+  before_action :store_per_page, only: [:index]
   before_action :set_tournament, only: [:show, :edit, :update, :destroy]
 
   # GET /tournaments
   # GET /tournaments.json
   def index
-    @tournaments = Tournament.all
+    @tournaments = Tournament.order(:no).reverse_order.page(params[:page]).per(params[:per])
   end
 
   # GET /tournaments/1

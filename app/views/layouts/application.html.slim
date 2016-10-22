@@ -19,20 +19,37 @@ html lang="en"
 
 
   body
-    .navbar.navbar-inverse.navbar-static-top
-      .container.navbar-header
-        button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a.navbar-brand href="/"Cybfootball
+    #navigation.navbar.navbar-inverse.navbar-static-top
+      .container
+        .navbar-header
+          button.navbar-toggle.pull-right type='button' data-toggle='collapse' data-target='.navbar-responsive-collapse'
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href='/'
+            image.img-circle src='/images/logo.jpg'
         .navbar-collapse.collapse.navbar-responsive-collapse
           ul.nav.navbar-nav.navbar-right
-            li= link_to "Tournaments", tournaments_path
-            li= link_to "Teams", teams_path
-            li= link_to "Players", players_path
+            li= link_to tournaments_path
+              i.fa.fa-trophy
+              '
+              | Tournaments
+            li= link_to teams_path
+              i.fa.fa-users
+              '
+              | Teams
+            li= link_to players_path
+              i.fa.fa-user
+              '
+              | Players
 
-    .container
+    #content.container
       .row
         .col-lg-12
           = yield
+          = yield :js_footer
+
+    hr
+
+    #footer.container-fluid
+      = render 'layouts/footer'

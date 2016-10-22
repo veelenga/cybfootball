@@ -22,4 +22,20 @@ RSpec.describe Player, type: :model do
   it 'assignes default attributes' do
     expect(Player.new.graduation_year).not_to be_nil
   end
+
+  describe '.fio_like' do
+    it 'does case insensitive search by fio attribute' do
+      players = create_list :player, 3, fio: 'John Doe'
+      expect(Player.fio_like('John')).to match players
+      expect(Player.fio_like('doe')).to match players
+      expect(Player.fio_like('wrong')).to match []
+    end
+
+    it 'works on utf-8' do
+      player = create :player, fio: 'Вовік'
+      expect(Player.fio_like('В')).to match [player]
+      expect(Player.fio_like('во')).to match [player]
+      expect(Player.fio_like('вовк')).not_to include [player]
+    end
+  end
 end

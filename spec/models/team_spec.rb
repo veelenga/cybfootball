@@ -25,4 +25,39 @@ RSpec.describe Team, type: :model do
     expect(team.inhouse_matches).to be_empty
     expect(team.matches_as_a_guest).not_to be_empty
   end
+
+  describe '.by_name' do
+    it 'does case insensitive search by name attribute' do
+      teams = []
+      teams << create(:team, name: 'Dream Team 1')
+      teams << create(:team, name: 'Dream Team 2')
+      expect(Team.by_name('Dream')).to match teams
+      expect(Team.by_name('team')).to match teams
+      expect(Team.by_name('wrong')).to match []
+    end
+
+    it 'works on utf-8 inputs' do
+      team = create :team, name: 'Лабузь'
+      expect(Team.by_name('Л')).to match [team]
+      expect(Team.by_name('ь')).to match [team]
+      expect(Team.by_name('л')).to match [team]
+      expect(Team.by_name('c')).not_to match [team]
+    end
+  end
+
+  describe '#update_players_list' do
+    let(:team) { Team.new }
+    let(:player) { Player.new }
+
+    it 'can add player' do
+      team.update_players_list(player, :add)
+      expect(team.players).to match [player]
+    end
+
+    it 'can delete player' do
+      team.players << player
+      team.update_players_list(player, :delete)
+      expect(team.players).to match []
+    end
+  end
 end

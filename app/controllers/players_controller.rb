@@ -1,10 +1,13 @@
 class PlayersController < ApplicationController
+  before_action :store_per_page, only: [:index]
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all
+    scope = Player.order(:created_at)
+    scope = scope.fio_like(params[:search]) if params[:search]
+    @players = scope.page(params[:page]).per(params[:per])
   end
 
   # GET /players/1
@@ -61,13 +64,17 @@ class PlayersController < ApplicationController
     end
   end
 
+  def autocomplete
+    players = []
+    players = Player.order(:fio).fio_like(params[:q]).limit(15) if params[:q].present?
+    render json: players.map { |p| {id: p.id, fio: p.fio, avatar: p.avatar.url(:thumb)} }
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_player
-      @player = Player.find(params[:id])
+      @player = Player.find params[:id]
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
       params.require(:player).permit(:avatar, :fio, :bio, :graduation_year)
     end

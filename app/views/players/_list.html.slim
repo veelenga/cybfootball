@@ -1,0 +1,13 @@
+= hidden_field_tag :per, params[:per]
+
+- if players.present?
+  - players.each do |player|
+    .player-card.col-xs-12.col-sm-6.col-md-3
+      .thumbnail
+        = link_to player_path(player) do
+          = image_tag(player.avatar.url(:thumb), class: 'avatar img-rounded')
+          h4.text-center= player.fio
+        .admin_panel
+          = render "#{controller_path}/player_actions", player: player
+- else
+  | Players not found

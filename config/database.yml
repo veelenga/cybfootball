@@ -7,10 +7,8 @@ development:
   <<: *default
 
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-  timeout: 5000
-  pool: 5
+  <<: *default
+  database: cybfootball_test
 
 production:
   <<: *default
