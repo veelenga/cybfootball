@@ -13,8 +13,18 @@ RSpec.describe Tournament, type: :model do
     expect(build :tournament, description: nil).to be_valid
   end
 
-  it 'is valid without date' do
-    expect(build :tournament, date: nil).to be_valid
+  it 'requires date of tournament' do
+    expect(build :tournament, date: nil).not_to be_valid
+  end
+
+  it "is date equals today" do
+    tournament = build :tournament
+    expect(tournament.date).to eq(Date.today)
+  end
+
+  it "is between the time range" do
+    tournament = build :tournament
+    expect(tournament.date).to be_between(Date.new(1990,1,1), 1.years.from_now.to_date)
   end
 
   it 'can have groups' do

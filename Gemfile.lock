@@ -45,6 +45,8 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    bootstrap-datepicker-rails (1.6.4.1)
+      railties (>= 3.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -265,6 +267,7 @@ PLATFORMS
 
 DEPENDENCIES
   babel-transpiler
+  bootstrap-datepicker-rails
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
   byebug
