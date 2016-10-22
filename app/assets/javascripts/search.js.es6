@@ -1,4 +1,4 @@
-class InstantSearch {
+class Search {
   constructor (opts) {
     this.search_field   = opts.el
     this.search_btn     = opts.btn

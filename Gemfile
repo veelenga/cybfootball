@@ -17,6 +17,8 @@ gem 'font-awesome-rails'
 
 gem 'sprockets-es6'
 gem 'babel-transpiler'
+gem 'handlebars_assets'
+gem 'twitter-typeahead-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -29,10 +31,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-rspec', require: false
+  gem 'meta_request'
 end
 
 group :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'

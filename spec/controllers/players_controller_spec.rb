@@ -123,4 +123,27 @@ RSpec.describe PlayersController, type: :controller do
       expect(response).to redirect_to(players_url)
     end
   end
+
+  describe "GET autocomplete" do
+    let!(:players) do
+      3.times { |i| create(:player, fio: "John#{i}") }
+    end
+
+    it 'returns players that autocompletes fio' do
+      get :autocomplete, params: { q: 'john1'}
+      players = JSON.parse response.body
+      expect(players.size).to eql 1
+      expect(players.first['fio']).to eql 'John1'
+    end
+
+    it 'returns empty array if players not found' do
+      get :autocomplete, params: { q: 'wrong'}
+      expect(response.body).to eql '[]'
+    end
+
+    it 'returns empty array if query is empty' do
+      get :autocomplete, params: { q: '' }
+      expect(response.body).to eql '[]'
+    end
+  end
 end

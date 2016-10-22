@@ -18,6 +18,12 @@ RSpec.describe TeamsController, type: :controller do
       get :show, params: {id: team.to_param}
       expect(assigns(:team)).to eq(team)
     end
+
+    it 'assigns the players of the team as @team_players' do
+      team = create :team, players: [build(:player)]
+      get :show, params: { id: team.to_param }
+      expect(assigns(:team_players)).to eq team.players
+    end
   end
 
   describe "GET #new" do
@@ -118,6 +124,32 @@ RSpec.describe TeamsController, type: :controller do
       team = Team.create! valid_attributes
       delete :destroy, params: {id: team.to_param}
       expect(response).to redirect_to(teams_url)
+    end
+  end
+
+  describe 'PUT #update_players' do
+    let(:team) { create :team }
+    let(:player) { create :player }
+
+    it 'adds a player to the team and redirects to team page' do
+      expect {
+        put :update_players, params: { id: team.to_param, player: { id: player.to_param, action: :add }}
+      }.to change(team.players, :count).by 1
+      expect(response).to redirect_to(team_path team)
+    end
+
+    it 'removes a player from the team and redirects to team page' do
+      team.players << player
+      expect{
+        put :update_players, params: { id: team.to_param, player: { id: player.to_param, action: :delete } }
+      }.to change(team.players, :count).by -1
+      expect(response).to redirect_to(team_path team)
+    end
+
+    it 'raises error if required params not passed' do
+      expect {
+        put :update_players, params: { id: team.to_param }
+      }.to raise_error ActiveRecord::RecordNotFound
     end
   end
 end
