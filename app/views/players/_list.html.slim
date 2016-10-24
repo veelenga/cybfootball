@@ -10,4 +10,4 @@
         .admin_panel
           = render "#{controller_path}/player_actions", player: player
 - else
-  | Players not found
+  = t('views.players.not_found')

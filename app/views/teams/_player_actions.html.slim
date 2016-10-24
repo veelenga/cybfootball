@@ -1,6 +1,6 @@
 .text-right
   => button_to update_players_team_path(@team, player: { id: player.id, action: :delete }), class: 'btn btn-danger btn-xs',
-    method: :put, data: { confirm: t('.confirm', default: 'Are you sure you want delete user from this team?') }
+    method: :put, data: { confirm: t('views.teams.show.confirmation_remove') }
     span.glyphicon.glyphicon-trash
     '
-    | remove from team
+    = t('views.teams.show.remove_from_team')

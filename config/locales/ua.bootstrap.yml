@@ -1,0 +1,15 @@
+ua:
+  helpers:
+    actions: "Дії"
+    links:
+      back: "Назад"
+      cancel: "Відміна"
+      confirm: "Ви впевнені?"
+      destroy: "Видалити"
+      new: "Створити"
+      edit: "Редагувати"
+    titles:
+      edit: "Редагувати %{model}"
+      save: "Зберегти %{model}"
+      new: "Створити %{model}"
+      delete: "Видалити %{model}"
