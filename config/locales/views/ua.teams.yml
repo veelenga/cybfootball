@@ -1,9 +1,0 @@
-ua:
-  views:
-    teams:
-      not_found: Таких команд тут ще немає
-
-      show:
-        remove_from_team: Видали з команди
-        confirmation_remove: Ви впевнені, що хочете видалити гравця з цієї команди?
-        search_player: Шукати гравця

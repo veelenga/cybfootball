@@ -8,6 +8,9 @@ class Team < ApplicationRecord
 
   scope :by_name, ->(name) { where('teams.name ~* ?', ".*#{name}.*")}
 
+  has_attached_file :avatar, styles: { thumb: '300x200>' }, default_url: '/images/default_team_avatar.png'
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
   def update_players_list(player, action)
     case action.try(:to_sym)
       when :add

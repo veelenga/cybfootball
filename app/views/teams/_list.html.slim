@@ -1,18 +1,19 @@
 = hidden_field_tag :per, params[:per]
 
 - if teams.present?
-  table.table.table-striped
-    thead
-      tr
-        th= Team.human_attribute_name(:name)
-        th=t '.actions', default: t("helpers.actions")
-    tbody
-      - teams.each do |team|
-        tr
-          td= link_to team.name, team_path(team)
-          td
-            = link_to t('.edit', default: t('helpers.links.edit')), edit_team_path(team), class: 'btn btn-default btn-xs'
-            '
-            = link_to t('.destroy', default: t('helpers.links.destroy')), team_path(team), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-xs btn-danger'
+  - teams.each do |team|
+    .player-card.col-xs-12.col-sm-6.col-md-3
+      .thumbnail
+        = link_to team_path(team) do
+          = image_tag(team.avatar.url(:thumb), class: 'avatar img-rounded')
+          h4.text-center = team.name
+          .admin_panel
+            .text-right
+              => link_to edit_team_path(team), class: 'btn btn-default btn-xs'
+                span.glyphicon.glyphicon-edit
+
+              => link_to team_path(team), class: 'btn btn-danger btn-xs', method: :delete,
+                data: { confirm: t('views.teams.confirm_delete') }
+                span.glyphicon.glyphicon-trash
 - else
   = t('views.teams.not_found')

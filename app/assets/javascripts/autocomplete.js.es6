@@ -5,11 +5,12 @@ class Autocomplete {
     this.display = opts.display
     this.suggestion = opts.suggestion
 
-    var bloodhound = this.bloodhound(opts.url)
+    this.input.typeahead('destroy');
 
+    var bloodhound = this.bloodhound(opts.url)
     bloodhound.initialize();
 
-    this.initTypeahead(bloodhound.ttAdapter());
+    this.input.ready(() => this.initTypeahead(bloodhound.ttAdapter()));
   }
 
   bloodhound (url) {

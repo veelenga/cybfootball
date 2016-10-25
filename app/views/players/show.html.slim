@@ -8,15 +8,15 @@
   = image_tag @player.avatar.url(:thumb), class: 'img-rounded'
 
 .col-sm-8
-p
-  strong=> model_class.human_attribute_name(:bio) + ':'
-  = @player.bio
-p
-  strong=> model_class.human_attribute_name(:graduation_year) + ':'
-  = @player.graduation_year
+  p
+    strong=> model_class.human_attribute_name(:bio) + ':'
+    = @player.bio
+  p
+    strong=> model_class.human_attribute_name(:graduation_year) + ':'
+    = @player.graduation_year
 
-= link_to t('.back', default: t("helpers.links.back")), players_path, class: 'btn btn-default'
-'
-= link_to t('.edit', default: t("helpers.links.edit")), edit_player_path(@player), class: 'btn btn-default'
-'
-= link_to t('.destroy', default: t("helpers.links.destroy")), player_path(@player), method: "delete", data: { confirm: t('.confirm', :default => t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-danger'
+  = link_to t('.back', default: t("helpers.links.back")), players_path, class: 'btn btn-default'
+  '
+  = link_to t('.edit', default: t("helpers.links.edit")), edit_player_path(@player), class: 'btn btn-default'
+  '
+  = link_to t('.destroy', default: t("helpers.links.destroy")), player_path(@player), method: "delete", data: { confirm: t('.confirm', :default => t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-danger'
