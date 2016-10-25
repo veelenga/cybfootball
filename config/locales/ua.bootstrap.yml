@@ -8,6 +8,7 @@ ua:
       destroy: "Видалити"
       new: "Створити"
       edit: "Редагувати"
+      save: "Зберегти"
     titles:
       edit: "Редагувати %{model}"
       save: "Зберегти %{model}"
