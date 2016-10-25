@@ -3,7 +3,7 @@
   = f.text_area :description, rows: 8
   = f.text_field :date, class: 'datepicker', control_col: 'col-sm-2', icon: 'th'
   = f.form_group do
-    = f.submit :class => 'btn btn-primary'
+    = f.submit t('helpers.links.save'), class: 'btn btn-primary'
     = link_to t('.cancel', default: t('helpers.links.cancel')), tournaments_path, class: 'btn'
 
 javascript:

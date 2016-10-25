@@ -1,0 +1,11 @@
+ua:
+  views:
+    pagination:
+      first: "<<"
+      last: ">>"
+      previous: "<"
+      next: ">"
+      truncate: "..."
+      helpers:
+        per_page: Відображати по
+        total_found: Всього знайдено

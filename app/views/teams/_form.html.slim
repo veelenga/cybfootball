@@ -1,5 +1,5 @@
 = bootstrap_form_for @team, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
   = f.text_field :name
   = f.form_group do
-      = f.submit class: 'btn btn-primary'
+      = f.submit t('helpers.links.save'), class: 'btn btn-primary'
       = link_to t('.cancel', default: t("helpers.links.cancel")), teams_path, class: 'btn'

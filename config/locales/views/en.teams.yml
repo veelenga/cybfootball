@@ -1,0 +1,9 @@
+en:
+  views:
+    teams:
+      not_found: Teams not found
+
+      show:
+        remove_from_team: Remove from team
+        confirmation_remove: Are you sure you want to delete this player from the team?
+        search_player: Search player

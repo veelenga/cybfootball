@@ -1,0 +1,5 @@
+en:
+  views:
+    players:
+      not_found: Players not found
+      confirm_delete: Are you sure you want to delete this player?

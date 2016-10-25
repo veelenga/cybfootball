@@ -1,0 +1,21 @@
+ua:
+  activerecord:
+    models:
+      player: Гравець
+      team: Команда
+      tournament: Турнір
+
+    attributes:
+      player:
+        avatar: Фото
+        fio: Ім'я
+        bio: Біографія
+        graduation_year: Рік випуску
+
+      team:
+        name: Назва
+
+      tournament:
+        no: №
+        date: Дата
+        description: Опис

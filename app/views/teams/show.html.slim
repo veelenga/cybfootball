@@ -19,12 +19,12 @@ hr
   .panel-heading
     .col-xs-3.col-md-1.pull-left style='padding-top: 7px;'
       b
-        | Players
+        = t('gen.players')
     .col-xs-9.col-md-5.input-group
       = bootstrap_form_tag url: update_players_team_path(@team), layout: :horizontal, method: :put do |f|
         = f.hidden_field :"player[id]", class: 'player_id'
         = f.hidden_field :"player[action]", value: 'add'
-        = f.text_field :fio, hide_label: true, class: 'typeahead', placeholder: 'Search player',
+        = f.text_field :fio, hide_label: true, class: 'typeahead', placeholder: t('views.teams.show.search_player'),
           append: f.submit('Add', class: 'btn btn-default')
 
   .panel-body id='team_players'

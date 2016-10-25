@@ -3,5 +3,5 @@
     span.glyphicon.glyphicon-edit
 
   => link_to player_path(player), class: 'btn btn-danger btn-xs', method: :delete,
-    data: { confirm: t('.confirm', default: 'Are you sure you want delete this user?') }
+    data: { confirm: t('views.players.confirm_delete') }
     span.glyphicon.glyphicon-trash
