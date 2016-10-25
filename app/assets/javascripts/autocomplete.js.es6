@@ -6,10 +6,9 @@ class Autocomplete {
     this.suggestion = opts.suggestion
 
     var bloodhound = this.bloodhound(opts.url)
-
     bloodhound.initialize();
 
-    this.initTypeahead(bloodhound.ttAdapter());
+    this.input.ready(() => this.initTypeahead(bloodhound.ttAdapter()));
   }
 
   bloodhound (url) {
@@ -37,6 +36,7 @@ class Autocomplete {
     ).bind('typeahead:autocomplete', (ev, suggestion) =>
       this.saveSelected(suggestion.id)
     );
+    $(document).on('turbolinks:visit', event => this.input.typeahead('destroy'))
   }
 
   saveSelected (id) {

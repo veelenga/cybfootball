@@ -1,7 +1,12 @@
 en:
   views:
+    players:
+      not_found: Players not found
+      confirm_delete: Are you sure you want to delete this player?
+
     teams:
       not_found: Teams not found
+      confirm_delete: Are you sure you want to delete this team?
 
       show:
         remove_from_team: Remove from team

@@ -18,5 +18,6 @@ module Cybfootball
       g.view_specs false
       g.helper_specs false
     end
+    config.i18n.fallbacks = [:en]
   end
 end

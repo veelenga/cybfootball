@@ -26,6 +26,11 @@ RSpec.describe Team, type: :model do
     expect(team.matches_as_a_guest).not_to be_empty
   end
 
+  it 'can have avatar' do
+    team = build :team
+    expect(team.avatar).not_to be_nil
+  end
+
   describe '.by_name' do
     it 'does case insensitive search by name attribute' do
       teams = []
