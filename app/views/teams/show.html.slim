@@ -40,7 +40,7 @@ hr
 
 - content_for :js_footer do
   javascript:
-    new Autocomplete({
+    var search = new Autocomplete({
       el: $('.typeahead'),
       out: $('.player_id'),
       url: "#{autocomplete_players_path}",
@@ -53,3 +53,10 @@ hr
           </div>
         `)
     });
+
+    // handle typeahead & turbolinks problem
+    var destroySearch = function (e) {
+      document.removeEventListener(e.type, destroySearch)
+      if (search) search.destroy();
+    }
+    document.addEventListener('turbolinks:visit', destroySearch);

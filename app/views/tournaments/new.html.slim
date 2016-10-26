@@ -1,6 +1,5 @@
-- model_class = Tournament
 .page-header
   h1
-    =t '.title', default: [:'helpers.titles.new', 'New %{model}'], model: model_class.model_name.human.titleize
+    =t 'views.tournaments.new.title'
     i.fa.fa-trophy.pull-right
 = render partial: "form"

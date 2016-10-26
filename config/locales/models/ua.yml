@@ -13,6 +13,7 @@ ua:
         graduation_year: Рік випуску
 
       team:
+        avatar: Фото
         name: Назва
 
       tournament:

@@ -1,6 +1,5 @@
-- model_class = Team
 .page-header
   h1
-    =t '.title', default: [:'helpers.titles.edit', 'Edit %{model}'], model: model_class.model_name.human.titleize
+    =t 'views.teams.edit.title'
     i.fa.fa-users.pull-right
 = render partial: "form"

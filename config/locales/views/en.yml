@@ -3,6 +3,10 @@ en:
     players:
       not_found: Players not found
       confirm_delete: Are you sure you want to delete this player?
+      new:
+        title: New Player
+      edit:
+        title: Edit Player
 
     teams:
       not_found: Teams not found
@@ -12,3 +16,13 @@ en:
         remove_from_team: Remove from team
         confirmation_remove: Are you sure you want to delete this player from the team?
         search_player: Search player
+      new:
+        title: New Team
+      edit:
+        title: Edit Team
+
+    tournaments:
+      new:
+        title: New Tournament
+      edit:
+        title: Edit Tournament

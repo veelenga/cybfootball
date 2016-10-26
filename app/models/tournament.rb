@@ -10,11 +10,11 @@ class Tournament < ApplicationRecord
   validates :date, presence: true,
     inclusion: {
       in: Date.new(1990,1,1)...Date.new(Date.current.year + 2, 1, 1),
-      message: "should be from 1990 to #{Date.current.year + 1} year"
+      message: I18n.t('activerecord.errors.messages.year_between', min: 1990, max: Date.current.year + 1)
     },
     format: {
       with: /(19|20)\d{2}/i,
-      message: "should be a four-digit year"
+      message: I18n.t('activerecord.errors.messages.four_digit_year')
     },
     uniqueness: true
 

@@ -3,6 +3,10 @@ ua:
     players:
       not_found: Таких гравців тут ще немає
       confirm_delete: Ви впевнені, що хочете видалити гравця?
+      new:
+        title: Створити Гравця
+      edit:
+        title: Редагувати Гравця
 
     teams:
       not_found: Таких команд тут ще немає
@@ -12,3 +16,13 @@ ua:
         remove_from_team: Видалити з команди
         confirmation_remove: Ви впевнені, що хочете видалити гравця з цієї команди?
         search_player: Шукати гравця
+      new:
+        title: Створити Команду
+      edit:
+        title: Редагувати Команду
+
+    tournaments:
+      new:
+        title: Створити Турнір
+      edit:
+        title: Редагувати Турнір

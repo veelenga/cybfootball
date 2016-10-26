@@ -36,7 +36,10 @@ class Autocomplete {
     ).bind('typeahead:autocomplete', (ev, suggestion) =>
       this.saveSelected(suggestion.id)
     );
-    $(document).on('turbolinks:visit', event => this.input.typeahead('destroy'))
+  }
+
+  destroy () {
+    this.input.typeahead('destroy')
   }
 
   saveSelected (id) {

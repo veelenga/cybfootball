@@ -1,0 +1,6 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        four_digit_year: should be four-digit year
+        year_between: "year should be between %{min} and %{max}"
