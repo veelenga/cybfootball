@@ -1,0 +1,28 @@
+.text-center
+  label.avatar-cropper href='#'
+    div style='width:300px; height:300px; overflow:hidden'
+      = image_tag img, class: 'avatar'
+  label.btn.btn-default.btn-file
+    input.avatar-chooser type='file' style='display: none;'
+      | Upload new
+
+.cropper.modal.fade role='dialog' tabindex='-1'
+  .modal-dialog role='document'
+    .modal-content
+      .modal-header
+        .button.close data-dismiss='modal'
+          | &times;
+        h4.modal-title
+          | Crop image
+
+      .modal-body
+        .text-center
+          = image_tag img, class: 'img-box', style: 'max-width: 100%;'
+
+      .modal-footer
+        button.btn.btn-primary.modal-close.finish-crop data-dismiss='modal'
+          | Set new avatar
+
+= content_for :js_footer do
+  javascript:
+    new ImageCropper({ width: 300, height: 300, avatar: $('.avatar'), image: $('.img-box') })
