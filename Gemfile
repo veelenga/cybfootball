@@ -20,6 +20,7 @@ gem 'sprockets-es6'
 gem 'babel-transpiler'
 gem 'handlebars_assets'
 gem 'twitter-typeahead-rails'
+gem 'cropper-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -54,6 +54,15 @@ RSpec.describe PlayersController, type: :controller do
         post :create, params: {player: valid_attributes}
         expect(response).to redirect_to(Player.last)
       end
+
+      it 'acceptes attribute accessors attributes' do
+        accessor_attributes = { crop_x: '10', crop_y: '20', crop_w: '30', crop_h: '40' }
+        post :create, params: { player: valid_attributes.merge(accessor_attributes) }
+        expect(assigns(:player).crop_x).to eql accessor_attributes[:crop_x]
+        expect(assigns(:player).crop_y).to eql accessor_attributes[:crop_y]
+        expect(assigns(:player).crop_w).to eql accessor_attributes[:crop_w]
+        expect(assigns(:player).crop_h).to eql accessor_attributes[:crop_h]
+      end
     end
 
     context "with invalid params" do

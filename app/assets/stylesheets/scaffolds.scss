@@ -15,6 +15,13 @@
   }
 }
 
+.avatar-border {
+  border:0;
+  .avatar-cropper {
+    cursor: pointer;
+  }
+}
+
 .pagination {
   display: inline-block;
   margin: 0px;

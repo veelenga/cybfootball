@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require bootstrap-datepicker
 //= require twitter/typeahead.min
+//= require cropper
 //= require handlebars
 //= require turbolinks
 //= require_tree .

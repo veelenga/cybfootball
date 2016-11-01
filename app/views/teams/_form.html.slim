@@ -1,8 +1,7 @@
-= bootstrap_form_for @team, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
-  .col-sm-4
-    = image_tag @team.avatar.url(:thumb), class: 'img-rounded'
-  .col-sm-8
-    = f.file_field :avatar
+= bootstrap_form_for @team, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10', html: {multipart: true} do |f|
+  .col-md-4
+    = render 'shared/avatar_chooser', form: f, model: @team
+  .col-md-6.col-md-offset-1
     = f.text_field :name
     = f.form_group do
         = f.submit t('helpers.links.save'), class: 'btn btn-primary'

@@ -1,0 +1,44 @@
+.text-center
+  .thumbnail.avatar-border
+    label.avatar-cropper href='#'
+      div class='img-rounded' style="width:#{model.geometry(:thumb).width}px; height:#{model.geometry(:thumb).height}px; overflow:hidden"
+        = image_tag model.avatar.url(:thumb), class: 'avatar'
+    .caption
+      label.btn.btn-default.btn-file
+        input.avatar-chooser name="#{form.object_name}[avatar]" type='file' style='display: none;' accept="image/*"
+          = t('views.players.upload_avatar')
+
+- %w(crop_x crop_y crop_w crop_h).each do |attribute|
+  = form.hidden_field attribute, id: attribute
+
+.cropper.modal.fade role='dialog' tabindex='-1'
+  .modal-dialog role='document'
+    .modal-content
+      .modal-header
+        .button.close data-dismiss='modal'
+          | &times;
+        h4.modal-title
+          | Crop image
+
+      .modal-body
+        .text-center
+          = image_tag model.avatar.url(:original), class: 'img-box', style: 'max-width: 100%;'
+
+      .modal-footer
+        button.btn.btn-primary.modal-close.finish-crop data-dismiss='modal'
+          | Set new avatar
+
+= content_for :js_footer do
+  javascript:
+    new ImageCropper({
+      width:  "#{model.geometry(:thumb).width}",
+      height: "#{model.geometry(:thumb).height}",
+      avatar: $('.avatar'),
+      image:  $('.img-box'),
+      save: function(coords) {
+        $("#crop_x").val(coords.x);
+        $("#crop_y").val(coords.y);
+        $("#crop_w").val(coords.w);
+        $("#crop_h").val(coords.h);
+      }
+    })

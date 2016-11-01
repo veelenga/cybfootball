@@ -3,6 +3,7 @@ ua:
     players:
       not_found: Таких гравців тут ще немає
       confirm_delete: Ви впевнені, що хочете видалити гравця?
+      upload_avatar: Завантажити фото
       new:
         title: Створити Гравця
       edit:

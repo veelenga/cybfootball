@@ -1,4 +1,6 @@
 class Player < ApplicationRecord
+  include ModelExtensions::Avatar
+
   has_and_belongs_to_many :teams, -> { distinct }
   has_many :goals
 
@@ -8,8 +10,7 @@ class Player < ApplicationRecord
 
   scope :fio_like, ->(fio) { where('players.fio ~* ?', ".*#{fio}.*") }
 
-  has_attached_file :avatar, styles: { thumb: "300x300>" }, default_url: "/images/default_avatar.png"
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+  has_avatar styles: {thumb: '300x300#'}, default_url: "/images/default_avatar.png"
 
   private
 
