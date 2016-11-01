@@ -1,10 +1,12 @@
 .text-center
-  label.avatar-cropper href='#'
-    div style="width:#{model.geometry(:thumb).width}px; height:#{model.geometry(:thumb).height}px; overflow:hidden"
-      = image_tag model.avatar.url(:thumb), class: 'avatar'
-  label.btn.btn-default.btn-file
-    input.avatar-chooser name="#{form.object_name}[avatar]" type='file' style='display: none;' accept="image/*"
-      = t('views.players.upload_avatar')
+  .thumbnail.avatar-border
+    label.avatar-cropper href='#'
+      div class='img-rounded' style="width:#{model.geometry(:thumb).width}px; height:#{model.geometry(:thumb).height}px; overflow:hidden"
+        = image_tag model.avatar.url(:thumb), class: 'avatar'
+    .caption
+      label.btn.btn-default.btn-file
+        input.avatar-chooser name="#{form.object_name}[avatar]" type='file' style='display: none;' accept="image/*"
+          = t('views.players.upload_avatar')
 
 - %w(crop_x crop_y crop_w crop_h).each do |attribute|
   = form.hidden_field attribute, id: attribute

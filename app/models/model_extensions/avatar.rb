@@ -20,7 +20,7 @@ module ModelExtensions::Avatar
       end
 
       after_validation do
-        restore_avatar_file_name! if new_record? && errors.present?
+        restore_avatar_file_name! if errors.present?
       end
 
       define_method :styles do
