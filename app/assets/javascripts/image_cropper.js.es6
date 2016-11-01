@@ -1,5 +1,6 @@
 class ImageCropper {
   constructor (opts) {
+    this.save = opts.save
     this.width = opts.width
     this.height = opts.height
     this.avatar = opts.avatar
@@ -67,6 +68,12 @@ class ImageCropper {
       marginLeft: `-${left}px`,
       marginTop:  `-${top}px`
     })
-    // TODO: set hidden fields
+
+    this.save({
+      w: parseInt(this.coords.width),
+      h: parseInt(this.coords.height),
+      x: parseInt(this.coords.x),
+      y: parseInt(this.coords.y)
+    })
   }
 }

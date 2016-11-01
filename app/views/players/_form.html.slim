@@ -1,8 +1,7 @@
-= bootstrap_form_for @player, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
+= bootstrap_form_for @player, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10', html: {multipart: true} do |f|
   .col-sm-4
-    = render 'shared/avatar_chooser', img: @player.avatar.url(:thumb)
+    = render 'shared/avatar_chooser', form: f, avatar: @player.avatar, geometry: @player.geometry
   .col-sm-8
-    = f.file_field :avatar
     = f.text_field :fio
     = f.text_area :bio, rows: 4
     = f.select :graduation_year, options_for_select(1990..Date.today.year + 7, @player.graduation_year), control_col: 'col-sm-2'
