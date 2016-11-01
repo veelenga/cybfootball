@@ -1,7 +1,7 @@
 .text-center
   label.avatar-cropper href='#'
-    div style='width:300px; height:300px; overflow:hidden'
-      = image_tag avatar.url(:thumb), class: 'avatar'
+    div style="width:#{model.geometry(:thumb).width}px; height:#{model.geometry(:thumb).height}px; overflow:hidden"
+      = image_tag model.avatar.url(:thumb), class: 'avatar'
   label.btn.btn-default.btn-file
     input.avatar-chooser name="#{form.object_name}[avatar]" type='file' style='display: none;'
       = t('views.players.upload_avatar')
@@ -20,7 +20,7 @@
 
       .modal-body
         .text-center
-          = image_tag avatar.url(:original), class: 'img-box', style: 'max-width: 100%;'
+          = image_tag model.avatar.url(:original), class: 'img-box', style: 'max-width: 100%;'
 
       .modal-footer
         button.btn.btn-primary.modal-close.finish-crop data-dismiss='modal'
@@ -29,8 +29,8 @@
 = content_for :js_footer do
   javascript:
     new ImageCropper({
-      width:  "#{geometry.width}",
-      height: "#{geometry.height}",
+      width:  "#{model.geometry(:thumb).width}",
+      height: "#{model.geometry(:thumb).height}",
       avatar: $('.avatar'),
       image:  $('.img-box'),
       save: function(coords) {
