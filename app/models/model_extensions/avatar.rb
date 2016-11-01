@@ -8,7 +8,7 @@ module ModelExtensions::Avatar
 
   module ClassMethods
     def has_avatar(opts)
-      [:avatar, :crop_x, :crop_y, :crop_w, :crop_h].each do |attr|
+      %w(avatar crop_x crop_y crop_w crop_h crop_r).each do |attr|
         attr_accessor :"#{attr}"
       end
 

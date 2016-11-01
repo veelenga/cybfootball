@@ -1,14 +1,14 @@
 .text-center
   .thumbnail.avatar-border
     label.avatar-cropper href='#'
-      div class='img-rounded' style="width:#{model.geometry(:thumb).width}px; height:#{model.geometry(:thumb).height}px; overflow:hidden"
+      div style="width:#{model.geometry(:thumb).width}px; height:#{model.geometry(:thumb).height}px; overflow:hidden"
         = image_tag model.avatar.url(:thumb), class: 'avatar'
     .caption
       label.btn.btn-default.btn-file
         input.avatar-chooser name="#{form.object_name}[avatar]" type='file' style='display: none;' accept="image/*"
           = t('views.players.upload_avatar')
 
-- %w(crop_x crop_y crop_w crop_h).each do |attribute|
+- %w(crop_x crop_y crop_w crop_h crop_r).each do |attribute|
   = form.hidden_field attribute, id: attribute
 
 .cropper.modal.fade role='dialog' tabindex='-1'
@@ -40,5 +40,6 @@
         $("#crop_y").val(coords.y);
         $("#crop_w").val(coords.w);
         $("#crop_h").val(coords.h);
+        $("#crop_r").val(coords.r);
       }
     })

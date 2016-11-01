@@ -59,6 +59,16 @@ RSpec.describe TeamsController, type: :controller do
         post :create, params: {team: valid_attributes}
         expect(response).to redirect_to(Team.last)
       end
+
+      it 'acceptes attribute accessors attributes' do
+        accessor_attributes = { crop_x: '10', crop_y: '20', crop_w: '30', crop_h: '40', crop_r: '50' }
+        post :create, params: { team: valid_attributes.merge(accessor_attributes) }
+        expect(assigns(:team).crop_x).to eql accessor_attributes[:crop_x]
+        expect(assigns(:team).crop_y).to eql accessor_attributes[:crop_y]
+        expect(assigns(:team).crop_w).to eql accessor_attributes[:crop_w]
+        expect(assigns(:team).crop_h).to eql accessor_attributes[:crop_h]
+        expect(assigns(:team).crop_r).to eql accessor_attributes[:crop_r]
+      end
     end
 
     context "with invalid params" do

@@ -76,6 +76,6 @@ class PlayersController < ApplicationController
     end
 
     def player_params
-      params.require(:player).permit(:avatar, :fio, :bio, :graduation_year, :crop_x, :crop_y, :crop_w, :crop_h)
+      params.require(:player).permit(:avatar, :fio, :bio, :graduation_year, :crop_x, :crop_y, :crop_w, :crop_h, :crop_r)
     end
 end

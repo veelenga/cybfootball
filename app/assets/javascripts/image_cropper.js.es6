@@ -16,6 +16,8 @@ class ImageCropper {
     $('.avatar-chooser').on('change', (e) => this.loadImage(e))
 
     this.avatar.on('click', () => this.show())
+
+    this.registerHotkeys();
   }
 
   init () {
@@ -25,12 +27,18 @@ class ImageCropper {
       checkOrientation: false,
       checkCrossOrigin: false,
       guides: false,
-      rotatable: false,
       scalable: false,
       aspectRatio: this.width / this.height,
       minContainerWidth: this.width,
       minContainerHeight: this.height,
       crop: e => this.coords = e
+    })
+  }
+
+  registerHotkeys() {
+    $('.cropper').keypress(e => {
+      (e.charCode == 32) && this.image.cropper('rotate', 90); // space
+      (e.charCode == 114) && this.image.cropper('reset');     // r
     })
   }
 
@@ -60,20 +68,25 @@ class ImageCropper {
     let height = parseInt(this.image.get(0).naturalHeight * ry)
     let left   = parseInt(this.coords.x * rx)
     let top    = parseInt(this.coords.y * ry)
+    let rotate = this.coords.rotate
+
+    if (rotate % 180) [top, left] = [left, top]
 
     this.avatar.attr('src', this.image.attr('src'))
     this.avatar.css({
       width:      `${width}px`,
       height:     `${height}px`,
       marginLeft: `-${left}px`,
-      marginTop:  `-${top}px`
+      marginTop:  `-${top}px`,
+      transform:  `rotate(${rotate}deg)`
     })
 
     this.save({
       w: parseInt(this.coords.width),
       h: parseInt(this.coords.height),
       x: parseInt(this.coords.x),
-      y: parseInt(this.coords.y)
+      y: parseInt(this.coords.y),
+      r: rotate
     })
   }
 }
