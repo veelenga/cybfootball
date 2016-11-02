@@ -1,22 +1,22 @@
 class ImageCropper {
   constructor (opts) {
-    this.save = opts.save
-    this.width = opts.width
+    this.save   = opts.save
+    this.width  = opts.width
     this.height = opts.height
     this.avatar = opts.avatar
-    this.image = opts.image
+    this.image  = opts.image
 
+    this.cropper = $('.cropper')
     this.coords = undefined
 
-    $('.cropper')
+    this.cropper
       .on('shown.bs.modal', () => this.init())
       .on('hidden.bs.modal', () => this.destroy())
 
-    $('.finish-crop').on('click', () => this.setResults())
+    $('.finish-crop').on('click', () => this.saveResults())
     $('.avatar-chooser').on('change', (e) => this.loadImage(e))
 
     this.avatar.on('click', () => this.show())
-
     this.registerHotkeys();
   }
 
@@ -31,19 +31,22 @@ class ImageCropper {
       aspectRatio: this.width / this.height,
       minContainerWidth: this.width,
       minContainerHeight: this.height,
+      preview: this.avatar,
       crop: e => this.coords = e
     })
   }
 
   registerHotkeys() {
-    $('.cropper').keypress(e => {
+    this.cropper.keypress(e => {
       (e.charCode == 32) && this.image.cropper('rotate', 90); // space
       (e.charCode == 114) && this.image.cropper('reset');     // r
     })
   }
 
   destroy () {
+    let preview = this.avatar.html()
     this.image.cropper('destroy')
+    this.avatar.html(preview)
   }
 
   show () {
@@ -60,33 +63,13 @@ class ImageCropper {
     }
   }
 
-  setResults () {
-    let rx = this.width / this.coords.width
-    let ry = this.height / this.coords.height
-
-    let width  = parseInt(this.image.get(0).naturalWidth * rx)
-    let height = parseInt(this.image.get(0).naturalHeight * ry)
-    let left   = parseInt(this.coords.x * rx)
-    let top    = parseInt(this.coords.y * ry)
-    let rotate = this.coords.rotate
-
-    if (rotate % 180) [top, left] = [left, top]
-
-    this.avatar.attr('src', this.image.attr('src'))
-    this.avatar.css({
-      width:      `${width}px`,
-      height:     `${height}px`,
-      marginLeft: `-${left}px`,
-      marginTop:  `-${top}px`,
-      transform:  `rotate(${rotate}deg)`
-    })
-
+  saveResults () {
     this.save({
       w: parseInt(this.coords.width),
       h: parseInt(this.coords.height),
       x: parseInt(this.coords.x),
       y: parseInt(this.coords.y),
-      r: rotate
+      r: this.coords.rotate
     })
   }
 }

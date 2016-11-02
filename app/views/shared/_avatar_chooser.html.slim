@@ -1,8 +1,8 @@
 .text-center
   .thumbnail.avatar-border
     label.avatar-cropper href='#'
-      div style="width:#{model.geometry(:thumb).width}px; height:#{model.geometry(:thumb).height}px; overflow:hidden"
-        = image_tag model.avatar.url(:thumb), class: 'avatar'
+      div class='avatar' style="width:#{model.geometry(:thumb).width}px; height:#{model.geometry(:thumb).height}px; overflow:hidden"
+        = image_tag model.avatar.url(:thumb)
     .caption
       label.btn.btn-default.btn-file
         input.avatar-chooser name="#{form.object_name}[avatar]" type='file' style='display: none;' accept="image/*"
