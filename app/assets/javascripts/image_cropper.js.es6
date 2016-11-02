@@ -13,8 +13,8 @@ class ImageCropper {
       .on('shown.bs.modal', () => this.init())
       .on('hidden.bs.modal', () => this.destroy())
 
-    $('.finish-crop').on('click', () => this.saveResults())
-    $('.avatar-chooser').on('change', (e) => this.loadImage(e))
+    $('.finish-crop').on('click', () => this.setResults())
+    $('.avatar-chooser').on('change', e => this.loadImage(e))
 
     this.avatar.on('click', () => this.show())
     this.registerHotkeys();
@@ -46,7 +46,8 @@ class ImageCropper {
   destroy () {
     let preview = this.avatar.html()
     this.image.cropper('destroy')
-    this.avatar.html(preview)
+    this.resultSaved && this.avatar.html(preview)
+    this.resultSaved = false
   }
 
   show () {
@@ -63,7 +64,7 @@ class ImageCropper {
     }
   }
 
-  saveResults () {
+  setResults () {
     this.save({
       w: parseInt(this.coords.width),
       h: parseInt(this.coords.height),
@@ -71,5 +72,6 @@ class ImageCropper {
       y: parseInt(this.coords.y),
       r: this.coords.rotate
     })
+    this.resultSaved = true
   }
 }
