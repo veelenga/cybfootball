@@ -6,8 +6,8 @@ ua:
         title: Редагувати фото
         finish: Встановити
         instructions: |
-          <strong>Space</strong> - обертати, <strong>R</strong> - скинути зміни,
-          <strong>Double click</strong> - drag режим, <strong>Esc</strong> - вийти
+          <strong>Double click</strong> - drag режим, <strong>Scroll</strong> - масштабувати,
+          <strong>Space</strong> - обертати, <strong>R</strong> - скинути зміни, <strong>Esc</strong> - вийти
 
     players:
       not_found: Таких гравців тут ще немає
