@@ -6,7 +6,7 @@
     .caption
       label.btn.btn-default.btn-file
         input.avatar-chooser name="#{form.object_name}[avatar]" type='file' style='display: none;' accept="image/*"
-          = t('views.players.upload_avatar')
+          = t('views.avatar.upload')
 
 - %w(crop_x crop_y crop_w crop_h crop_r).each do |attribute|
   = form.hidden_field attribute, id: attribute
@@ -18,15 +18,17 @@
         .button.close data-dismiss='modal'
           | &times;
         h4.modal-title
-          | Crop image
+          = t('views.avatar.edit.title')
 
       .modal-body
         .text-center
           = image_tag model.avatar.url(:original), class: 'img-box', style: 'max-width: 100%;'
 
       .modal-footer
-        button.btn.btn-primary.modal-close.finish-crop data-dismiss='modal'
-          | Set new avatar
+        .pull-left.text-left.help-block
+          = simple_format t('views.avatar.edit.instructions')
+        button.btn.btn-primary.modal-close.finish-crop.pull-right data-dismiss='modal'
+          = t('views.avatar.edit.finish')
 
 = content_for :js_footer do
   javascript:
