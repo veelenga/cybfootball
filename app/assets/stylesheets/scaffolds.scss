@@ -17,8 +17,17 @@
 
 .avatar-border {
   border:0;
+
   .avatar-cropper {
     cursor: pointer;
+  }
+
+  .avatar {
+    display: block;
+    min-width:  0px !important;
+    min-height: 0px !important;
+    max-width:  none !important;
+    max-height: none !important;
   }
 }
 

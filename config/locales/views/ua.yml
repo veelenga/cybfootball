@@ -1,9 +1,17 @@
 ua:
   views:
+    avatar:
+      upload: Завантажити фото
+      edit:
+        title: Редагувати фото
+        finish: Встановити
+        instructions: |
+          <strong>Double click</strong> - drag режим, <strong>Scroll</strong> - масштабувати,
+          <strong>Space</strong> - обертати, <strong>R</strong> - скинути зміни, <strong>Esc</strong> - вийти
+
     players:
       not_found: Таких гравців тут ще немає
       confirm_delete: Ви впевнені, що хочете видалити гравця?
-      upload_avatar: Завантажити фото
       new:
         title: Створити Гравця
       edit:
