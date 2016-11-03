@@ -13,6 +13,34 @@
       }
     }
   }
+
+  .navbar-header {
+    .navbar-toggle {
+      margin-left: 15px;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .site-nav {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+
+    .user-nav {
+      float: right;
+    }
+
+    .navbar-collapse {
+      text-align: center;
+    }
+  }
+}
+
+#user-login {
+  .modal-dialog {
+    max-width: 450px
+  }
 }
 
 .avatar-border {

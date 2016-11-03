@@ -1,0 +1,31 @@
+- if user_signed_in?
+  li= link_to destroy_user_session_path, method: :delete
+    i.fa.fa-sign-in
+    '
+    = t 'views.user.sign_out'
+- else
+  li= link_to '#', type: 'button', data: { toggle: 'modal', target: '#user-login' }
+    i.fa.fa-sign-out
+    '
+    = t 'views.user.sign_in'
+
+- content_for :html_footer do
+  - unless user_signed_in?
+    .modal.fade id='user-login'
+      .modal-dialog
+        .modal-content
+          .modal-header
+            .button.close data-dismiss='modal'
+              | &times;
+            h4.modal-title
+              = t 'views.user.sign_in_title'
+
+          .modal-body
+            = bootstrap_form_for resource, url: session_path(resource_name), layout: :horizontal do |f|
+              = f.text_field :login, autofocus: true
+              = f.password_field :password, autocomplete: 'off'
+              - if devise_mapping.rememberable?
+                .col-sm-offset-2.col-sm-10
+                  = f.check_box :remember_me
+              .text-right
+                = f.submit t('views.user.sign_in'), class: 'btn btn-primary', remote: true

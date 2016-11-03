@@ -15,6 +15,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
 gem 'kaminari'
 gem 'font-awesome-rails'
+gem 'devise'
 
 gem 'sprockets-es6'
 gem 'babel-transpiler'

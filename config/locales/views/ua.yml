@@ -9,6 +9,11 @@ ua:
           <strong>Double click</strong> - drag режим, <strong>Scroll</strong> - масштабувати,
           <strong>Space</strong> - обертати, <strong>R</strong> - скинути зміни, <strong>Esc</strong> - вийти
 
+    user:
+      sign_in: Увійти
+      sign_out: Вийти
+      sign_in_title: Вхід до системи
+
     players:
       not_found: Таких гравців тут ще немає
       confirm_delete: Ви впевнені, що хочете видалити гравця?

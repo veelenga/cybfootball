@@ -30,7 +30,7 @@
         button.btn.btn-primary.modal-close.finish-crop.pull-right data-dismiss='modal'
           = t('views.avatar.edit.finish')
 
-= content_for :js_footer do
+- content_for :js_footer do
   javascript:
     new ImageCropper({
       width:  "#{model.geometry(:thumb).width}",
