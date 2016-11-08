@@ -69,7 +69,7 @@ class TeamsController < ApplicationController
   def update_players
     @team.update_players_list @player, params[:player].try(:[], :action)
     respond_to do |format|
-      format.html { redirect_to team_path(@team), notice: 'Player list successfully updated.' }
+      format.html { redirect_to team_path(@team), notice: t('controllers.team.player_list_update') }
       format.json { head :no_content }
     end
   end

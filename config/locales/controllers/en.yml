@@ -1,0 +1,17 @@
+en:
+  controllers:
+    player:
+      create: Player successfully created
+      update: Player successfully updated
+      destroy: Player successfully destroyed
+
+    team:
+      create: Team successfully created
+      update: Team successfully updated
+      destroy: Team successfully destroyed
+      player_list_update: Player list successfully updated
+
+    tournament:
+      create: Tournament successfully created
+      update: Tournament successfully updated
+      destroy: Tournament successfully destroyed
