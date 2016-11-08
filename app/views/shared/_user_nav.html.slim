@@ -20,12 +20,5 @@
             h4.modal-title
               = t 'views.user.sign_in_title'
 
-          .modal-body
-            = bootstrap_form_for resource, url: session_path(resource_name), layout: :horizontal do |f|
-              = f.text_field :login, autofocus: true
-              = f.password_field :password, autocomplete: 'off'
-              - if devise_mapping.rememberable?
-                .col-sm-offset-2.col-sm-10
-                  = f.check_box :remember_me
-              .text-right
-                = f.submit t('views.user.sign_in'), class: 'btn btn-primary', remote: true
+          .modal-body.sign-in-form
+            = render 'sessions/form'
