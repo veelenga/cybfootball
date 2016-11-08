@@ -29,4 +29,6 @@
       $('#user-login').on('hidden.bs.modal', function (){
         $('.modal-flash-messages').html('');
         $('#user_password').val('');
-      })
+      });
+
+      new Turbofix({ onvisit: function() { $('#user-login').html('') } })

@@ -55,8 +55,4 @@ hr
     });
 
     // handle typeahead & turbolinks problem
-    var destroySearch = function (e) {
-      document.removeEventListener(e.type, destroySearch)
-      if (search) search.destroy();
-    }
-    document.addEventListener('turbolinks:visit', destroySearch);
+    new Turbofix({ onvisit: function() { if (search) search.destroy(); } })
