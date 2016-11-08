@@ -1,0 +1,17 @@
+ua:
+  controllers:
+    player:
+      create: Нового гравця створено
+      update: Дані гравця збережено
+      destroy: Гравця видалено
+
+    team:
+      create: Нову команду створено
+      update: Дані команди збережено
+      destroy: Команду видалено
+      player_list_update: Список гравців оновлено
+
+    tournament:
+      create: Новий турнір успішно створено
+      update: Турнір збережено
+      destroy: Турнір видалено

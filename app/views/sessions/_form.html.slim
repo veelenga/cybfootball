@@ -1,0 +1,9 @@
+.modal-flash-messages.text-center
+  = flash_messages if @user
+= bootstrap_form_for (@user || User.new), remote: true, url: session_path(:user), layout: :horizontal do |f|
+  = f.text_field :login, autofocus: true
+  = f.password_field :password, autocomplete: 'off'
+  .col-sm-offset-2.col-sm-10
+    = f.check_box :remember_me
+  .text-right
+    = f.submit t('views.user.sign_in'), class: 'btn btn-primary'

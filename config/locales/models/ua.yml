@@ -1,11 +1,17 @@
 ua:
   activerecord:
     models:
+      user: Користувач
       player: Гравець
       team: Команда
       tournament: Турнір
 
     attributes:
+      user:
+        login: Логін
+        password: Пароль
+        remember_me: Запам'ятати
+
       player:
         avatar: Фото
         fio: Ім'я
