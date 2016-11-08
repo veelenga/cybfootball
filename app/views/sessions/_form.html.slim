@@ -1,3 +1,5 @@
+.modal-flash-messages.text-center
+  = flash_messages if @user
 = bootstrap_form_for (@user || User.new), remote: true, url: session_path(:user), layout: :horizontal do |f|
   = f.text_field :login, autofocus: true
   = f.password_field :password, autocomplete: 'off'

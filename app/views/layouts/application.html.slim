@@ -49,7 +49,10 @@ html lang="en"
 
     #content.container
       .row
-        .col-lg-12
+        .col-sm-8.col-sm-offset-2
+          .text-center
+            = flash_messages
+        .col-sm-12
           = yield
           = yield :html_footer
           = yield :js_footer

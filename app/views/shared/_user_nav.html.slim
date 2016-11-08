@@ -22,3 +22,11 @@
 
           .modal-body.sign-in-form
             = render 'sessions/form'
+
+- content_for :js_footer do
+  - unless user_signed_in?
+    javascript:
+      $('#user-login').on('hidden.bs.modal', function (){
+        $('.modal-flash-messages').html('');
+        $('#user_password').val('');
+      })

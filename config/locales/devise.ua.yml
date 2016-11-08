@@ -1,0 +1,21 @@
+ua:
+  devise:
+    failure:
+      already_authenticated: "Ви вже зайшли в систему."
+      inactive: "Ваш аккаунт покищо не активний."
+      invalid: "Неправильний логін або пароль."
+      locked: "Ваш аккаунт заблоковано"
+      last_attempt: "У вас э ще одна спроба до того, як ваш аккаунт буде заблоковано."
+      not_found_in_database: "Неправильний логін або пароль."
+      timeout: "Ваша сесія закінчилась. Будь ласка, увійдіть в систему знову, щоб продовжити."
+      unauthenticated: "Спершу ви повинні увійти в систему."
+    omniauth_callbacks:
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords:
+      updated: "Ваш пароль успішно змінено."
+      updated_not_active: "Ваш пароль успішно змінено."
+    sessions:
+      signed_in: "Вітаємо, ви успішно увійшли в систему."
+      signed_out: "Ви успішно вийшли з системи. До зустрічі."
+      already_signed_out: "Ви успішно вийшли з системи."
