@@ -12,7 +12,7 @@ module ModelExtensions::Avatar
         attr_accessor :"#{attr}"
       end
 
-      after_save do
+      before_save do
         if cropping?
           avatar.assign(avatar)
           avatar.save
@@ -39,7 +39,7 @@ module ModelExtensions::Avatar
     end
 
     def cropping?
-      !avatar.blank? && !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+      avatar.present? && crop_x.present? && crop_y.present? && crop_w.present? && crop_h.present?
     end
   end
 end

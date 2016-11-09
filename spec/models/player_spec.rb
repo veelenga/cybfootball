@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Player, type: :model do
   let(:player) { build(:player) }
+  let(:player_with_avatar) { build(:player_with_avatar) }
 
   it 'is valid with required attributes' do
     expect(player).to be_valid
@@ -21,6 +22,11 @@ RSpec.describe Player, type: :model do
 
   it 'assignes default attributes' do
     expect(Player.new.graduation_year).not_to be_nil
+  end
+
+  it 'can have avatar' do
+    expect(player_with_avatar).to be_valid
+    expect(player_with_avatar.avatar).not_to be_nil
   end
 
   describe '.fio_like' do
