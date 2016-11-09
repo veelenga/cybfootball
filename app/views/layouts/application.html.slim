@@ -44,8 +44,9 @@ html lang="en"
               '
               = t('gen.players')
 
-          ul.nav.navbar-nav.user-nav
-            = render 'shared/user_nav'
+          ul.nav.navbar-nav.control-nav
+            = render 'shared/language_bar'
+            = render 'shared/user_bar'
 
     #content.container
       .row
@@ -60,4 +61,4 @@ html lang="en"
     hr
 
     #footer.container-fluid
-      = render 'layouts/footer'
+      = render 'shared/footer'

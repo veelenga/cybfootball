@@ -27,13 +27,23 @@
       vertical-align: top;
     }
 
-    .user-nav {
+    .control-nav {
       float: right;
     }
 
     .navbar-collapse {
       text-align: center;
     }
+  }
+}
+
+.language-bar {
+  .dropdown-toggle i {
+    margin-right: 2px;
+  }
+
+  .dropdown-menu {
+    min-width: 10px;
   }
 }
 

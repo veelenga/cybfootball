@@ -1,0 +1,9 @@
+li.dropdown.language-bar
+  a.dropdown-toggle data-toggle='dropdown' href='#'
+    i class="famfamfam-flag-#{I18n.locale}"
+    span.caret
+  ul.dropdown-menu
+    - (I18n.available_locales - [I18n.locale]).each do |l|
+      li
+        = link_to locale: l
+          i class="famfamfam-flag-#{l}"

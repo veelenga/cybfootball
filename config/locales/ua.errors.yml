@@ -8,3 +8,4 @@ ua:
         not_a_number: Не є числом
         four_digit_year: Рік повинен мати чотири цифри
         year_between: "Рік повинен бути між %{min} та %{max}"
+        taken: таке значення уже існує
