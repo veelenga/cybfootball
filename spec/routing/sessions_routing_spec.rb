@@ -9,5 +9,13 @@ RSpec.describe Devise::SessionsController, type: :routing do
     it 'routes to #sign_out' do
       expect(delete: '/sign_out').to route_to('sessions#destroy')
     end
+
+    it 'routes to #settings' do
+      expect(get: '/settings').to route_to('users#settings')
+    end
+
+    it 'routes to #update_password' do
+      expect(patch: '/update_password').to route_to('users#update_password')
+    end
   end
 end

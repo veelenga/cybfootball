@@ -3,7 +3,7 @@ ua:
     errors:
       messages:
         blank: Це поле є обов'язковим
-        invalid: Недопустимий формат файлу
+        invalid: Значення не правильне
         spoofed_media_type: Має вміст, що не відповідає заявленому
         not_a_number: Не є числом
         four_digit_year: Рік повинен мати чотири цифри

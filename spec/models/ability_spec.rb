@@ -22,5 +22,10 @@ describe 'User' do
       it { is_expected.to be_able_to(:read, :all) }
       it { is_expected.not_to be_able_to(:manage, :all) }
     end
+
+    context 'when signed in' do
+      let(:user) { create :user }
+      it { is_expected.to be_able_to(:manage, User) }
+    end
   end
 end
