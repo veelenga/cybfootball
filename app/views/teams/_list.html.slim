@@ -7,13 +7,14 @@
         = link_to team_path(team) do
           = image_tag(team.avatar.url(:thumb), class: 'avatar img-rounded')
           h4.text-center = team.name
-          .admin_panel
-            .text-right
-              => link_to edit_team_path(team), class: 'btn btn-default btn-xs'
-                span.glyphicon.glyphicon-edit
+          - if can? :manage, Team
+            .admin_panel
+              .text-right
+                => link_to edit_team_path(team), class: 'btn btn-default btn-xs'
+                  span.glyphicon.glyphicon-edit
 
-              => link_to team_path(team), class: 'btn btn-danger btn-xs', method: :delete,
-                data: { confirm: t('views.teams.confirm_delete') }
-                span.glyphicon.glyphicon-trash
+                => link_to team_path(team), class: 'btn btn-danger btn-xs', method: :delete,
+                  data: { confirm: t('views.teams.confirm_delete') }
+                  span.glyphicon.glyphicon-trash
 - else
   = t('views.teams.not_found')

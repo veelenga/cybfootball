@@ -7,17 +7,19 @@
         th= Tournament.human_attribute_name(:no)
         th= Tournament.human_attribute_name(:description)
         th= Tournament.human_attribute_name(:date)
-        th=t '.actions', default: t('helpers.actions')
+        - if can? :manage, Tournament
+          th=t '.actions', default: t('helpers.actions')
     tbody
       - tournaments.each do |tournament|
         tr
           td= link_to tournament.no, tournament_path(tournament)
           td= tournament.description
           td= tournament.date
-          td
-            = link_to t('.edit', default: t('helpers.links.edit')), edit_tournament_path(tournament), class: 'btn btn-default btn-xs'
-            '
-            = link_to t('.destroy', default: t('helpers.links.destroy')), tournament_path(tournament), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-xs btn-danger'
+          - if can? :manage, Tournament
+            td
+              = link_to t('.edit', default: t('helpers.links.edit')), edit_tournament_path(tournament), class: 'btn btn-default btn-xs'
+              '
+              = link_to t('.destroy', default: t('helpers.links.destroy')), tournament_path(tournament), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-xs btn-danger'
 
 - else
   | Tournaments not found

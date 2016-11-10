@@ -10,10 +10,11 @@
 .col-sm-8
 
   = link_to t('.back', default: t('helpers.links.back')), teams_path, :class => 'btn btn-default'
-  '
-  = link_to t('.edit', default: t('helpers.links.edit')), edit_team_path(@team), class: 'btn btn-default'
-  '
-  = link_to t('.destroy', default: t('helpers.links.destroy')), team_path(@team), method: 'delete', data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-danger'
+  - if can? :manage, Team
+    '
+    = link_to t('.edit', default: t('helpers.links.edit')), edit_team_path(@team), class: 'btn btn-default'
+    '
+    = link_to t('.destroy', default: t('helpers.links.destroy')), team_path(@team), method: 'delete', data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-danger'
 
 .clearfix
 
@@ -21,15 +22,17 @@ hr
 
 .panel.panel-default
   .panel-heading
-    .col-xs-3.col-md-1.pull-left style='padding-top: 7px;'
-      b
-        = t('gen.players')
-    .col-xs-9.col-md-5.input-group
-      = bootstrap_form_tag url: update_players_team_path(@team), layout: :horizontal, method: :put do |f|
-        = f.hidden_field :"player[id]", class: 'player_id'
-        = f.hidden_field :"player[action]", value: 'add'
-        = f.text_field :fio, hide_label: true, class: 'typeahead', placeholder: t('views.teams.show.search_player'),
-          append: f.submit('Add', class: 'btn btn-default')
+    .col-xs-3.col-md-1 style='padding-top: 7px;'
+      b= t('gen.players')
+    - if can? :manage, Team
+      .col-xs-9.col-md-5.input-group
+        = bootstrap_form_tag url: update_players_team_path(@team), layout: :horizontal, method: :put do |f|
+          = f.hidden_field :"player[id]", class: 'player_id'
+          = f.hidden_field :"player[action]", value: 'add'
+          = f.text_field :fio, hide_label: true, class: 'typeahead', placeholder: t('views.teams.show.search_player'),
+            append: f.submit('Add', class: 'btn btn-default')
+    - else
+      .clearfix
 
   .panel-body id='team_players'
     = render 'players/list', players: @team_players
