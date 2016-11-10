@@ -15,3 +15,6 @@ en:
       create: Tournament successfully created
       update: Tournament successfully updated
       destroy: Tournament successfully destroyed
+
+    errors:
+      not_authorized: You are not authorized to access this page.

@@ -7,7 +7,8 @@
         = link_to player_path(player) do
           = image_tag(player.avatar.url(:thumb), class: 'avatar img-rounded')
           h4.text-center= player.fio
-        .admin_panel
-          = render "#{controller_path}/player_actions", player: player
+        - if can? :manage, Player
+          .admin_panel
+            = render "#{controller_path}/player_actions", player: player
 - else
   = t('views.players.not_found')

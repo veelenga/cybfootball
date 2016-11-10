@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe ApplicationController, type: :controller do
   describe '#store_per_page' do
     controller do
+      skip_load_and_authorize_resource
       before_action :store_per_page, only: [:index]
 
       def index

@@ -7,7 +7,7 @@ RSpec.describe Devise::SessionsController, type: :routing do
     end
 
     it 'routes to #sign_out' do
-      expect(delete: '/sign_out').to route_to('devise/sessions#destroy')
+      expect(delete: '/sign_out').to route_to('sessions#destroy')
     end
   end
 end

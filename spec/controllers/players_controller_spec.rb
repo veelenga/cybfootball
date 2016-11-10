@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe PlayersController, type: :controller do
-
+  sign_in!
   let(:valid_attributes) { attributes_for(:player) }
   let(:invalid_attributes) { attributes_for(:player, fio: nil) }
 
