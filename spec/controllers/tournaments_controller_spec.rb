@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe TournamentsController, type: :controller do
-  # adjust the attributes here as well.
+  sign_in!
   let(:valid_attributes) { attributes_for(:tournament) }
   let(:invalid_attributes) { attributes_for(:tournament, no: nil) }
 

@@ -1,4 +1,6 @@
 class SessionsController < Devise::SessionsController
+  skip_load_and_authorize_resource
+
   def create
     self.resource = warden.authenticate(auth_options)
     if self.resource.try :active_for_authentication?

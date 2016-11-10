@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe TeamsController, type: :controller do
+  sign_in!
   let(:valid_attributes) { attributes_for(:team) }
   let(:invalid_attributes) { attributes_for(:team, name: nil) }
 

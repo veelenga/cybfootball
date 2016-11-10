@@ -2,6 +2,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
 
+  authorize_resource
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => t('controllers.errors.not_authorized')
+  end
+
   protected
 
   def store_per_page

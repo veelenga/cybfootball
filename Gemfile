@@ -16,6 +16,7 @@ gem 'paperclip'
 gem 'kaminari'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'cancancan', '~> 1.10', require: false
 
 gem 'sprockets-es6'
 gem 'babel-transpiler'

@@ -15,7 +15,7 @@ module ModelExtensions::Avatar
       before_save do
         if cropping?
           avatar.assign(avatar)
-          avatar.save
+          avatar.save unless new_record?
         end
       end
 
