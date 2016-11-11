@@ -7,7 +7,7 @@ class UsersController < DeviseController
     @user = User.find(current_user.id)
     if @user.update_with_password(user_params)
       bypass_sign_in(@user)
-      redirect_to settings_path, notice: 'Password updated successfully.'
+      redirect_to settings_path, notice: t('devise.passwords.updated')
     else
       flash[:error] = @user.errors.full_messages.join(', ')
       render :settings

@@ -10,6 +10,9 @@ ua:
       user:
         login: Логін
         password: Пароль
+        new_password: Новий пароль
+        password_confirmation: Підтвердження паролю
+        current_password: Старий пароль
         remember_me: Запам'ятати
 
       player:
@@ -26,3 +29,10 @@ ua:
         no: №
         date: Дата
         description: Опис
+
+    errors:
+      models:
+          user:
+            attributes:
+              password_confirmation:
+                confirmation: "та новий пароль не співпадають"

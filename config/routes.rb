@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     post 'sign_in', to: 'sessions#create', as: :user_session
     delete 'sign_out', to: 'sessions#destroy', as: :destroy_user_session
     get 'settings', to: 'users#settings'
+    get 'update_password', to: 'users#settings'
     patch 'update_password', to: 'users#update_password'
   end
 

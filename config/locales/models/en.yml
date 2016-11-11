@@ -1,0 +1,32 @@
+en:
+  activerecord:
+    models:
+      user: User
+      player: Player
+      team: Team
+      tournament: Tournament
+
+    attributes:
+      user:
+        login: Login
+        password: Password
+        new_password: New password
+        password_confirmation: Password confirmation
+        current_password: Current password
+        remember_me: Remember me
+
+      player:
+        avatar: Avatar
+        fio: FIO
+        bio: BIO
+        graduation_year: Graduation year
+
+      team:
+        avatar: Avatar
+        name: Name
+
+      tournament:
+        no: No
+        date: Date
+        description: Description
+

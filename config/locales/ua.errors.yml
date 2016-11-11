@@ -2,10 +2,11 @@ ua:
   activerecord:
     errors:
       messages:
-        blank: Це поле є обов'язковим
-        invalid: Значення не правильне
-        spoofed_media_type: Має вміст, що не відповідає заявленому
-        not_a_number: Не є числом
-        four_digit_year: Рік повинен мати чотири цифри
-        year_between: "Рік повинен бути між %{min} та %{max}"
+        blank: є обов'язковим
+        invalid: не є правильним
+        spoofed_media_type: має не правильний тип
+        not_a_number: має бути числом
+        four_digit_year: рік повинен мати чотири цифри
+        year_between: "рік повинен бути між %{min} та %{max}"
         taken: таке значення уже існує
+        too_short: "занадто короткий (мінімум %{count} символів)"
