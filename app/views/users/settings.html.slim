@@ -1,0 +1,18 @@
+.page-header
+  h1
+    =t 'gen.settings'
+    i.fa.fa-cog.pull-right
+
+.panel.panel-default
+  .panel-heading
+    b
+      i.fa.fa-key
+      '
+      = t('views.settings.change_password')
+  .panel-body
+    .col-md-8.col-md-offset-2
+      = bootstrap_form_for @user, inline_errors: false, url: update_password_path, method: :patch, layout: :horizontal, label_col: 'col-sm-4', control_col: 'col-sm-8' do |f|
+        = f.password_field :current_password, required: true
+        = f.password_field :password, label: t('activerecord.attributes.user.new_password'), required: true
+        = f.password_field :password_confirmation, required: true
+        = f.submit t('helpers.links.save'), class: 'btn btn-primary pull-right'

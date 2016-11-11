@@ -9,6 +9,9 @@ en:
           <strong>Double click</strong> - drag mode, <strong>Scroll</strong> - zoom,
           <strong>Space</strong> - rotate, <strong>R</strong> - reset, <strong>Esc</strong> - quit
 
+    settings:
+      change_password: Change password
+
     user:
       sign_in: Sign in
       sign_out: Sign out

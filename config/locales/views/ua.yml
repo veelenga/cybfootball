@@ -9,6 +9,9 @@ ua:
           <strong>Double click</strong> - drag режим, <strong>Scroll</strong> - масштабувати,
           <strong>Space</strong> - обертати, <strong>R</strong> - скинути зміни, <strong>Esc</strong> - вийти
 
+    settings:
+      change_password: Зміна паролю
+
     user:
       sign_in: Увійти
       sign_out: Вийти
