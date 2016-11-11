@@ -1,11 +1,23 @@
 - if user_signed_in?
-  li= link_to destroy_user_session_path, method: :delete
-    i.fa.fa-sign-in
-    '
-    = t 'views.user.sign_out'
+  li.dropdown
+    a.dropdown-toggle data-toggle='dropdown' href='#'
+      i.fa.fa-user-circle.fa-inverse.fa-lg
+      '
+      = current_user.login
+      '
+      span.caret
+    ul.dropdown-menu
+      li= link_to settings_path
+        i.fa.fa-cog
+        '
+        = t 'gen.settings'
+      li= link_to destroy_user_session_path, method: :delete
+        i.fa.fa-power-off
+        '
+        = t 'views.user.sign_out'
 - else
   li= link_to '#', type: 'button', data: { toggle: 'modal', target: '#user-login' }
-    i.fa.fa-sign-out
+    i.fa.fa-sign-in
     '
     = t 'views.user.sign_in'
 
