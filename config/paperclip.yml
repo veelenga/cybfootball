@@ -1,0 +1,17 @@
+default: &default
+  storage: :s3
+  s3_region: eu-central-1
+  s3_host_name: s3.eu-central-1.amazonaws.com
+  s3_permissions: :private
+  s3_protocol: https
+
+test:
+  storage: :filesystem
+
+development:
+  <<: *default
+  bucket: cybfootball.photo.dev
+
+production:
+  <<: *default
+  bucket: cybfootball.photo
