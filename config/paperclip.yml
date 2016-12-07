@@ -9,8 +9,7 @@ test:
   storage: :filesystem
 
 development:
-  <<: *default
-  bucket: cybfootball.photo.dev
+  storage: :filesystem
 
 production:
   <<: *default
