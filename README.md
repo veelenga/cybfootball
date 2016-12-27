@@ -1,13 +1,4 @@
-## List of technologies used
-
-  - [Rails 5](https://github.com/rails/rails)
-  - [Bootstrap 3](https://github.com/twbs/bootstrap-sass)
-  - [PostgresSQL](https://www.postgresql.org/)
-  - [Slim template engine](http://slim-lang.com/)
-  - [RSpec](http://rspec.info/) and [Factory Girl](https://github.com/thoughtbot/factory_girl/wiki)
-  - A little of jQuery, CoffeeScript, Sass and maybe something else
-
-## Installation
+## How to setup
 
   1. Install `ruby` of version **2.3.1**: https://www.ruby-lang.org/en/documentation/installation/
 
@@ -32,6 +23,7 @@
   ```sh
   $ bundle exec rake db:create
   $ bundle exec rake db:migrate
+  $ bundle exec rake db:seed
   $ bundle exec rake db:migrate RAILS_ENV=test
   $ bundle exec rspec
   ```
