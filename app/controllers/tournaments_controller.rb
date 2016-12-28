@@ -5,7 +5,7 @@ class TournamentsController < ApplicationController
   # GET /tournaments
   # GET /tournaments.json
   def index
-    @tournaments = Tournament.order(:no).reverse_order.page(params[:page]).per(params[:per])
+    @tournaments = Tournament.order(:date).page(params[:page]).per(params[:per])
   end
 
   # GET /tournaments/1
@@ -70,6 +70,6 @@ class TournamentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tournament_params
-      params.require(:tournament).permit(:no, :description, :date)
+      params.require(:tournament).permit(:title, :description, :date)
     end
 end

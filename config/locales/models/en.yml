@@ -26,7 +26,7 @@ en:
         name: Name
 
       tournament:
-        no: No
+        title: Title
         date: Date
         description: Description
 

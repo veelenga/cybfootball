@@ -1,5 +1,5 @@
 = bootstrap_form_for @tournament, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
-  = f.number_field :no, control_col: 'col-sm-2'
+  = f.text_field :title
   = f.text_area :description, rows: 8
   = f.text_field :date, class: 'datepicker', control_col: 'col-sm-2', icon: 'th'
   = f.form_group do

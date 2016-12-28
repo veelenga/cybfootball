@@ -3,10 +3,7 @@ class Tournament < ApplicationRecord
 
   after_initialize :set_default_attributes, if: :new_record?
 
-  validates :no, presence: true,
-    numericality: { only_integer: true },
-    uniqueness: true
-
+  validates :title, presence: true
   validates :date, presence: true,
     inclusion: {
       in: Date.new(1990,1,1)...Date.new(Date.current.year + 2, 1, 1),

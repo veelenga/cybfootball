@@ -5,8 +5,8 @@ RSpec.describe Tournament, type: :model do
     expect(build :tournament).to be_valid
   end
 
-  it 'requires number of tournament' do
-    expect(build :tournament, no: nil).not_to be_valid
+  it 'requires title of tournament' do
+    expect(build :tournament, title: nil).not_to be_valid
   end
 
   it 'is valid without description' do

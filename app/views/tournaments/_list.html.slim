@@ -4,16 +4,14 @@
   table.table.table-striped
     thead
       tr
-        th= Tournament.human_attribute_name(:no)
-        th= Tournament.human_attribute_name(:description)
+        th= Tournament.human_attribute_name(:title)
         th= Tournament.human_attribute_name(:date)
         - if can? :manage, Tournament
           th=t '.actions', default: t('helpers.actions')
     tbody
       - tournaments.each do |tournament|
         tr
-          td= link_to tournament.no, tournament_path(tournament)
-          td= tournament.description
+          td= link_to tournament.title, tournament_path(tournament)
           td= tournament.date
           - if can? :manage, Tournament
             td
