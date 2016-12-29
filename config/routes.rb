@@ -8,10 +8,14 @@ Rails.application.routes.draw do
     patch 'update_password', to: 'users#update_password'
   end
 
-  resources :tournaments
+  resources :tournaments do
+    resources :groups
+  end
+
   resources :teams do
     put 'update_players', on: :member
   end
+
   resources :players do
     get 'autocomplete', on: :collection
   end

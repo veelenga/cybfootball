@@ -30,6 +30,9 @@ ua:
         date: Дата
         description: Опис
 
+      group:
+        name: Назва
+
     errors:
       models:
           user:

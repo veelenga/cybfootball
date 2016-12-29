@@ -43,3 +43,9 @@ en:
         title: New Tournament
       edit:
         title: Edit Tournament
+
+    groups:
+      new:
+        title: New Group
+      edit:
+        title: Edit Group

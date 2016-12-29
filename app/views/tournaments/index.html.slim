@@ -10,7 +10,7 @@
       = link_to t('.new', default: t('helpers.links.new')), new_tournament_path, class: 'btn btn-primary'
 
   .panel-body id="#{resource}"
-      = render 'list', tournaments: @tournaments
+    = render 'list', tournaments: @tournaments
 
   .panel-footer
     .row.remote_pagination

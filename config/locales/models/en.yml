@@ -30,3 +30,6 @@ en:
         date: Date
         description: Description
 
+      group:
+        name: Name
+

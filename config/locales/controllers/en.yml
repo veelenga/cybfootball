@@ -16,5 +16,10 @@ en:
       update: Tournament successfully updated
       destroy: Tournament successfully destroyed
 
+    group:
+      create: Group successfully created
+      update: Group successfully updated
+      destroy: Group successfully destroyed
+
     errors:
       not_authorized: You are not authorized to access this page.

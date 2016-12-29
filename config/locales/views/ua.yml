@@ -43,3 +43,9 @@ ua:
         title: Створити Турнір
       edit:
         title: Редагувати Турнір
+
+    groups:
+      new:
+        title: Нова Группа
+      edit:
+        title: Редагувати Группу
