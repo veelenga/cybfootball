@@ -24,6 +24,7 @@ gem 'babel-transpiler'
 gem 'handlebars_assets'
 gem 'twitter-typeahead-rails'
 gem 'cropper-rails'
+gem 'react-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
