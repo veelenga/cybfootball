@@ -9,6 +9,7 @@ class Team < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   scope :by_name, ->(name) { where('teams.name ~* ?', ".*#{name}.*")}
+  scope :excepting, ->(teams) { where.not(id: Array.wrap(teams).pluck(:id)) }
 
   has_avatar styles: {thumb: '300x200>'}, default_url: "/images/default_team_avatar.png"
 

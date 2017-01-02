@@ -3,4 +3,4 @@
     =t 'views.groups.edit.title'
     i.fa.fa-table.pull-right
 
-== render 'form'
+= react_component 'App.Tournament.Group', { id: @group.id, name: @group.name, teams: @group.teams.map { |p| {id: p.id, name: p.name, avatar: p.avatar.url(:thumb)}  }}

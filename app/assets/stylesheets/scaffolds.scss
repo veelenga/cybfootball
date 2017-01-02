@@ -97,3 +97,11 @@
     padding-left: inherit;
   }
 }
+
+.no-underline {
+  text-decoration: none !important
+}
+
+.table tbody>tr>td.vert-align {
+  vertical-align: middle;
+}

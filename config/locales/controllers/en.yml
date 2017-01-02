@@ -20,6 +20,7 @@ en:
       create: Group successfully created
       update: Group successfully updated
       destroy: Group successfully destroyed
+      team_list_update: Team list successfully updated
 
     errors:
       not_authorized: You are not authorized to access this page.

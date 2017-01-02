@@ -66,7 +66,7 @@ RSpec.describe GroupsController, type: :controller do
       it 'redirects to the group' do
         group = Group.create! valid_attributes
         put :update, params: {id: group.to_param, group: valid_attributes}.merge!(default_params)
-        expect(response).to redirect_to(tournament)
+        expect(response).to redirect_to(group)
       end
     end
 
@@ -96,7 +96,7 @@ RSpec.describe GroupsController, type: :controller do
     it 'redirects to the groups list' do
       group = Group.create! valid_attributes
       delete :destroy, params: {id: group.to_param}.merge!(default_params)
-      expect(response).to redirect_to(tournament_url tournament)
+      expect(response).to redirect_to(group_url group)
     end
   end
 end

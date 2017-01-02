@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   end
 
   resources :tournaments do
-    resources :groups
+    resources :groups, shallow: true
+  end
+  resources :groups do
+    member do
+      put 'update_teams'
+      get 'find_new_team'
+    end
   end
 
   resources :teams do

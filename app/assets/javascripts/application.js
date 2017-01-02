@@ -18,6 +18,7 @@
 //= require cropper
 //= require handlebars
 //= require turbolinks
+//= require underscore
 //= require react
 //= require react_ujs
 //= require components
