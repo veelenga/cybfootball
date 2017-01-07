@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :groups do
     member do
       put 'update_teams'
-      get 'find_new_team'
+      get 'search_teams'
     end
   end
 

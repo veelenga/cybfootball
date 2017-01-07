@@ -38,7 +38,7 @@ RSpec.describe GroupsController, type: :controller do
 
       it 'redirects to the created group' do
         post :create, params: {group: valid_attributes}.merge!(default_params)
-        expect(response).to redirect_to(tournament)
+        expect(response).to redirect_to(edit_group_path Group.last)
       end
     end
 
@@ -96,7 +96,35 @@ RSpec.describe GroupsController, type: :controller do
     it 'redirects to the groups list' do
       group = Group.create! valid_attributes
       delete :destroy, params: {id: group.to_param}.merge!(default_params)
-      expect(response).to redirect_to(group_url group)
+      expect(response).to redirect_to(tournament_path tournament)
     end
+  end
+
+  describe 'GET #search_teams' do
+    let!(:team) { create(:team, name: 'dream team') }
+    let!(:group) { create(:group) }
+
+    it 'returns a list of available teams' do
+      get :search_teams, params: { id: group.id, q: 'dream' }
+      teams = JSON.parse response.body
+      expect(teams.size).to eql 1
+      expect(teams[0]['name']).to eql 'dream team'
+    end
+
+    it 'returns empty array if no teams found' do
+      get :search_teams, params: { id: group.id, q: 'no_such_team' }
+      expect(JSON.parse response.body).to eql []
+    end
+
+    it 'does not return existed team' do
+      group.teams << team
+      get :search_teams, params: { id: group.id, q: 'dream' }
+      teams = JSON.parse response.body
+      expect(teams.size).to eql 0
+    end
+  end
+
+  describe 'GET #update_teams' do
+    
   end
 end

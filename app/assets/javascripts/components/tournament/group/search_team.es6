@@ -19,7 +19,7 @@ App.Tournament.Group.SearchTeam = class SearchTeam extends React.Component {
             datumTokenizer: Bloodhound.tokenizers.whitespace,
             queryTokenizer: Bloodhound.tokenizers.whitespace,
             remote: {
-              url: `/groups/${this.props.id}/find_new_team?q=%QUERY`,
+              url: `/groups/${this.props.id}/search_teams?q=%QUERY`,
               wildcard: '%QUERY',
               cache: false
             }

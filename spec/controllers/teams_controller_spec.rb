@@ -151,7 +151,7 @@ RSpec.describe TeamsController, type: :controller do
 
     it 'removes a player from the team and redirects to team page' do
       team.players << player
-      expect{
+      expect {
         put :update_players, params: { id: team.to_param, player: { id: player.to_param, action: :delete } }
       }.to change(team.players, :count).by -1
       expect(response).to redirect_to(team_path team)

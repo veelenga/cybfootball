@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy, :find_new_team, :update_teams]
+  before_action :set_group, only: [:show, :edit, :update, :destroy, :search_teams, :update_teams]
   before_action :set_tournament, only: [:index, :new, :create]
   before_action :set_team, only: [:update_teams]
 
@@ -30,7 +30,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @tournament, notice: t('controllers.group.create') }
+        format.html { redirect_to edit_group_path(@group), notice: t('controllers.group.create') }
         format.json { render :show, status: :created, location: @tournament }
       else
         format.html { render :new }
@@ -58,14 +58,14 @@ class GroupsController < ApplicationController
   def destroy
     @group.destroy
     respond_to do |format|
-      format.html { redirect_to @tournament, notice: t('controllers.group.destroy') }
+      format.html { redirect_to @group.tournament, notice: t('controllers.group.destroy') }
       format.json { head :no_content }
     end
   end
 
-  def find_new_team
+  def search_teams
     teams = []
-    teams = Team.excepting(@group.teams.reload).order(:name).by_name(params[:q]).limit(15) if params[:q].present?
+    teams = Team.excepting(@group.teams).order(:name).by_name(params[:q]).limit(15) if params[:q].present?
     render json: teams.map { |p| {id: p.id, name: p.name, avatar: p.avatar.url(:thumb)} }
   end
 
