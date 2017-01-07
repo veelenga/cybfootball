@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+// jshint esversion: 6
 
 App.Suggestion = class Suggestion extends React.Component {
   constructor(props) {
@@ -8,13 +8,6 @@ App.Suggestion = class Suggestion extends React.Component {
     this.valueSubmitted = false;
     this.handleBlur = this.handleBlur.bind(this);
     this.handleKeyPressed = this.handleKeyPressed.bind(this);
-
-    this.display = props.display;
-    this.suggests = props.suggests;
-    this.templates = props.templates;
-    this.autofocus = props.autofocus;
-    this.onSelected = props.onSelected;
-    this.input_props = props.input_props || {};
   }
 
   clearValue () {
@@ -30,7 +23,7 @@ App.Suggestion = class Suggestion extends React.Component {
   handleKeyPressed(e) {
     this.valueSubmitted = false;
     if (e.key === 'Enter' && this.suggestion) {
-      this.onSelected(this.suggestion);
+      this.props.onSelected(this.suggestion);
       this.suggestion = null;
       this.valueSubmitted = true;
       this.clearValue();
@@ -39,16 +32,16 @@ App.Suggestion = class Suggestion extends React.Component {
 
   componentDidMount() {
     $(this.refs.suggestion).typeahead(null, {
-      display: this.display,
-      source: this.suggests,
-      templates: this.templates
+      display: this.props.display,
+      source: this.props.suggests,
+      templates: this.props.templates
     }).bind('typeahead:select', (ev, suggestion) => {
       this.suggestion = suggestion;
     }).bind('typeahead:autocomplete', (ev, suggestion) => {
       this.suggestion = suggestion;
     });
 
-    if (this.autofocus) {
+    if (this.props.autofocus) {
       this.refs.suggestion.focus();
     }
   }
@@ -62,7 +55,7 @@ App.Suggestion = class Suggestion extends React.Component {
           className: 'form-control',
           onBlur: this.handleBlur,
           onKeyPress: this.handleKeyPressed
-        }, this.input_props)
+        }, this.props.input_props)
       )
     );
   }

@@ -1,11 +1,13 @@
+// jshint esversion: 6
+
 class Autocomplete {
   constructor (opts) {
-    this.input = opts.el
-    this.output = opts.out
-    this.display = opts.display
-    this.suggestion = opts.suggestion
+    this.input = opts.el;
+    this.output = opts.out;
+    this.display = opts.display;
+    this.suggestion = opts.suggestion;
 
-    var bloodhound = this.bloodhound(opts.url)
+    var bloodhound = this.bloodhound(opts.url);
     bloodhound.initialize();
 
     this.input.ready(() => this.initTypeahead(bloodhound.ttAdapter()));
@@ -39,10 +41,10 @@ class Autocomplete {
   }
 
   destroy () {
-    this.input.typeahead('destroy')
+    this.input.typeahead('destroy');
   }
 
   saveSelected (id) {
-    this.output.val(id)
+    this.output.val(id);
   }
 }
