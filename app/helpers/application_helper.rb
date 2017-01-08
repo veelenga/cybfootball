@@ -13,12 +13,18 @@ module ApplicationHelper
     end
   end
 
+  def flashes
+    flash.delete(:timedout).map do |type, text|
+      { type: type, text: text }
+    end
+  end
+
   def flash_messages(opts = {})
-    flash.delete(:timedout).each do |msg_type, message|
+    flashes.each do |message|
       concat(
-        content_tag(:div, message, class: "alert #{bootstrap_class_for(msg_type)} fade in") do
+        content_tag(:div, message[:text], class: "alert #{bootstrap_class_for(message[:type])} fade in") do
           concat content_tag(:button, '&times;'.html_safe, class: 'close', data: { dismiss: 'alert' })
-          concat message
+          concat message[:text]
         end
       )
     end

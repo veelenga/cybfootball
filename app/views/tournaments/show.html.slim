@@ -17,6 +17,13 @@ p
   br
   = @tournament.date
 
+p
+  strong= model_class.human_attribute_name(:groups) + ':'
+  br
+  - @tournament.groups.each do |group|
+    = link_to group.name, edit_group_path(group)
+    '
+
 = link_to t('.back', default: t("helpers.links.back")), tournaments_path, class: 'btn btn-default'
 - if can? :manage, Tournament
   '

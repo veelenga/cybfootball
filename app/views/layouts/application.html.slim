@@ -52,7 +52,7 @@ html lang="en"
       .row
         .col-sm-8.col-sm-offset-2
           .text-center
-            = flash_messages
+            = react_component 'App.FlashMessages', messages: flashes
         .col-sm-12
           = yield
           = yield :html_footer

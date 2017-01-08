@@ -29,6 +29,7 @@ en:
         title: Title
         date: Date
         description: Description
+        groups: Groups
 
       group:
         name: Name
