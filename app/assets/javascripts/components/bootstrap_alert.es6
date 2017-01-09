@@ -8,7 +8,7 @@ App.Alert = class Alert extends React.Component {
       notice: 'alert-success',
       success: 'alert-success'
     };
-    return classes[type] || type;
+    return classes[type] || classes.success;
   }
 
   componentDidMount() {

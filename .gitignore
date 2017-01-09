@@ -22,3 +22,4 @@
 
 # Ignore upload directory
 /public/system/*
+/public/javascripts/*

@@ -17,9 +17,9 @@ App.Tournament.Group = class Group extends React.Component {
       url: `/groups/${this.props.id}`,
       dataType: 'JSON',
       data: { group: group },
-      success: data => this.setState({ name: group.name }),
+      success: () => this.setState({ name: group.name }),
       error: (jqXHR) => {
-        window.App.respError(jqXHR, 'Unable to update group. Try again later.');
+        window.App.respError(jqXHR, I18n.t('views.groups.errors.unable_to_update'));
       }
     });
   }
@@ -40,9 +40,9 @@ App.Tournament.Group = class Group extends React.Component {
       url: `/groups/${this.props.id}/update_teams`,
       dataType: 'JSON',
       data: { id: this.props.id, team: { id: team.id, action: action } },
-      success: data => update(team),
+      success: () => update(team),
       error: (jqXHR) => {
-        window.App.respError(jqXHR, 'Unable to update teams. Try again later.');
+        window.App.respError(jqXHR, I18n.t('views.groups.errors.unable_to_update'));
       }
     });
   }
@@ -70,7 +70,7 @@ App.Tournament.Group = class Group extends React.Component {
         ),
         React.DOM.div({ className: 'panel-footer clearfix' },
           React.DOM.strong(null,
-            'Total: ', this.state.teams.length
+            `${I18n.t('views.groups.edit.total_teams')}: `, this.state.teams.length
           ),
           React.DOM.div({ className: 'col-sm-3 pull-right' },
             React.createElement(App.Tournament.Group.SearchTeam,

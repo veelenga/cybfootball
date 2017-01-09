@@ -8,7 +8,7 @@ App.Tournament.Group.Teams = class Teams extends React.Component {
   }
 
   removeTeam (team) {
-    if (confirm('Are you sure?')) {
+    if (confirm(I18n.t('views.groups.edit.remove_team_confirm'))) {
       this.handleRemoveTeam(team);
     }
   }

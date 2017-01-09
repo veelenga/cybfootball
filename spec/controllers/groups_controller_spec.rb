@@ -66,7 +66,7 @@ RSpec.describe GroupsController, type: :controller do
       it 'redirects to the group' do
         group = Group.create! valid_attributes
         put :update, params: {id: group.to_param, group: valid_attributes}.merge!(default_params)
-        expect(response).to be_ok
+        expect(response).to redirect_to(group)
       end
     end
 

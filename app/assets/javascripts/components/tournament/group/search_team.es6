@@ -12,7 +12,7 @@ App.Tournament.Group.SearchTeam = class SearchTeam extends React.Component {
       React.createElement(App.Suggestion, {
         display: 'name',
         autofocus: true,
-        input_props: { placeholder: 'Add a team' },
+        input_props: { placeholder: I18n.t('views.groups.edit.add_team') },
         onSelected: this.handleOnFound,
         suggests:
           new Bloodhound({
@@ -25,7 +25,7 @@ App.Tournament.Group.SearchTeam = class SearchTeam extends React.Component {
             }
           }).ttAdapter(),
         templates: {
-          empty: "<p class='text-center'>No more results</p>",
+          empty: `<p class='text-center'>${I18n.t('views.groups.edit.team_not_found')}</p>`,
           suggestion: Handlebars.compile(`
               <div>
                 <img src={{avatar}} class='img-rounded' height='32px'/>

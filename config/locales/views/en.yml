@@ -49,5 +49,11 @@ en:
         title: New Group
       edit:
         title: Edit Group
-      tournament_link:
-        title: To Tournament
+        tournament_link: To Tournament
+        total_teams: Total
+        add_team: Add a team
+        team_not_found: Team not found
+        remove_team_confirm: Are you sure you want to remove this team from this group including all related matches?
+        delete_confirm: Are you sure you want to delete this group with all related data ?
+      errors:
+        unable_to_update: Unable to update this group. Please try again later.
