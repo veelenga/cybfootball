@@ -1,12 +1,14 @@
+// jshint esversion: 6
+
 class Turbofix {
   constructor (opts) {
-    this.onvisit = opts.onvisit
+    this.onvisit = opts.onvisit;
 
     var visitListener = e => {
-      document.removeEventListener(e.type, visitListener)
-      this.onvisit()
-    }
+      document.removeEventListener(e.type, visitListener);
+      this.onvisit();
+    };
 
-    if (this.onvisit) document.addEventListener('turbolinks:visit', visitListener)
+    if (this.onvisit) document.addEventListener('turbolinks:visit', visitListener);
   }
 }

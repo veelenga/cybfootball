@@ -97,3 +97,30 @@
     padding-left: inherit;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .modal {
+    text-align: center;
+  }
+
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+}
+
+.no-underline {
+  text-decoration: none !important
+}
+
+.table tbody>tr>td.vert-align {
+  vertical-align: middle;
+}

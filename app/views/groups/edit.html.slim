@@ -1,0 +1,11 @@
+.page-header
+  h1
+    =t 'views.groups.edit.title'
+    i.fa.fa-table.pull-right
+
+= react_component 'App.Tournament.Group', { id: @group.id, name: @group.name, teams: @group.teams.map { |p| {id: p.id, name: p.name, avatar: p.avatar.url(:thumb)}  }}
+
+= link_to t('.back', default: t('views.groups.edit.tournament_link')), tournament_path(@group.tournament), :class => 'btn btn-default'
+- if can? :manage, Group
+  '
+  = link_to t('.destroy', default: t('helpers.links.destroy')), group_path(@group), method: 'delete', data: { confirm: t('views.groups.edit.delete_confirm') }, class: 'btn btn-danger'

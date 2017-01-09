@@ -23,7 +23,7 @@
 
 - content_for :html_footer do
   - unless user_signed_in?
-    .modal.fade id='user-login'
+    .modal.fade id='user-login' tabindex='-1'
       .modal-dialog
         .modal-content
           .modal-header

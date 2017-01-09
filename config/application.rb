@@ -19,5 +19,6 @@ module Cybfootball
       g.helper_specs false
     end
     config.i18n.fallbacks = [:en]
+    config.middleware.use I18n::JS::Middleware
   end
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe PlayersController, type: :routing do
-  describe 'routing' do
+  describe 'players routing' do
     it 'routes to #index' do
       expect(:get => '/players').to route_to('players#index')
     end

@@ -18,12 +18,15 @@ gem 'kaminari'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'cancancan', '~> 1.10', require: false
+gem 'i18n-js', '>= 3.0.0.rc11'
 
 gem 'sprockets-es6'
 gem 'babel-transpiler'
 gem 'handlebars_assets'
 gem 'twitter-typeahead-rails'
 gem 'cropper-rails'
+gem 'underscore-rails'
+gem 'react-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

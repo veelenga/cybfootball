@@ -29,6 +29,10 @@ ua:
         title: Назва
         date: Дата
         description: Опис
+        groups: Групи
+
+      group:
+        name: Назва
 
     errors:
       models:
