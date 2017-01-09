@@ -43,7 +43,7 @@ class GroupsController < ApplicationController
   # PATCH/PUT /groups/1.json
   def update
     respond_to do |format|
-      if @group.update(group_params)
+      if @group.update({:name => nil})
         format.html { redirect_to @group, notice: t('controllers.group.update') }
         format.json { render :show, status: :ok, location: @group }
       else

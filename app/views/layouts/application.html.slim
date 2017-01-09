@@ -51,8 +51,8 @@ html lang="en"
     #content.container
       .row
         .col-sm-8.col-sm-offset-2
-          .text-center
-            = react_component 'App.FlashMessages', messages: flashes
+          .text-center id='message-list'
+            = react_component 'App.Messages', messages: flashes
         .col-sm-12
           = yield
           = yield :html_footer

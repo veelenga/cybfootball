@@ -66,7 +66,7 @@ RSpec.describe GroupsController, type: :controller do
       it 'redirects to the group' do
         group = Group.create! valid_attributes
         put :update, params: {id: group.to_param, group: valid_attributes}.merge!(default_params)
-        expect(response).to redirect_to(group)
+        expect(response).to be_ok
       end
     end
 
@@ -124,7 +124,19 @@ RSpec.describe GroupsController, type: :controller do
     end
   end
 
-  describe 'GET #update_teams' do
-    
+  describe 'PUT #update_teams' do
+    let!(:group) { create(:group) }
+    let!(:team) { create(:team) }
+
+    it 'adds a team to group' do
+      put :update_teams, params: { id: group.id, team: { id: team.id, action: 'add' }  }
+      expect(group.reload.teams).to include team
+    end
+
+    it 'removes a team from the group' do
+      group.teams << team
+      put :update_teams, params: { id: group.id, team: { id: team.id, action: 'delete' } }
+      expect(group.reload.teams).not_to include team
+    end
   end
 end

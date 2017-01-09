@@ -15,7 +15,7 @@ module ApplicationHelper
 
   def flashes
     flash.delete(:timedout).map do |type, text|
-      { type: type, text: text }
+      { id: text.object_id, type: type, text: text }
     end
   end
 

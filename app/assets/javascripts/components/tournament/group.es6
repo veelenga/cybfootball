@@ -17,7 +17,10 @@ App.Tournament.Group = class Group extends React.Component {
       url: `/groups/${this.props.id}`,
       dataType: 'JSON',
       data: { group: group },
-      success: data => this.setState({ name: group.name })
+      success: data => this.setState({ name: group.name }),
+      error: (jqXHR) => {
+        window.App.respError(jqXHR, 'Unable to update group. Try again later.');
+      }
     });
   }
 
@@ -37,7 +40,10 @@ App.Tournament.Group = class Group extends React.Component {
       url: `/groups/${this.props.id}/update_teams`,
       dataType: 'JSON',
       data: { id: this.props.id, team: { id: team.id, action: action } },
-      success: data => update(team)
+      success: data => update(team),
+      error: (jqXHR) => {
+        window.App.respError(jqXHR, 'Unable to update teams. Try again later.');
+      }
     });
   }
 
