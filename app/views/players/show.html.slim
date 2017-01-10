@@ -4,10 +4,10 @@
     = @player.fio
     i.fa.fa-user.pull-right
 
-.col-sm-4
+.col-sm-6
   = image_tag @player.avatar.url(:thumb), class: 'img-rounded'
 
-.col-sm-8
+.col-sm-6
   p
     strong=> model_class.human_attribute_name(:bio) + ':'
     = @player.bio

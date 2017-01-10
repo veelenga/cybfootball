@@ -4,10 +4,10 @@
     = @team.name
     i.fa.fa-users.pull-right
 
-.col-sm-4
+.col-sm-6
   = image_tag @team.avatar.url(:thumb), class: 'img-rounded'
 
-.col-sm-8
+.col-sm-6
 
   = link_to t('.back', default: t('helpers.links.back')), teams_path, :class => 'btn btn-default'
   - if can? :manage, Team
