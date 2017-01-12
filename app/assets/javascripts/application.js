@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require bootstrap-datepicker
+//= require flatpickr-calendar
+//= require flatpickr-calendar/l10n/uk
 //= require twitter/typeahead.min
 //= require cropper
 //= require handlebars

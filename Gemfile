@@ -11,7 +11,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
-gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2'
 gem 'kaminari'
@@ -28,6 +27,8 @@ gem 'twitter-typeahead-rails'
 gem 'cropper-rails'
 gem 'underscore-rails'
 gem 'react-rails'
+
+gem 'rails-assets-flatpickr-calendar', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'byebug', platform: :mri

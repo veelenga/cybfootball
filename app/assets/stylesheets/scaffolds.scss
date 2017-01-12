@@ -124,3 +124,7 @@
 .table tbody>tr>td.vert-align {
   vertical-align: middle;
 }
+
+input[readonly].datepicker{
+  background-color:transparent;
+}
