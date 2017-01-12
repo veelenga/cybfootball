@@ -1,7 +1,7 @@
 = bootstrap_form_for @tournament, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
   = f.text_field :title
-  = f.text_area :description, rows: 8
-  = f.text_field :date, class: 'datepicker', control_col: 'col-sm-2', icon: 'th'
+  = f.text_area :description
+  = f.text_field :date, class: 'datepicker', control_col: 'col-sm-4', icon: 'th'
   = f.form_group do
     = f.submit t('helpers.links.save'), class: 'btn btn-primary'
     = link_to t('.cancel', default: t('helpers.links.cancel')), tournaments_path, class: 'btn'
@@ -12,3 +12,5 @@ javascript:
     todayHighlight: true,
     format: 'yyyy-mm-dd'
   });
+
+  new SimpleMDE(); // uses first text area, i.e. description
