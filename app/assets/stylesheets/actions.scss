@@ -1,0 +1,40 @@
+.actions a {
+  margin-left: 3px;
+}
+
+.actions .btn {
+  color: #666;
+  line-height: 1.5;
+  font-size: 13px;
+  background-color: #fff;
+  border-color: #ccc;
+  border-radius: 50px;
+}
+
+.actions .btn i {
+  font-size: 12px;
+}
+
+.actions .btn:hover {
+  background: #f2f2f2;
+}
+
+.actions .btn.btn-circle {
+  width: 28px;
+  height: 28px;
+  padding: 3px 7px;
+  text-align: center;
+}
+
+.actions .btn.btn-circle i {
+  font-size: 11px;
+}
+
+.actions .btn.btn-red.active,
+.actions .btn.btn-red:hover {
+  color: #fff;
+  box-shadow: none;
+  background: #e26a6a;
+  border-color: #e26a6a;
+}
+

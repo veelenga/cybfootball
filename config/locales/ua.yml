@@ -4,5 +4,7 @@ ua:
     teams: Команди
     players: Гравці
 
-    search: Шукати
+    search: Пошук...
+    nothing_found: Нічого не знайдено
     settings: Налаштування
+    add: Додати

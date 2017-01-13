@@ -88,13 +88,23 @@
   }
 }
 
-.panel-heading {
-  .command {
-    padding-bottom: 3px;
+.panel {
+  border-radius: 6px;
+
+  .panel-heading {
+    .command {
+      padding-bottom: 3px;
+    }
+
+    .input-group {
+      padding-left: inherit;
+    }
   }
 
-  .input-group {
-    padding-left: inherit;
+  .panel-body {
+    .thumbnail {
+      border-radius: 10px;
+    }
   }
 }
 
@@ -118,7 +128,25 @@
 }
 
 .no-underline {
-  text-decoration: none !important
+  text-decoration: none !important;
+}
+
+.search {
+  border-radius: 50px !important;
+}
+
+.search-box {
+  .form-group {
+    margin-bottom: 0px;
+  }
+
+  input[type='text'] {
+    border-radius: 30px 0px 0px 30px !important;
+  }
+
+  .btn {
+    border-radius: 0px 30px 30px 0px;
+  }
 }
 
 .table tbody>tr>td.vert-align {

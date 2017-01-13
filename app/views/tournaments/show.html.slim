@@ -1,17 +1,10 @@
 - model_class = Tournament
 .page-header
   h1
-    =t '.title', default: model_class.model_name.human.titleize
     i.fa.fa-trophy.pull-right
+    = @tournament.title
 
-p
-  strong= model_class.human_attribute_name(:title) + ':'
-  br
-  = @tournament.title
-p
-  strong= model_class.human_attribute_name(:description) + ':'
-  br
-  = markdown @tournament.description
+= markdown @tournament.description
 p
   strong= model_class.human_attribute_name(:date) + ':'
   br

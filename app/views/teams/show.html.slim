@@ -21,16 +21,15 @@
 hr
 
 .panel.panel-default
-  .panel-heading
-    .col-xs-3.col-md-1 style='padding-top: 7px;'
-      b= t('gen.players')
+  .panel-heading.clearfix
+    b= t('gen.players')
     - if can? :manage, Team
-      .col-xs-9.col-md-5.input-group
-        = bootstrap_form_tag url: update_players_team_path(@team), layout: :horizontal, method: :put do |f|
+      .col-xs-6.col-md-5.input-group.search-box.pull-right
+        = bootstrap_form_tag url: update_players_team_path(@team), hide_label: true, control_col: 'col-sm-12', layout: :horizontal, method: :put do |f|
           = f.hidden_field :"player[id]", class: 'player_id'
           = f.hidden_field :"player[action]", value: 'add'
-          = f.text_field :fio, hide_label: true, class: 'typeahead', placeholder: t('views.teams.show.search_player'),
-            append: f.submit('Add', class: 'btn btn-default')
+          = f.text_field :fio, hide_label: true, class: 'typeahead', placeholder: t('views.teams.show.search_player'), autofocus: true,
+            append: f.submit(t('gen.add'), class: 'btn btn-default')
     - else
       .clearfix
 

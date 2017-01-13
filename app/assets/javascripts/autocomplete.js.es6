@@ -29,7 +29,7 @@ class Autocomplete {
       display: this.display,
       source: source,
       templates: {
-        empty: "<p class='text-center'>Nothing found</p>",
+        empty: `<p class='text-center'>${I18n.t('gen.nothing_found')}</p>`,
         suggestion: this.suggestion
       }
     }

@@ -7,8 +7,8 @@ class Search {
     this.request_url    = opts.url;
     this.request_params = opts.with_params || [];
 
-    this.search_btn.on('click', (e) => this.performSearch(e));
-    this.search_field.on('input', (e) => this.delay(200, () => this.performSearch(e)));
+    this.search_btn && this.search_btn.on('click', (e) => this.performSearch(e));
+    this.search_field && this.search_field.on('input', (e) => this.delay(200, () => this.performSearch(e)));
   }
 
   performSearch (e) {
