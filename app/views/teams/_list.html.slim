@@ -2,7 +2,7 @@
 
 - if teams.present?
   - teams.each do |team|
-    .player-card.col-xs-12.col-sm-6.col-md-3
+    .card.col-xs-12.col-sm-6.col-md-3
       .thumbnail
         = link_to team_path(team) do
           = image_tag(team.avatar.url(:thumb), class: 'avatar img-rounded')

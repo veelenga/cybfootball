@@ -4,14 +4,11 @@
     =t 'gen.tournaments'
     i.fa.fa-trophy.pull-right
 
-.panel.panel-default
-  .panel-heading
-    - if can? :create, Tournament
-      = link_to t('.new', default: t('helpers.links.new')), new_tournament_path, class: 'btn btn-primary'
+- if can? :create, Tournament
+  .actions.text-right style='margin: 10px;'
+    = link_to new_tournament_path, class: 'btn' do
+      i.glyphicon.glyphicon-plus
+      '
+      = t('helpers.links.new')
 
-  .panel-body id="#{resource}"
-    = render 'list', tournaments: @tournaments
-
-  .panel-footer
-    .row.remote_pagination
-      = render 'shared/pagination_with_per_page_links', list: @tournaments, opts: {params: params.slice(:search).to_unsafe_h, remote: true}
+= render 'list', tournaments: @tournaments

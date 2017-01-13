@@ -1,13 +1,17 @@
-.player-card {
-  .avatar {
+.card {
+  .thumbnail {
     opacity: 1;
+    box-shadow: 0;
+    border: 1px solid #eee;
+
     -webkit-transition: 2s;
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.9;
+      box-shadow: 0 0 50px 3px #515151;
     }
   }
 
