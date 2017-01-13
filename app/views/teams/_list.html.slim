@@ -8,6 +8,7 @@
           = image_tag(team.avatar.url(:thumb), class: 'avatar img-rounded')
           h4.text-center = team.name
           - if can? :manage, Team
+            hr
             .admin_panel.actions
               .text-center
                 => link_to edit_team_path(team), class: 'btn btn-circle'

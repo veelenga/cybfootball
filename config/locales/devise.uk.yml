@@ -1,4 +1,4 @@
-ua:
+uk:
   devise:
     failure:
       already_authenticated: "Ви вже зайшли в систему."

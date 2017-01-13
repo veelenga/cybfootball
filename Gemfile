@@ -18,6 +18,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'cancancan', '~> 1.10', require: false
 gem 'i18n-js', '>= 3.0.0.rc11'
+gem 'rails-i18n', '~> 5.0.0'
 gem 'redcarpet'
 
 gem 'sprockets-es6'
