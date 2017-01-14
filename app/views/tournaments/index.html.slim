@@ -2,13 +2,12 @@
 .page-header
   h1
     =t 'gen.tournaments'
-    i.fa.fa-trophy.pull-right
+    .pull-right
+      = tournament_header_glyph
 
 - if can? :create, Tournament
   .actions.text-right style='margin: 10px;'
     = link_to new_tournament_path, class: 'btn' do
-      i.glyphicon.glyphicon-plus
-      '
-      = t('helpers.links.new')
+      = add_glyph
 
 = render 'list', tournaments: @tournaments

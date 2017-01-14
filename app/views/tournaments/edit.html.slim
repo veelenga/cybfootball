@@ -1,5 +1,6 @@
 .page-header
   h1
     =t 'views.tournaments.edit.title'
-    i.fa.fa-trophy.pull-right
+    .pull-right
+      = tournament_header_glyph
 = render partial: 'form'

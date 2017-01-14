@@ -1,4 +1,4 @@
 .text-center
   => button_to update_players_team_path(@team, player: { id: player.id, action: :delete }), class: 'btn btn-red btn-circle',
     method: :put, data: { confirm: t('views.teams.show.confirmation_remove') }
-    i.glyphicon.glyphicon-remove
+    = remove_glyph

@@ -2,16 +2,15 @@
 .page-header
   h1
     =t 'gen.teams'
-    i.fa.fa-users.pull-right
+    .pull-right
+      = teams_header_glyph
 
 .panel.panel-default
   .panel-heading
     - if can? :create, Team
       .actions.pull-right
         = link_to new_team_path, class: 'btn' do
-          i.glyphicon.glyphicon-plus
-          '
-          = t 'helpers.links.new'
+          = add_glyph
     .col-xs-7.col-sm-5.input-group
       = render 'shared/search_field', resource: resource
 
