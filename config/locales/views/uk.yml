@@ -39,14 +39,19 @@ uk:
         title: Редагувати Команду
 
     tournaments:
+      confirm_delete: Ви впевнені, що хочете видалити турнір?
+
       new:
         title: Створити Турнір
       edit:
         title: Редагувати Турнір
 
     groups:
+      confirm_delete: Ви впевнені, що хочете видалити групу?
       new:
         title: Нова Група
+      show:
+        teams: Команди
       edit:
         title: Редагувати Групу
         tournament_link: До Турніру
@@ -54,6 +59,5 @@ uk:
         add_team: Додати команду
         team_not_found: Нічого не знайдено
         remove_team_confirm: Ви впевнені що хочете видалити команду з цієї групи зі всіма матчами?
-        delete_confirm: Ви впевнені що хочете видалити групу зі всіма даними?
       errors:
         unable_to_update: Група не може бути відредактована. Будь ласка, спробуйте пізніше.

@@ -11,7 +11,7 @@
         .actions.pull-right
           .col-sm-2
             = link_to new_player_path, class: 'btn' do
-              i.glyphicon.glyphicon-plus
+              = add_glyph
       .col-xs-7.col-sm-5.input-group
         = render 'shared/search_field', resource: resource
       .clearfix

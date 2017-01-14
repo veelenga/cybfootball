@@ -47,6 +47,8 @@ en:
     groups:
       new:
         title: New Group
+      show:
+        teams: Teams
       edit:
         title: Edit Group
         tournament_link: To Tournament

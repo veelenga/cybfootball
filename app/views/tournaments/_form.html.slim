@@ -1,5 +1,5 @@
 = bootstrap_form_for @tournament, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
-  = f.text_field :title
+  = f.text_field :title, autofocus: true
   = f.text_area :description
   = f.text_field :date, class: 'datepicker', control_col: 'col-sm-3', icon: 'th'
   = f.form_group do
@@ -8,5 +8,5 @@
 
 - content_for :js_footer do
   javascript:
-    new SimpleMDE(); // uses first text area, i.e. description
+    new SimpleMDE({ spellChecker: I18n.locale === 'en' }); // uses first text area, i.e. description
     $('.datepicker').flatpickr({});

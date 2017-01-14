@@ -34,4 +34,8 @@ module GlyphiconHelper
   def back_glyph
     content_tag(:i, nil, class: 'glyphicon glyphicon-chevron-left faa-pulse animated-hover')
   end
+
+  def add_group_glyph
+    content_tag(:i, nil, class: 'fa fa-plus faa-pulse animated-hover')
+  end
 end

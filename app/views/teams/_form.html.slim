@@ -2,7 +2,7 @@
   .col-md-4
     = render 'shared/avatar_chooser', form: f, model: @team
   .col-md-6.col-md-offset-1
-    = f.text_field :name
+    = f.text_field :name, autofocus: true
     = f.form_group do
         = f.submit t('helpers.links.save'), class: 'btn btn-primary'
         = link_to t('.cancel', default: t("helpers.links.cancel")), teams_path, class: 'btn'

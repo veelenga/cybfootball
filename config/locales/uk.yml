@@ -4,6 +4,7 @@ uk:
     teams: Команди
     players: Гравці
 
+    number: '#'
     search: Пошук...
     nothing_found: Нічого не знайдено
     settings: Налаштування

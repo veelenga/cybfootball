@@ -15,8 +15,11 @@
         = edit_glyph
 
       => link_to tournament_path(@tournament), class: 'btn btn-red btn-circle', method: :delete,
-        data: { confirm: t('views.players.confirm_delete') }
+        data: { confirm: t('views.tournaments.confirm_delete') }
         = delete_glyph
+
+      => link_to new_tournament_group_path(@tournament), class: 'btn btn-circle'
+        = add_group_glyph
 
 br
 
@@ -27,3 +30,21 @@ br
         .small.pull-right
           = l @tournament.date, format: :long
       = markdown @tournament.description
+
+- if @tournament.groups.exists?
+  - @tournament.groups.each do |group|
+    .card
+      .thumbnail
+        .caption
+          h4
+            = group.name
+            - if can? :manage, Group
+              .actions.pull-right
+                => link_to edit_group_path(group), class: 'btn btn-circle'
+                  = edit_glyph
+
+                => link_to group_path(group), class: 'btn btn-red btn-circle', method: :delete,
+                  data: { confirm: t('views.groups.confirm_delete') }
+                  = delete_glyph
+
+          = react_component 'App.Tournament.Group.Teams', { editable: can?(:manage, Group), teams: group.teams.map { |p| {id: p.id, name: p.name, avatar: p.avatar.url(:thumb)} } }
