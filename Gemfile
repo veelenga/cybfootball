@@ -11,7 +11,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
-gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2'
 gem 'kaminari'
@@ -19,6 +18,8 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'cancancan', '~> 1.10', require: false
 gem 'i18n-js', '>= 3.0.0.rc11'
+gem 'rails-i18n', '~> 5.0.0'
+gem 'redcarpet'
 
 gem 'sprockets-es6'
 gem 'babel-transpiler'
@@ -27,6 +28,9 @@ gem 'twitter-typeahead-rails'
 gem 'cropper-rails'
 gem 'underscore-rails'
 gem 'react-rails'
+
+gem 'rails-assets-flatpickr-calendar', source: 'https://rails-assets.org'
+gem 'rails-assets-font-awesome-animation', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'byebug', platform: :mri

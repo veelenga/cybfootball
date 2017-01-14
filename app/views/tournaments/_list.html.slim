@@ -1,23 +1,23 @@
-= hidden_field_tag :per, params[:per]
-
-- if tournaments.present?
-  table.table.table-striped
-    thead
-      tr
-        th= Tournament.human_attribute_name(:title)
-        th= Tournament.human_attribute_name(:date)
-        - if can? :manage, Tournament
-          th=t '.actions', default: t('helpers.actions')
-    tbody
-      - tournaments.each do |tournament|
-        tr
-          td= link_to tournament.title, tournament_path(tournament)
-          td= tournament.date
+- tournaments.each do |tournament|
+  .col-xs-12
+    .card
+      .thumbnail
+        .caption
+          h6
+            .small.pull-right
+              = l tournament.date, format: :long
+          h4
+            = link_to tournament.title, tournament_path(tournament)
+          = markdown tournament.description
+          hr
           - if can? :manage, Tournament
-            td
-              = link_to t('.edit', default: t('helpers.links.edit')), edit_tournament_path(tournament), class: 'btn btn-default btn-xs'
-              '
-              = link_to t('.destroy', default: t('helpers.links.destroy')), tournament_path(tournament), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-xs btn-danger'
+            .text-center.actions
+              => link_to edit_tournament_path(tournament), class: 'btn btn-circle'
+                = edit_glyph
 
-- else
+              => link_to tournament_path(tournament), class: 'btn btn-red btn-circle', method: :delete,
+                data: { confirm: t('views.tournaments.confirm_delete') }
+                = delete_glyph
+
+- if tournaments.empty?
   | Tournaments not found

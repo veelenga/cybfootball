@@ -2,13 +2,14 @@
 
 - if players.present?
   - players.each do |player|
-    .player-card.col-xs-12.col-sm-6.col-md-3
+    .card.col-xs-12.col-sm-6.col-md-3
       .thumbnail
         = link_to player_path(player) do
           = image_tag(player.avatar.url(:thumb), class: 'avatar img-rounded')
           h4.text-center= player.fio
         - if can? :manage, Player
-          .admin_panel
+          hr
+          .admin_panel.actions
             = render "#{controller_path}/player_actions", player: player
 - else
   = t('views.players.not_found')

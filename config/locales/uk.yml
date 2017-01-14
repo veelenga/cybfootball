@@ -1,8 +1,11 @@
-ua:
+uk:
   gen:
     tournaments: Турніри
     teams: Команди
     players: Гравці
 
-    search: Шукати
+    number: '#'
+    search: Пошук...
+    nothing_found: Нічого не знайдено
     settings: Налаштування
+    add: Додати

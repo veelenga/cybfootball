@@ -2,15 +2,19 @@
 .page-header
   h1
     =t 'gen.players'
-    i.fa.fa-user.pull-right
+    .pull-right
+      = players_header_glyph
 
 .panel.panel-default
   .panel-heading
-    - if can? :create, Player
-      .col-xs-6.col-sm-2.command
-        = link_to t('.new', default: t('helpers.links.new')), new_player_path, class: 'btn btn-primary'
-    .col-xs-12.col-sm-5.input-group
-      = render 'shared/search_field', resource: resource
+      - if can? :create, Player
+        .actions.pull-right
+          .col-sm-2
+            = link_to new_player_path, class: 'btn' do
+              = add_glyph
+      .col-xs-7.col-sm-5.input-group
+        = render 'shared/search_field', resource: resource
+      .clearfix
 
   .panel-body id="#{resource}"
     = render 'list', players: @players

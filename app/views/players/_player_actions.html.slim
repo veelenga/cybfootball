@@ -1,7 +1,7 @@
-.text-right
-  => link_to edit_player_path(player), class: 'btn btn-default btn-xs'
-    span.glyphicon.glyphicon-edit
+.text-center
+  => link_to edit_player_path(player), class: 'btn btn-circle'
+    = edit_glyph
 
-  => link_to player_path(player), class: 'btn btn-danger btn-xs', method: :delete,
+  => link_to player_path(player), class: 'btn btn-red btn-circle', method: :delete,
     data: { confirm: t('views.players.confirm_delete') }
-    span.glyphicon.glyphicon-trash
+    = delete_glyph

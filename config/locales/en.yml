@@ -4,5 +4,8 @@ en:
     teams: Teams
     players: Players
 
+    number: '#'
     search: Search
+    nothing_found: Nothing found
     settings: Settings
+    add: Add

@@ -5,7 +5,7 @@ class TournamentsController < ApplicationController
   # GET /tournaments
   # GET /tournaments.json
   def index
-    @tournaments = Tournament.order(:date).page(params[:page]).per(params[:per])
+    @tournaments = Tournament.order(:date).reverse_order.page(params[:page]).per(params[:per])
   end
 
   # GET /tournaments/1

@@ -1,10 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "rails_bootstrap_forms";
-@import "bootstrap-datepicker3";
+@import "flatpickr-calendar";
 @import "font-awesome";
+@import "font-awesome-animation";
 @import "scaffolds";
-@import "players";
+@import "cards";
+@import "actions";
 @import "typeaheadjs";
 @import "cropper";
 @import "famfamfam-flags";
+@import "simplemde.min";

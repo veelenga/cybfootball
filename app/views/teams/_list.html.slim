@@ -2,19 +2,20 @@
 
 - if teams.present?
   - teams.each do |team|
-    .player-card.col-xs-12.col-sm-6.col-md-3
+    .card.col-xs-12.col-sm-6.col-md-3
       .thumbnail
         = link_to team_path(team) do
           = image_tag(team.avatar.url(:thumb), class: 'avatar img-rounded')
           h4.text-center = team.name
           - if can? :manage, Team
-            .admin_panel
-              .text-right
-                => link_to edit_team_path(team), class: 'btn btn-default btn-xs'
-                  span.glyphicon.glyphicon-edit
+            hr
+            .admin_panel.actions
+              .text-center
+                => link_to edit_team_path(team), class: 'btn btn-circle'
+                  = edit_glyph
 
-                => link_to team_path(team), class: 'btn btn-danger btn-xs', method: :delete,
+                => link_to team_path(team), class: 'btn btn-red btn-circle', method: :delete,
                   data: { confirm: t('views.teams.confirm_delete') }
-                  span.glyphicon.glyphicon-trash
+                  = delete_glyph
 - else
   = t('views.teams.not_found')

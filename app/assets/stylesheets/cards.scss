@@ -1,0 +1,40 @@
+.card {
+  .thumbnail {
+    opacity: 1;
+    box-shadow: 0;
+    border: 1px solid #eee;
+
+    -webkit-transition: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+
+    &:hover {
+      opacity: 0.9;
+      box-shadow: 0 0 50px 3px #515151;
+    }
+
+    table img{
+      height: 48px;
+    }
+
+    hr {
+      border-top: 1px dashed #8c8b8b;
+
+      &:after {
+        content: '\0026BD';
+        display: inline-block;
+        position: relative;
+        top: -12px;
+        left: 80%;
+        padding: 0 3px;
+        color: #8c8b8b;
+        font-size: 18px;
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+}
