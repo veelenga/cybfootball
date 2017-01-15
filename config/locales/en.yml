@@ -1,11 +1,11 @@
+---
 en:
   gen:
-    tournaments: Tournaments
-    teams: Teams
-    players: Players
-
-    number: '#'
-    search: Search
-    nothing_found: Nothing found
-    settings: Settings
     add: Add
+    nothing_found: Nothing found
+    number: "#"
+    players: Players
+    search: Search
+    settings: Settings
+    teams: Teams
+    tournaments: Tournaments

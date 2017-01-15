@@ -44,6 +44,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-rspec', require: false
   gem 'meta_request'
+  gem 'i18n-tasks'
 end
 
 group :test do
@@ -56,4 +57,4 @@ gem 'rails_12factor', group: :production
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-ruby '2.3.1'
+ruby '2.3.3'
