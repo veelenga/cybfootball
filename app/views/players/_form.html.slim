@@ -2,8 +2,8 @@
   .col-md-4
     = render 'shared/avatar_chooser', form: f, model: @player
   .col-md-7.col-md-offset-1
-    = f.text_field :fio, autofocus: true
-    = f.text_area :bio, rows: 4
+    = f.text_field :fio, autofocus: true, placeholder: t('views.players.edit.placeholders.fio')
+    = f.text_area :bio, rows: 4, placeholder: t('views.players.edit.placeholders.bio')
     = f.select :graduation_year, options_for_select(1990..Date.today.year + 7, @player.graduation_year), control_col: 'col-sm-2 col-md-3'
     = f.form_group do
       = f.submit t('helpers.links.save'), class: 'btn btn-primary'

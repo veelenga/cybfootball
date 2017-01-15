@@ -24,11 +24,13 @@ en:
         title: New Player
       edit:
         title: Edit Player
+        placeholders:
+          fio: Andriy Shevchenko
+          bio: Is a football manager and retired Ukrainian footballer who played for Dynamo Kyiv, Milan, Chelsea and the Ukraine national team as a striker.
 
     teams:
       not_found: Teams not found
       confirm_delete: Are you sure you want to delete this team?
-
       show:
         remove_from_team: Remove from team
         confirmation_remove: Are you sure you want to delete this player from the team?
@@ -37,14 +39,26 @@ en:
         title: New Team
       edit:
         title: Edit Team
+        placeholders:
+          name: Real Madrid C.F.
 
     tournaments:
+      confirm_delete: Are you sure you want to delete this tournament?
       new:
         title: New Tournament
       edit:
         title: Edit Tournament
+        placeholders:
+          title: UEFA Champions League
+          description: |
+            Is an annual continental club football competition organised by the **Union of European Football Associations** (UEFA) and contested by top-division European clubs.
+
+            It is one of the most prestigious tournaments in the world and the most prestigious club competition in European football, played by the national league champion (and, for some nations, one or more runners-up) of each UEFA national association.
+
+            The final of the 2012–13 tournament was the most watched UEFA Champions League final to date, as well as the most watched annual sporting event worldwide in 2013, drawing 360 million television viewers.
 
     groups:
+      confirm_delete: Are you sure you want to delete this group?
       new:
         title: New Group
       show:
@@ -56,6 +70,7 @@ en:
         add_team: Add a team
         team_not_found: Team not found
         remove_team_confirm: Are you sure you want to remove this team from this group including all related matches?
-        delete_confirm: Are you sure you want to delete this group with all related data ?
+        placeholders:
+          name: A
       errors:
         unable_to_update: Unable to update this group. Please try again later.

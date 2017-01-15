@@ -54,7 +54,7 @@ App.Tournament.Group.Teams = class Teams extends React.Component {
 
 App.Tournament.Group.Teams.propTypes = {
   teams: React.PropTypes.array.isRequired,
-  editable: React.PropTypes.boolean,
+  editable: React.PropTypes.bool,
   removeTeam: React.PropTypes.func
 };
 

@@ -1,6 +1,6 @@
 = bootstrap_form_for @tournament, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
-  = f.text_field :title, autofocus: true
-  = f.text_area :description
+  = f.text_field :title, autofocus: true, placeholder: t('views.tournaments.edit.placeholders.title')
+  = f.text_area :description, placeholder: t('views.tournaments.edit.placeholders.description')
   = f.text_field :date, class: 'datepicker', control_col: 'col-sm-3', icon: 'th'
   = f.form_group do
     = f.submit t('helpers.links.save'), class: 'btn btn-primary'
