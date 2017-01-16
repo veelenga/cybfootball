@@ -15,6 +15,11 @@ crumb :group do |group|
   parent :tournament, group.tournament
 end
 
+crumb :new_group do |group|
+  link t('views.groups.new.title'), groups_path
+  parent :tournament, group.tournament
+end
+
 crumb :teams do
   link t('gen.teams'), teams_path
 end
@@ -42,4 +47,3 @@ crumb :new_player do
   link t('views.players.new.title'), players_path
   parent :players
 end
-
