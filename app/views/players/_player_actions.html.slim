@@ -1,7 +1,7 @@
 .text-center
-  => link_to edit_player_path(player), class: 'btn btn-circle'
+  => link_to edit_player_path(player), class: 'btn btn-circle', title: t('views.players.tooltips.edit')
     = edit_glyph
 
   => link_to player_path(player), class: 'btn btn-red btn-circle', method: :delete,
-    data: { confirm: t('views.players.confirm_delete') }
+    data: { confirm: t('views.players.confirm_delete') }, title: t('views.players.tooltips.delete')
     = delete_glyph

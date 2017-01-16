@@ -29,8 +29,10 @@ gem 'cropper-rails'
 gem 'underscore-rails'
 gem 'react-rails'
 
-gem 'rails-assets-flatpickr-calendar', source: 'https://rails-assets.org'
-gem 'rails-assets-font-awesome-animation', source: 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-flatpickr-calendar'
+  gem 'rails-assets-font-awesome-animation'
+end
 
 group :development, :test do
   gem 'byebug', platform: :mri

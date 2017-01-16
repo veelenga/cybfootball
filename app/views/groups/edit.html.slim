@@ -5,12 +5,12 @@
       = groups_header_glyph
 
 .actions
-  => link_to tournament_path(@group.tournament), :class => 'btn btn-circle'
+  => link_to tournament_path(@group.tournament), class: 'btn btn-circle', title: t('views.groups.tooltips.index')
     = back_glyph
   - if can? :manage, Group
     .pull-right
       = link_to group_path(@group), method: 'delete',  class: 'btn btn-red btn-circle',
-        data: { confirm: t('views.groups.edit.delete_confirm') }
+        data: { confirm: t('views.groups.edit.delete_confirm') }, title: t('views.groups.tooltips.delete')
         = delete_glyph
 
 br
