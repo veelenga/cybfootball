@@ -9,7 +9,7 @@
   .panel-heading
     - if can? :create, Team
       .actions.pull-right
-        = link_to new_team_path, class: 'btn' do
+        = link_to new_team_path, class: 'btn', title: t('views.teams.tooltips.new')
           = add_glyph
     .col-xs-7.col-sm-5.input-group
       = render 'shared/search_field', resource: resource
