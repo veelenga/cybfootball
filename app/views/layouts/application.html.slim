@@ -53,6 +53,8 @@ html lang="#{I18n.locale}"
         .col-sm-8.col-sm-offset-2
           .text-center id='message-list'
             = react_component 'App.Messages', messages: flashes
+          .text-center
+            == breadcrumbs
         .col-sm-12
           = yield
           = yield :html_footer

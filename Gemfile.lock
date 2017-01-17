@@ -98,6 +98,8 @@ GEM
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -342,6 +344,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   font-awesome-rails
+  gretel
   guard-rspec
   handlebars_assets
   i18n-js (>= 3.0.0.rc11)
