@@ -20,6 +20,9 @@
         data: { confirm: t('views.tournaments.confirm_delete') }, title: t('views.tournaments.tooltips.delete')
         = delete_glyph
 
+      => link_to new_tournament_path, class: 'btn btn-circle', title: t('views.tournaments.tooltips.new') do
+        = add_glyph
+
       => link_to new_tournament_group_path(@tournament), class: 'btn btn-circle', title: t('views.tournaments.tooltips.new_group')
         = add_group_glyph
 

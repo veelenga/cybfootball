@@ -7,7 +7,7 @@
 
 - if can? :create, Tournament
   .actions.text-right style='margin: 10px;'
-    = link_to new_tournament_path, class: 'btn', title: t('views.tournaments.tooltips.new') do
+    = link_to new_tournament_path, class: 'btn btn-circle', title: t('views.tournaments.tooltips.new') do
       = add_glyph
 
 .row id="#{resource}"

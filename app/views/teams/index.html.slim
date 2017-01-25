@@ -8,9 +8,9 @@
 .control-bar
   - if can? :create, Team
     .actions.pull-right
-      = link_to new_team_path, class: 'btn', title: t('views.teams.tooltips.new')
+      = link_to new_team_path, class: 'btn btn-circle', title: t('views.teams.tooltips.new')
         = add_glyph
-  .col-xs-12.col-sm-6.col-md-4.input-group
+  .col-xs-10.col-sm-6.col-md-4.input-group
     = render 'shared/search_field', resource: resource
 
 .row id="#{resource}"

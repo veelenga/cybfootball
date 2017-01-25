@@ -19,6 +19,12 @@
         data: { confirm: t('views.teams.confirm_delete') }, title: t('views.teams.tooltips.delete')
         = delete_glyph
 
+      = link_to new_team_path, class: 'btn btn-circle', title: t('views.teams.tooltips.new')
+        = add_glyph
+
+      = link_to new_player_path, class: 'btn btn-circle', title: t('views.players.tooltips.new')
+        = add_player_glyph
+
 br
 
 .card.col-sm-6
