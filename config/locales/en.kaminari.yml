@@ -6,3 +6,6 @@ en:
       previous: "&larr; Previous"
       next: "Next &rarr;"
       truncate: "..."
+      helpers:
+        per_page: Per page
+        total_found: Total
