@@ -22,5 +22,10 @@ en:
       destroy: Group successfully destroyed
       team_list_update: Team list successfully updated
 
+    faq:
+      create: Question was successfully created
+      update: Question was successfully updated
+      destroy: Question was successfully destroyed
+
     errors:
       not_authorized: You are not authorized to access this page.

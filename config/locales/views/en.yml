@@ -95,3 +95,19 @@ en:
         edit: Edit group
         delete: Delete group
         index: To tournament
+
+    faqs:
+      confirm_delete: Are you sure you want to delete this question?
+      new:
+        title: New question
+      edit:
+        title: Edit question
+        placeholders:
+          question: Can i create new players or change information about existed?
+          answer: |
+            Yes, you can. You need to contact administrator and we will create personal account for you.
+
+            Using this account you will be able to create and change existed content on the site.
+        new: Create question
+        edit: Edit question
+        delete: Delete question

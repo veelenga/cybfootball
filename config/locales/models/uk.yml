@@ -34,6 +34,11 @@ uk:
       group:
         name: Назва
 
+      faq:
+        question: Питання
+        answer: Відповідь
+        order: Порядок
+
     errors:
       models:
           user:

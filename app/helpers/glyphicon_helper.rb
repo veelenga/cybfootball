@@ -8,6 +8,7 @@ module GlyphiconHelper
   def teams_header_glyph;      glyph('fa fa-users', :tada) end
   def players_header_glyph;    glyph('fa fa-user', :tada) end
   def groups_header_glyph;     glyph('fa fa-table', :tada) end
+  def faqs_header_glyph;       glyph('fa fa-question', :tada) end
 
   def add_glyph;    glyph('fa fa-plus', :pulse) end
   def edit_glyph;   glyph('glyphicon glyphicon-pencil', :pulse) end
