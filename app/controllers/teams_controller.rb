@@ -67,10 +67,14 @@ class TeamsController < ApplicationController
   end
 
   def update_players
-    @team.update_players_list @player, params[:player].try(:[], :action)
-    respond_to do |format|
-      format.html { redirect_to team_path(@team), notice: t('controllers.team.player_list_update') }
-      format.json { head :no_content }
+    if @player.present?
+      @team.update_players_list @player, params[:player].try(:[], :action)
+      respond_to do |format|
+        format.html { redirect_to team_path(@team), notice: t('controllers.team.player_list_update') }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to team_path(@team)
     end
   end
 
@@ -80,7 +84,7 @@ class TeamsController < ApplicationController
     end
 
     def set_player
-      @player = Player.find params[:player].try(:[], :id)
+      @player = Player.find_by_id params[:player].try(:[], :id)
     end
 
     def team_params

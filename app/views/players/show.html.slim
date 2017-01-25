@@ -23,15 +23,14 @@ br
 
 .card
   .thumbnail
-    .caption
-      .col-sm-5
-        = image_tag @player.avatar.url(:thumb), class: 'img-rounded'
+    .col-sm-5
+      = image_tag @player.avatar.url(:thumb), class: 'img-rounded img-responsive'
 
-      .col-sm-7
-        p
-          strong=> model_class.human_attribute_name(:bio) + ':'
-          = @player.bio
-        p
-          strong=> model_class.human_attribute_name(:graduation_year) + ':'
-          = @player.graduation_year
-      .clearfix
+    .col-sm-7
+      p
+        strong=> model_class.human_attribute_name(:bio) + ':'
+        = @player.bio
+      p
+        strong=> model_class.human_attribute_name(:graduation_year) + ':'
+        = @player.graduation_year
+    .clearfix

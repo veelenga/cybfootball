@@ -16,7 +16,7 @@ module KaminariHelper
   private
 
   def current_per_page
-    params[PER_PAGE_PARAM].try(:to_i) || Kaminari.config.config[:default_per_page]
+    params[PER_PAGE_PARAM].try(:to_i) || Kaminari.config[:default_per_page]
   end
 
   def current_page

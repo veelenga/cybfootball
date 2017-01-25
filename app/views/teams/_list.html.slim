@@ -7,15 +7,15 @@
         = link_to team_path(team) do
           = image_tag(team.avatar.url(:thumb), class: 'avatar img-rounded')
           h4.text-center = team.name
-          - if can? :manage, Team
-            hr
-            .admin_panel.actions
-              .text-center
-                => link_to edit_team_path(team), class: 'btn btn-circle', title: t('views.teams.tooltips.edit')
-                  = edit_glyph
+        - if can? :manage, Team
+          hr.ball
+          .admin_panel.actions
+            .text-center
+              => link_to edit_team_path(team), class: 'btn btn-circle', title: t('views.teams.tooltips.edit')
+                = edit_glyph
 
-                => link_to team_path(team), class: 'btn btn-red btn-circle', method: :delete,
-                  data: { confirm: t('views.teams.confirm_delete') }, title: t('views.teams.tooltips.delete')
-                  = delete_glyph
+              => link_to team_path(team), class: 'btn btn-red btn-circle', method: :delete,
+                data: { confirm: t('views.teams.confirm_delete') }, title: t('views.teams.tooltips.delete')
+                = delete_glyph
 - else
   = t('views.teams.not_found')

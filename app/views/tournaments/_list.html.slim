@@ -9,7 +9,7 @@
           h4
             = link_to tournament.title, tournament_path(tournament)
           = markdown tournament.description
-          hr
+          hr.ball
           - if can? :manage, Tournament
             .text-center.actions
               => link_to edit_tournament_path(tournament), class: 'btn btn-circle', title: t('views.tournaments.tooltips.edit')

@@ -13,7 +13,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2'
-gem 'kaminari', github: 'kaminari/kaminari', branch: 'master'
+gem 'kaminari'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'cancancan', '~> 1.10', require: false

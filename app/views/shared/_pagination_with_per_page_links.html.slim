@@ -7,4 +7,4 @@
     = t('views.pagination.helpers.per_page')
   ==<> per_page_links list, values: opts[:per_pages], params: opts[:params], remote: opts[:remote], joiner: ' '
 .paginator.col-sm-8
-  = paginate list, params: opts[:params], remote: opts[:remote]
+  = paginate list, params: opts[:params] || {}, remote: opts[:remote]
