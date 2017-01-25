@@ -10,4 +10,8 @@
     = link_to new_tournament_path, class: 'btn', title: t('views.tournaments.tooltips.new') do
       = add_glyph
 
-= render 'list', tournaments: @tournaments
+.row id="#{resource}"
+  = render 'list', tournaments: @tournaments
+
+.row.remote_pagination
+  = render 'shared/pagination_with_per_page_links', list: @tournaments, opts: {params: params.slice(:search).to_unsafe_h, remote: true, per_pages: [1, 8, 20]}

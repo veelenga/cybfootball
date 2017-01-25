@@ -3,9 +3,9 @@ uk:
     pagination:
       first: "<<"
       last: ">>"
-      previous: "<"
-      next: ">"
+      previous: "&larr; Назад"
+      next: "Вперед &rarr;"
       truncate: "..."
       helpers:
         per_page: Відображати по
-        total_found: Всього знайдено
+        total_found: Загальна кількість

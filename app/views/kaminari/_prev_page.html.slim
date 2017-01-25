@@ -1,3 +1,4 @@
-li
-  = link_to_unless current_page.first?, t('views.pagination.previous').html_safe,
-    url, rel: 'prev', remote: remote
+- disabled = current_page.first?
+li class="#{'disabled' if disabled}"
+  = link_to t('views.pagination.previous').html_safe, (disabled ? '#' : url),
+    rel: 'prev', remote: remote
