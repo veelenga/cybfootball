@@ -1,3 +1,15 @@
+.page-header {
+  margin: 40px 15px 20px;
+
+  @media (max-width: 767px) {
+    margin-top: 0px;
+  }
+}
+
+.control-bar {
+  margin-bottom: 30px;
+}
+
 .navbar {
   font-size: 16px;
   .navbar-brand {
@@ -20,7 +32,7 @@
     }
   }
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     .site-nav {
       display: inline-block;
       float: none;

@@ -153,14 +153,13 @@ RSpec.describe TeamsController, type: :controller do
       team.players << player
       expect {
         put :update_players, params: { id: team.to_param, player: { id: player.to_param, action: :delete } }
-      }.to change(team.players, :count).by -1
+      }.to change(team.players, :count).by(-1)
       expect(response).to redirect_to(team_path team)
     end
 
-    it 'raises error if required params not passed' do
-      expect {
-        put :update_players, params: { id: team.to_param }
-      }.to raise_error ActiveRecord::RecordNotFound
+    it 'does not raise an error if required params not passed' do
+      put :update_players, params: { id: team.to_param }
+      expect(response).to redirect_to(team_path team)
     end
   end
 end

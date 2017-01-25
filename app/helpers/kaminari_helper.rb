@@ -1,7 +1,7 @@
 module KaminariHelper
   PAGE_PARAM = :page
   PER_PAGE_PARAM = :per
-  PER_PAGE_DEFAULT_VALUES = [8, 16, 20, 40, 100]
+  PER_PAGE_DEFAULT_VALUES = [8, 20, 40, 100]
 
   def per_page_links(list, options = {})
     page, per = current_page, current_per_page
@@ -16,7 +16,7 @@ module KaminariHelper
   private
 
   def current_per_page
-    params[PER_PAGE_PARAM].try(:to_i) || Kaminari.config.config[:default_per_page]
+    params[PER_PAGE_PARAM].try(:to_i) || Kaminari.config[:default_per_page]
   end
 
   def current_page

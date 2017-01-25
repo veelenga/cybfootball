@@ -1,5 +1,3 @@
-- breadcrumb :teams
-
 - resource = Team.model_name.plural
 .page-header
   h1
@@ -7,18 +5,16 @@
     .pull-right
       = teams_header_glyph
 
-.panel.panel-default
-  .panel-heading
-    - if can? :create, Team
-      .actions.pull-right
-        = link_to new_team_path, class: 'btn', title: t('views.teams.tooltips.new')
-          = add_glyph
-    .col-xs-7.col-sm-5.input-group
-      = render 'shared/search_field', resource: resource
+.control-bar
+  - if can? :create, Team
+    .actions.pull-right
+      = link_to new_team_path, class: 'btn', title: t('views.teams.tooltips.new')
+        = add_glyph
+  .col-xs-12.col-sm-6.col-md-4.input-group
+    = render 'shared/search_field', resource: resource
 
-  .panel-body id="#{resource}"
-      = render 'list', teams: @teams
+.row id="#{resource}"
+    = render 'list', teams: @teams
 
-  .panel-footer
-    .row.remote_pagination
-      = render 'shared/pagination_with_per_page_links', list: @teams, opts: {params: params.slice(:search).to_unsafe_h, remote: true}
+.row.remote_pagination
+  = render 'shared/pagination_with_per_page_links', list: @teams, opts: {params: params.slice(:search).to_unsafe_h, remote: true}

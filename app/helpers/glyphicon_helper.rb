@@ -38,4 +38,8 @@ module GlyphiconHelper
   def add_group_glyph
     content_tag(:i, nil, class: 'fa fa-plus faa-pulse animated-hover')
   end
+
+  def settings_glyph
+    content_tag(:i, nil, class: 'fa fa-cog faa-spin animated-hover')
+  end
 end

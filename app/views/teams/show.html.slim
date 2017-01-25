@@ -21,33 +21,31 @@
 
 br
 
-.col-sm-6
-  .card
-    .thumbnail
-      .caption
-        = image_tag @team.avatar.url(:thumb), class: 'img-rounded'
+.card.col-sm-6
+  .thumbnail
+    = image_tag @team.avatar.url(:thumb), class: 'img-rounded img-responsive'
 
 .clearfix
 
-.panel.panel-default
-  .panel-heading.clearfix
-    b= t('gen.players')
-    - if can? :manage, Team
-      .col-xs-6.col-md-5.input-group.search-box.pull-right
-        = bootstrap_form_tag url: update_players_team_path(@team), hide_label: true, control_col: 'col-sm-12', layout: :horizontal, method: :put do |f|
-          = f.hidden_field :"player[id]", class: 'player_id'
-          = f.hidden_field :"player[action]", value: 'add'
-          = f.text_field :fio, hide_label: true, class: 'typeahead', placeholder: t('views.teams.show.search_player'), autofocus: true,
-            append: f.submit(t('gen.add'), class: 'btn btn-default')
-    - else
-      .clearfix
+hr
 
-  .panel-body id='team_players'
-    = render 'players/list', players: @team_players
+.control-bar
+  - if can? :manage, Team
+    .col-xs-12.col-sm-6.col-md-5.input-group.search-box
+      = bootstrap_form_tag url: update_players_team_path(@team), hide_label: true, control_col: 'col-sm-12', layout: :horizontal, method: :put do |f|
+        = f.hidden_field :"player[id]", class: 'player_id'
+        = f.hidden_field :"player[action]", value: 'add'
+        = f.text_field :fio, hide_label: true, class: 'typeahead', placeholder: t('views.teams.show.search_player'), required: true,
+          append: f.submit(t('gen.add'), class: 'btn btn-default')
+    .clearfix
 
-  .panel-footer
-    .row.remote_pagination
-      = render 'shared/pagination_with_per_page_links', list: @team_players, opts: {remote: true}
+.row id='team_players'
+  = render 'players/list', players: @team_players
+
+.clearfix
+
+.row.remote_pagination
+  = render 'shared/pagination_with_per_page_links', list: @team_players, opts: {remote: true}
 
 - content_for :js_footer do
   javascript:

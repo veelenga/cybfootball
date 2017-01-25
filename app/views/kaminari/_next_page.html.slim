@@ -1,3 +1,4 @@
-li
-  = link_to_unless current_page.last?, raw(t 'views.pagination.next'),
-    url, rel: 'next', remote: remote
+- disabled = current_page.last?
+li class="#{'disabled' if disabled}"
+  = link_to t('views.pagination.next').html_safe, (disabled ? '#' : url),
+    rel: 'next', remote: remote
