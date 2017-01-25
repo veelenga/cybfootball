@@ -41,15 +41,15 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.4)
     ast (2.3.0)
-    autoprefixer-rails (6.6.1)
+    autoprefixer-rails (6.7.0)
       execjs
-    aws-sdk (2.6.46)
-      aws-sdk-resources (= 2.6.46)
-    aws-sdk-core (2.6.46)
+    aws-sdk (2.7.1)
+      aws-sdk-resources (= 2.7.1)
+    aws-sdk-core (2.7.1)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.6.46)
-      aws-sdk-core (= 2.6.46)
+    aws-sdk-resources (2.7.1)
+      aws-sdk-core (= 2.7.1)
     aws-sigv4 (1.0.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -80,7 +80,7 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
-    diff-lcs (1.2.5)
+    diff-lcs (1.3)
     easy_translate (0.5.0)
       json
       thread
@@ -123,7 +123,7 @@ GEM
     i18n (0.7.0)
     i18n-js (3.0.0.rc15)
       i18n (~> 0.6, >= 0.6.6)
-    i18n-tasks (0.9.8)
+    i18n-tasks (0.9.9)
       activesupport (>= 4.0.2)
       ast (>= 2.1.0)
       easy_translate (>= 0.5.0)
@@ -289,7 +289,7 @@ GEM
       railties (>= 3.1)
       slim (~> 3.0)
     slop (3.6.0)
-    spring (2.0.0)
+    spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -335,7 +335,7 @@ GEM
       activemodel (>= 5.0)
       debug_inspector
       railties (>= 5.0)
-    websocket-driver (0.6.4)
+    websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
 
