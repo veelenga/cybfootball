@@ -13,7 +13,7 @@ describe SitemapController, type: :controller do
       expect(response.content_type).to eql 'application/xml'
     end
 
-    it 'it renders sitemap/index layout' do
+    it 'renders sitemap/index layout' do
       get :index
       expect(response).to render_template('sitemap/index')
     end

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe GroupsController, type: :routing do
-  describe "groups routing" do
+  describe 'groups routing' do
     it 'routes to #new' do
       expect(:get => "/tournaments/1/groups/new").to route_to('groups#new', tournament_id: '1')
     end
