@@ -103,7 +103,7 @@ en:
       edit:
         title: Edit question
         placeholders:
-          question: Can i create new players or change information about existed?
+          question: Can i create new or change existed content on the site ?
           answer: |
             Yes, you can. You need to contact administrator and we will create personal account for you.
 
