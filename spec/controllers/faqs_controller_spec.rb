@@ -113,4 +113,17 @@ describe FaqsController, type: :controller do
       expect(response).to redirect_to(faqs_url)
     end
   end
+
+  describe 'PUT #order' do
+    let(:faqs) { create_list :faq, 3 }
+    it 'reorders faqs' do
+      put :order, params: { order: [faqs[1].id, faqs[0].id, faqs[2].id] }
+      expect(Faq.order(:id).pluck(:order)).to eql [2, 1, 3]
+    end
+
+    it 'does not reorder faqs when wrong param passed' do
+      put :order, params: { order: [faqs[0].id, 2] }
+      expect(Faq.order(:id).pluck(:order)).to eql [1, 1, 1]
+    end
+  end
 end
