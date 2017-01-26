@@ -5,7 +5,7 @@ class SitemapController < ActionController::Base
     headers['Content-Type'] = 'application/xml'
 
     respond_to do |format|
-      format.xml { @tournaments = Tournament.select(:id, :updated_at).recent(100) }
+      format.xml { @tournaments = Tournament.select(:id, :updated_at) }
     end
   end
 end
