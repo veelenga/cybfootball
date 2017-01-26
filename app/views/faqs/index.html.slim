@@ -1,0 +1,31 @@
+.page-header
+  h1
+    =t 'gen.faqs'
+    .pull-right
+      = faqs_header_glyph
+
+- if can? :create, Faq
+  .actions.text-right style='margin: 10px;'
+    = link_to new_faq_path, class: 'btn btn-circle', title: t('views.faqs.tooltips.new') do
+      = add_glyph
+
+.panel-group id='accordion'
+  - @faqs.each_with_index do |faq, index|
+    .panel.panel-info
+      .panel-heading
+        h4.panel-title.clearfix
+          a data-toggle='collapse' data-parent='#accordion' href="#collapse#{index}"
+            = faq.question
+            - if can? :manage, Faq
+              .pull-right.actions
+                => link_to edit_faq_path(faq), class: 'btn btn-circle', title: t('views.faqs.tooltips.edit')
+                  = edit_glyph
+
+                => link_to faq_path(faq), class: 'btn btn-red btn-circle', method: :delete,
+                  data: { confirm: t('views.faqs.confirm_delete') }, title: t('views.faqs.tooltips.delete')
+                  = delete_glyph
+
+      .panel-collapse.collapse id="collapse#{index}"
+        .panel-body
+          = markdown faq.answer
+

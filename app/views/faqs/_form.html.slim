@@ -1,0 +1,11 @@
+= bootstrap_form_for @faq, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
+  = f.text_field :question, autofocus: true, placeholder: t('views.faqs.edit.placeholders.question')
+  = f.text_area :answer, placeholder: t('views.faqs.edit.placeholders.answer')
+  = f.text_field :order, control_col: 'col-sm-2'
+  = f.form_group do
+    = f.submit t('helpers.links.save'), class: 'btn btn-primary'
+    = link_to t('.cancel', default: t('helpers.links.cancel')), faqs_path, class: 'btn'
+
+- content_for :js_footer do
+  javascript:
+    new SimpleMDE({ spellChecker: I18n.locale === 'en' });

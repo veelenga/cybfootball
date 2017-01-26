@@ -34,3 +34,7 @@ en:
       group:
         name: Name
 
+      faq:
+        question: Question
+        answer: Answer
+        order: Order
