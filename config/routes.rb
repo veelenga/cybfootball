@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :tournaments do
     resources :groups, shallow: true
   end
+
   resources :groups do
     member do
       put 'update_teams'
@@ -29,6 +30,8 @@ Rails.application.routes.draw do
   resources :faqs, except: [:show] do
     put 'order', on: :collection
   end
+
+  get 'sitemap.xml', to: 'sitemap#index', defaults: { format: 'xml' }
 
   root to: 'tournaments#index'
 end

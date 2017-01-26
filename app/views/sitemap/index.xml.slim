@@ -1,0 +1,8 @@
+doctype xml
+urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  - @tournaments.each do |t|
+    url
+      loc        = tournament_url t
+      lastmod    = t.updated_at.strftime('%Y-%m-%d')
+      changefreq monthly
+      priority   0.5
