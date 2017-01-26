@@ -15,6 +15,8 @@ class Tournament < ApplicationRecord
     },
     uniqueness: true
 
+  scope :recent, ->(n) { order(:date).last(n) }
+
   private
 
   def set_default_attributes
