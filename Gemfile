@@ -33,6 +33,7 @@ gem 'react-rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-flatpickr-calendar'
   gem 'rails-assets-font-awesome-animation'
+  gem 'rails-assets-jqueryui'
 end
 
 group :development, :test do

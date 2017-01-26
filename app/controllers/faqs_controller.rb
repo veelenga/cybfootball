@@ -44,6 +44,14 @@ class FaqsController < ApplicationController
     end
   end
 
+  def order
+    order, total = params[:order], Faq.count
+    if order.is_a?(Array) && order.size == total
+      Faq.update order.map(&:to_i), (1..total).map { |n| {order: n} }
+    end
+    head :no_content
+  end
+
   private
     def set_faq
       @faq = Faq.find(params[:id])

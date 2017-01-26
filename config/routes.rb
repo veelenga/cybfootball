@@ -26,7 +26,9 @@ Rails.application.routes.draw do
     get 'autocomplete', on: :collection
   end
 
-  resources :faqs, except: [:show]
+  resources :faqs, except: [:show] do
+    put 'order', on: :collection
+  end
 
   root to: 'tournaments#index'
 end

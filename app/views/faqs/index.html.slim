@@ -9,15 +9,16 @@
     = link_to new_faq_path, class: 'btn btn-circle', title: t('views.faqs.tooltips.new') do
       = add_glyph
 
-.panel-group id='accordion'
+.panel-group.draggable id='accordion'
   - @faqs.each_with_index do |faq, index|
-    .panel.panel-info
+    .panel.panel-info id="#{faq.id}"
       .panel-heading
         h4.panel-title.clearfix
           a data-toggle='collapse' data-parent='#accordion' href="#collapse#{index}"
             = faq.question
             - if can? :manage, Faq
               .pull-right.actions
+
                 => link_to edit_faq_path(faq), class: 'btn btn-circle', title: t('views.faqs.tooltips.edit')
                   = edit_glyph
 
@@ -25,7 +26,12 @@
                   data: { confirm: t('views.faqs.confirm_delete') }, title: t('views.faqs.tooltips.delete')
                   = delete_glyph
 
+                i.fa.fa-bars.bars
+
       .panel-collapse.collapse id="collapse#{index}"
         .panel-body
           = markdown faq.answer
 
+- can?(:manage, Faq) && content_for(:js_footer) do
+  javascript:
+    new Ordering({ sortable: '#accordion', element: '.panel', url: "#{order_faqs_path}" })

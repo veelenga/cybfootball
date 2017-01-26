@@ -29,5 +29,9 @@ RSpec.describe FaqsController, type: :routing do
     it 'routes to #destroy' do
       expect(:delete => '/faqs/1').to route_to('faqs#destroy', :id => '1')
     end
+
+    it 'routes to #order' do
+      expect(put: '/faqs/order').to route_to('faqs#order')
+    end
   end
 end

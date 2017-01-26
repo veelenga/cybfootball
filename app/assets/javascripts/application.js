@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jqueryui
 //= require bootstrap
 //= require flatpickr-calendar
 //= require flatpickr-calendar/l10n/uk

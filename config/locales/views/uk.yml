@@ -102,7 +102,7 @@ uk:
     faqs:
       confirm_delete: Ви впевнені що хочете видалити це питання?
       new:
-        title: Додати питання
+        title: Нове питання
       edit:
         title: Редактувати питання
         placeholders:
