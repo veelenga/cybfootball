@@ -20,6 +20,7 @@ uk:
         fio: Ім'я
         bio: Біографія
         graduation_year: Рік випуску
+        degree: Звання
 
       team:
         avatar: Фото

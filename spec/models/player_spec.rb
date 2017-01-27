@@ -20,10 +20,6 @@ RSpec.describe Player, type: :model do
     expect(build :player, graduation_year: nil).to be_valid
   end
 
-  it 'assignes default attributes' do
-    expect(Player.new.graduation_year).not_to be_nil
-  end
-
   it 'can have avatar' do
     expect(player_with_avatar).to be_valid
     expect(player_with_avatar.avatar).not_to be_nil
