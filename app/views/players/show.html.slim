@@ -27,13 +27,16 @@ br
 .card
   .thumbnail
     .col-sm-5
-      = image_tag @player.avatar.url(:thumb), class: 'img-rounded img-responsive'
+      = image_tag @player.avatar.url(:thumb), class: 'img-rounded img-responsive center-block'
 
     .col-sm-7
-      p
-        strong=> model_class.human_attribute_name(:bio) + ':'
-        = @player.bio
-      p
-        strong=> model_class.human_attribute_name(:graduation_year) + ':'
-        = @player.graduation_year
+      h4
+        -if @player.graduation_year.present?
+          .pull-right
+            h5 style='margin-top: 0px'
+              small
+                =<> t('views.players.show.graduation_year', year: @player.graduation_year)
+        = @player.degree
+
+      = @player.bio
     .clearfix

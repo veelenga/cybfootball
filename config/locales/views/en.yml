@@ -20,6 +20,7 @@ en:
     players:
       not_found: Players not found
       confirm_delete: Are you sure you want to delete this player?
+      degrees: [Regular, U-21, U-19, Student]
       new:
         title: New Player
       edit:
@@ -27,6 +28,9 @@ en:
         placeholders:
           fio: Andriy Shevchenko
           bio: Is a football manager and retired Ukrainian footballer who played for Dynamo Kyiv, Milan, Chelsea and the Ukraine national team as a striker.
+          degree: Football manager
+      show:
+        graduation_year: "Graduated in %{year}"
       tooltips:
         index: To players list
         new: New player

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125220844) do
+ActiveRecord::Schema.define(version: 20170127083344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,13 +62,14 @@ ActiveRecord::Schema.define(version: 20170125220844) do
   create_table "players", force: :cascade do |t|
     t.string   "fio"
     t.text     "bio"
-    t.integer  "graduation_year"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "degree"
+    t.integer  "graduation_year"
     t.index ["fio"], name: "index_players_on_fio", using: :btree
   end
 

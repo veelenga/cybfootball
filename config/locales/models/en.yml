@@ -19,6 +19,7 @@ en:
         avatar: Avatar
         fio: FIO
         bio: BIO
+        degree: Rank
         graduation_year: Graduation year
 
       team:

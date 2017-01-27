@@ -3,6 +3,7 @@ FactoryGirl.define do
     fio 'John Doe'
     bio 'Super talented high skilled player'
     graduation_year Date.today.year
+    degree 'PhD'
 
     factory :player_with_avatar do
       avatar { File.new "#{Rails.root}/spec/fixtures/avatar.png" }
