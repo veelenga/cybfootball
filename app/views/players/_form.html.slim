@@ -5,7 +5,7 @@
     = f.text_field :fio, autofocus: true, placeholder: t('views.players.edit.placeholders.fio')
     = f.text_area :bio, rows: 4, placeholder: t('views.players.edit.placeholders.bio')
     = f.text_field :degree, placeholder: t('views.players.edit.placeholders.degree', year: Date.today.year)
-    = f.select :graduation_year, options_for_select((1990..Date.today.year + 7).to_a.reverse.unshift(nil), @player.graduation_year), control_col: 'col-sm-2 col-md-3'
+    = f.select :graduation_year, options_for_select((1980..Date.today.year + 7).to_a.reverse.unshift(nil), @player.graduation_year), control_col: 'col-sm-2 col-md-3'
     = f.form_group do
       = f.submit t('helpers.links.save'), class: 'btn btn-primary'
       = link_to t('.cancel', default: t('helpers.links.cancel')), players_path, class: 'btn'
