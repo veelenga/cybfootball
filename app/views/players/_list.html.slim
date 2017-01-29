@@ -10,7 +10,9 @@
             h4 = player.fio
             - if player.degree.present?
               h5
-                small= player.degree
+                small
+                  => player.degree
+                  =<> "( #{ player.graduation_year } )" if player.graduation_year.present?
             - else
               p style='height:15px'
         - if can? :manage, Player
