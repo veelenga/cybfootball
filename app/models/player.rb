@@ -5,6 +5,7 @@ class Player < ApplicationRecord
   has_many :goals
 
   validates_presence_of :fio
+  validates_uniqueness_of :fio
 
   scope :fio_like, ->(fio) { where('players.fio ~* ?', ".*#{fio}.*") }
 

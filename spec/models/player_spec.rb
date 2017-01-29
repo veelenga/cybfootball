@@ -25,9 +25,14 @@ RSpec.describe Player, type: :model do
     expect(player_with_avatar.avatar).not_to be_nil
   end
 
+  it 'requires fio to be uniq' do
+    create(:player, fio: 'Jocker')
+    expect(build(:player, fio: 'Jocker')).not_to be_valid
+  end
+
   describe '.fio_like' do
     it 'does case insensitive search by fio attribute' do
-      players = create_list :player, 3, fio: 'John Doe'
+      players = create_list :player, 3
       expect(Player.fio_like('John')).to match players
       expect(Player.fio_like('doe')).to match players
       expect(Player.fio_like('wrong')).to match []

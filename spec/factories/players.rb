@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :player do
-    fio 'John Doe'
+    sequence(:fio) { |n| "John Doe #{n}" }
     bio 'Super talented high skilled player'
     graduation_year Date.today.year
     degree 'PhD'
