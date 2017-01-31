@@ -6,7 +6,7 @@
       .thumbnail
         = link_to team_path(team) do
           = image_tag(team.avatar.url(:thumb), class: 'avatar img-rounded')
-          h4.text-center = team.name
+          h4.text-center.single-line = team.name
         - if can? :manage, Team
           hr.ball
           .admin_panel.actions

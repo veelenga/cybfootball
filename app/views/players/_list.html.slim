@@ -7,7 +7,7 @@
         = link_to player_path(player) do
           = image_tag(player.avatar.url(:thumb), class: 'avatar img-rounded')
           .text-center
-            h4 = player.fio
+            h4.single-line = player.fio
             - if player.degree.present?
               h5
                 small
