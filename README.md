@@ -33,6 +33,7 @@
   ```sh
   $ bundle exec rails server
   ```
+
 ## Data from the book
 The information about the players, teams and the tournaments is located by the link
 https://drive.google.com/drive/folders/0B19XYNc9CGKzMGl4cnNTdVVyUWc?usp=sharing
