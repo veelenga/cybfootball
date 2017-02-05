@@ -12,11 +12,10 @@ App.Alert = class Alert extends React.Component {
   }
 
   componentDidMount() {
-    this.timer = setTimeout(() => {
-      $(this.refs.alert).fadeTo(500, 0).slideUp(500, () => {
-        this.props.onFade(this.props.message);
-      });
-    }, this.props.timeout);
+    this.timer = setTimeout(() =>
+      $(this.refs.alert).fadeTo(500, 0).slideUp(500, () => this.props.onFade()),
+      this.props.timeout
+    );
   }
 
   componentWillUnmount() {

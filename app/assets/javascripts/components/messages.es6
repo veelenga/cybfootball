@@ -27,7 +27,7 @@ App.Messages = class Messages extends React.Component {
           return React.createElement(App.Alert, {
             key: message.id,
             message: message,
-            onFade: (message) => { this.removeMessage(message); }
+            onFade: () => this.removeMessage(message)
           });
         })
       )
