@@ -18,6 +18,7 @@
 //= require flatpickr-calendar/l10n/uk
 //= require twitter/typeahead.min
 //= require cropper
+//= require lightbox-bootstrap
 //= require handlebars
 //= require turbolinks
 //= require underscore

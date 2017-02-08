@@ -27,9 +27,11 @@
 
 br
 
-.card.col-sm-6
+.card.col-sm-6.col-md-4
   .thumbnail
-    = image_tag @team.avatar.url(:thumb), class: 'img-rounded img-responsive'
+    = link_to_image @team.avatar.file?, @team.avatar.url,
+      image_tag(@team.avatar.url(:thumb), class: 'img-rounded img-responsive center-block'),
+      data: { toggle: 'lightbox' }
 
 .clearfix
 
