@@ -16,8 +16,13 @@
     }
 
     &:hover {
-      opacity: 0.9;
-      box-shadow: 0 0 50px 3px #515151;
+      @media (min-width: 768px) {
+        opacity: 0.9;
+        box-shadow: 0 0 50px 3px #515151;
+      }
+      @media (max-width: 767px) {
+        box-shadow: 0 0 5px 0.1px #515151;
+      }
     }
 
     table img {
