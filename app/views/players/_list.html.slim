@@ -5,7 +5,8 @@
     .card.col-xs-12.col-sm-6.col-md-3
       .thumbnail
         = link_to player_path(player) do
-          = image_tag(player.avatar.url(:thumb), class: 'avatar img-rounded')
+          .avatar-container style="padding-bottom:#{player.aspect_ratio(:thumb)}%"
+            = image_tag player.avatar.url(:thumb), class: 'avatar img-rounded'
           .text-center
             h4.single-line = player.fio
             - if player.degree.present?

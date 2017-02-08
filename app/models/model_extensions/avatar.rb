@@ -38,6 +38,11 @@ module ModelExtensions::Avatar
       Paperclip::Geometry.parse styles[style]
     end
 
+    def aspect_ratio(style)
+      geo = geometry(style)
+      geo.height / geo.width * 100
+    end
+
     def cropping?
       avatar.present? && crop_x.present? && crop_y.present? && crop_w.present? && crop_h.present?
     end

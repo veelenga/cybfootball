@@ -5,7 +5,8 @@
     .card.col-xs-12.col-sm-6.col-md-3
       .thumbnail
         = link_to team_path(team) do
-          = image_tag(team.avatar.url(:thumb), class: 'avatar img-rounded')
+          .avatar-container style="padding-bottom:#{team.aspect_ratio(:thumb)}%"
+            = image_tag(team.avatar.url(:thumb), class: 'avatar img-rounded')
           h4.text-center.single-line = team.name
         - if can? :manage, Team
           hr.ball
