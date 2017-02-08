@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def link_to_image(condition, url, image, options)
+  def link_to_image(condition, url, image, options = {})
     condition ? link_to(url, options) { image } : image
   end
 
