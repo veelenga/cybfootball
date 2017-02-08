@@ -1,9 +1,16 @@
-.row.col-md-12
-  .copyright.col-xs-6.col-xs-offset-2
-    = link_to t('gen.faqs'), faqs_path
-    br
-    | &copy; #{ Date.today.year } #{ link_to "cybfootball.org.ua", "#" }  All Rights Reserved.
-  .social-media.col-xs-4
+.row.col-md-12.text-center
+  .col-sm-4
+    .help.small
+      => link_to t('gen.faqs'), faqs_path
+      => link_to t('gen.about'), '#'
+      => link_to t('gen.contact'), '#'
+  .copyright.col-sm-4
+    .small
+      | &copy; #{ Date.today.year } Cybfootball. All rights reserved.
+    = link_to root_path
+      image.img-circle src='/images/logo.jpg'
+
+  .social-media.col-sm-4.hidden-xs
     a href='https://github.com/veelenga/cybfootball' target='_blank' title='Github'
       i.fa.fa-github.fa-2x
     a href='#' target='_blank' title='Facebook'

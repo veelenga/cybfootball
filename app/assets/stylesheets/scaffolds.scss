@@ -110,14 +110,24 @@
 
 #footer {
   .social-media {
+    margin-top: -10px;
+
     a {
-      padding: 5px;
+      margin-right: 15px;
       color: gray;
 
       &:hover {
         color: black;
       }
     }
+  }
+
+  img {
+    height: 30px;
+  }
+
+  .help a {
+    margin-left: 10px;
   }
 }
 
