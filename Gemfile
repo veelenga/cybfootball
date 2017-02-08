@@ -29,6 +29,7 @@ gem 'twitter-typeahead-rails'
 gem 'cropper-rails'
 gem 'underscore-rails'
 gem 'react-rails'
+gem 'lightbox-bootstrap-rails', '5.1.0.1'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-flatpickr-calendar'

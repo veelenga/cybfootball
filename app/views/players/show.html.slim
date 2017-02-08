@@ -27,7 +27,9 @@ br
 .card
   .thumbnail
     .col-sm-5
-      = image_tag @player.avatar.url(:thumb), class: 'img-rounded img-responsive center-block'
+      = link_to_image @player.avatar.file?, @player.avatar.url,
+        image_tag(@player.avatar.url(:thumb), class: 'img-rounded img-responsive center-block'),
+        data: { toggle: 'lightbox' }
 
     .col-sm-7
       h4

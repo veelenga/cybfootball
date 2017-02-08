@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def link_to_image(condition, url, image, options)
+    condition ? link_to(url, options) { image } : image
+  end
+
   def bootstrap_class_for(type)
     case type.to_sym
       when :success

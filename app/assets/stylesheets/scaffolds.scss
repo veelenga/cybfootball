@@ -64,6 +64,27 @@
     max-width: 450px;
     margin: auto;
   }
+
+  @media screen and (min-width: 768px) {
+    &.modal {
+      text-align: center;
+    }
+
+    &.modal:before {
+      display: inline-block;
+      vertical-align: middle;
+      content: " ";
+      height: 100%;
+    }
+
+    .modal-dialog {
+      max-width: 450px;
+      margin: auto;
+      display: inline-block;
+      text-align: left;
+      vertical-align: middle;
+    }
+  }
 }
 
 .avatar-border {
@@ -117,25 +138,6 @@
     .thumbnail {
       border-radius: 10px;
     }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .modal {
-    text-align: center;
-  }
-
-  .modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 100%;
-  }
-
-  .modal-dialog {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
   }
 }
 
