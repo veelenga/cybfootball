@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     if @page.present?
       render :show
     else
-      raise ActiveRecord::RecordNotFound, 'Record not found.'
+      raise ActiveRecord::RecordNotFound, 'Page not found.'
     end
   end
 
@@ -22,7 +22,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to page_path, notice: 'Page was successfully created.' }
+        format.html { redirect_to to_page_path(@page.path), notice: 'Page was successfully created.' }
       else
         format.html { render :new }
       end
@@ -32,7 +32,7 @@ class PagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to page_path, notice: 'Page was successfully updated.' }
+        format.html { redirect_to to_page_path(@page.path), notice: 'Page was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -53,9 +53,5 @@ class PagesController < ApplicationController
 
     def page_params
       params.require(:page).permit(:path, :title, :content)
-    end
-
-    def page_path
-      "/#{@page.path}"
     end
 end
