@@ -39,3 +39,8 @@ en:
         question: Question
         answer: Answer
         order: Order
+
+      page:
+        path: Path
+        title: Title
+        content: Content

@@ -33,5 +33,8 @@ Rails.application.routes.draw do
 
   get 'sitemap.xml', to: 'sitemap#index', defaults: { format: 'xml' }
 
+  resources :pages, except: [:index, :show]
+  get '/:id', to: 'pages#show'
+
   root to: 'tournaments#index'
 end

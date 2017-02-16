@@ -40,6 +40,11 @@ uk:
         answer: Відповідь
         order: Порядок
 
+      page:
+        path: Ідентифікатор
+        title: Заголовок
+        content: Зміст
+
     errors:
       models:
           user:

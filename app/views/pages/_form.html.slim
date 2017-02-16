@@ -1,0 +1,11 @@
+= bootstrap_form_for @page, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10' do |f|
+  = f.text_field :path, control_col: 'col-sm-3', autofocus: true, placeholder: t('views.pages.edit.placeholders.path')
+  = f.text_field :title, control_col: 'col-sm-5', placeholder: t('views.pages.edit.placeholders.title')
+  = f.text_area :content, placeholder: t('views.pages.edit.placeholders.content')
+  = f.form_group do
+    = f.submit t('helpers.links.save'), class: 'btn btn-primary'
+    = link_to t('helpers.links.cancel'), root_url, class: 'btn'
+
+- content_for :js_footer do
+  javascript:
+    new SimpleMDE({ spellChecker: I18n.locale === 'en' });
