@@ -2,8 +2,8 @@
   .col-sm-4
     .help.small
       => link_to t('gen.faqs'), faqs_path
-      => link_to t('gen.about'), '#'
-      => link_to t('gen.contact'), '#'
+      => link_to t('gen.about'), to_page_path('about')
+      => link_to t('gen.contact'), to_page_path('contact')
   .copyright.col-sm-4
     .small
       | &copy; #{ Date.today.year } Cybfootball. All rights reserved.

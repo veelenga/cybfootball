@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127083344) do
+ActiveRecord::Schema.define(version: 20170216170054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(version: 20170127083344) do
     t.index ["home_team_id"], name: "index_matches_on_home_team_id", using: :btree
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.string   "path"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "players", force: :cascade do |t|
     t.string   "fio"
     t.text     "bio"
@@ -68,8 +76,8 @@ ActiveRecord::Schema.define(version: 20170127083344) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "degree"
     t.integer  "graduation_year"
+    t.string   "degree"
     t.index ["fio"], name: "index_players_on_fio", using: :btree
   end
 

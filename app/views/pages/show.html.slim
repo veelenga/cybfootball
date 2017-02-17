@@ -1,0 +1,31 @@
+.page-header
+  h1
+    = @page.title
+    .pull-right
+      = info_header_glyph
+
+.actions
+  => link_to root_url, class: 'btn btn-circle'
+    = back_glyph
+
+  - if can? :manage, Page
+    .pull-right
+      => link_to edit_page_path(@page), class: 'btn btn-circle', title: t('views.pages.tooltips.edit')
+        = edit_glyph
+
+      => link_to page_path(@page), class: 'btn btn-red btn-circle', method: :delete,
+        data: { confirm: t('views.pages.confirm_delete') }, title: t('views.pages.tooltips.delete')
+        = delete_glyph
+
+      => link_to new_page_path, class: 'btn btn-circle', title: t('views.pages.tooltips.new')
+        = add_glyph
+
+br
+
+- if lookup_context.exists?(@page.path, 'pages/partials', true)
+  = render partial: "pages/partials/#{@page.path}", page: @page
+- else
+  .card
+    .thumbnail
+      .caption
+        = markdown @page.content

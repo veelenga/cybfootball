@@ -1,0 +1,14 @@
+default: &default
+  admin_address: unicybfootball@gmail.com
+
+test:
+  admin_address: ''
+
+development:
+  <<: *default
+
+staging:
+  <<: *default
+
+production:
+  <<: *default

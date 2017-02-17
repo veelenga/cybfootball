@@ -115,3 +115,21 @@ en:
         new: Create question
         edit: Edit question
         delete: Delete question
+
+    pages:
+      confirm_delete: Впевнені, що хочете видалити цю сторінку ?
+      new:
+        title: New page
+      edit:
+        title: Edit page
+        placeholders:
+          path: about
+          title: About
+          content: We are enthusiasts who changes the world.
+      tooltips:
+        new: Create page
+        edit: Edit page
+        delete: Delete page
+      placeholders:
+        email: Your email
+        message: Your message
