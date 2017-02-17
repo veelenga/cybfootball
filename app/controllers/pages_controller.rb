@@ -22,7 +22,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to to_page_path(@page.path), notice: 'Page was successfully created.' }
+        format.html { redirect_to to_page_path(@page.path), notice: t('controllers.pages.create') }
       else
         format.html { render :new }
       end
@@ -32,7 +32,7 @@ class PagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to to_page_path(@page.path), notice: 'Page was successfully updated.' }
+        format.html { redirect_to to_page_path(@page.path), notice: t('controllers.pages.update') }
       else
         format.html { render :edit }
       end
@@ -42,7 +42,7 @@ class PagesController < ApplicationController
   def destroy
     @page.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Page was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: t('controllers.pages.destroy') }
     end
   end
 

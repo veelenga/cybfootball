@@ -27,5 +27,10 @@ en:
       update: Question was successfully updated
       destroy: Question was successfully destroyed
 
+    pages:
+      create: Сторінку успішно створено
+      update: Сторінку змінено
+      destroy: Сторінку видалено
+
     errors:
       not_authorized: You are not authorized to access this page.
