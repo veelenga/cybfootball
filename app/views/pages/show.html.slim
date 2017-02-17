@@ -22,7 +22,10 @@
 
 br
 
-.card
-  .thumbnail
-    .caption
-      = markdown @page.content
+- if lookup_context.exists?(@page.path, 'pages/partials', true)
+  = render partial: "pages/partials/#{@page.path}", page: @page
+- else
+  .card
+    .thumbnail
+      .caption
+        = markdown @page.content

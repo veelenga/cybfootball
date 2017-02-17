@@ -1,0 +1,12 @@
+.card
+  .thumbnail
+    .caption
+      = markdown @page.content
+
+      br
+
+      = bootstrap_form_tag url: "https://formspree.io/#{EMAIL['admin_address']}", layout: :horizontal, control_col: 'col-sm-offset-2 col-sm-8' do |f|
+        = f.email_field :email, hide_label: true, name: '_replyto', required: true, placeholder: t('views.pages.placeholders.email')
+        = f.text_area :message, hide_label: true, required: true, rows: 8, placeholder: t('views.pages.placeholders.message')
+        = f.form_group do
+          = f.submit t('helpers.links.send'), class: 'btn btn-danger'

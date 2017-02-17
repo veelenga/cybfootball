@@ -130,3 +130,6 @@ en:
         new: Create page
         edit: Edit page
         delete: Delete page
+      placeholders:
+        email: Your email
+        message: Your message

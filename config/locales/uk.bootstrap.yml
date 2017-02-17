@@ -1,14 +1,15 @@
 uk:
   helpers:
-    actions: "Дії"
+    actions: 'Дії'
     links:
-      back: "Назад"
-      cancel: "Відміна"
-      confirm: "Ви впевнені?"
-      destroy: "Видалити"
-      new: "Створити"
-      edit: "Редагувати"
-      save: "Зберегти"
+      back: 'Назад'
+      cancel: 'Відміна'
+      confirm: 'Ви впевнені?'
+      destroy: 'Видалити'
+      new: 'Створити'
+      edit: 'Редагувати'
+      save: 'Зберегти'
+      send: 'Відправити'
     titles:
       edit: "Редагувати %{model}"
       save: "Зберегти %{model}"
