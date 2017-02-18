@@ -6,3 +6,17 @@ urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       lastmod    = t.updated_at.strftime('%Y-%m-%d')
       changefreq monthly
       priority   0.5
+
+  - @pages.each do |p|
+    url
+      loc        = to_page_url p.path
+      lastmod    = p.updated_at.strftime('%Y-%m-%d')
+      changefreq monthly
+      priority   0.5
+
+  - if @faqs_lastmod
+    url
+      loc        = faqs_url
+      lastmod    = @faqs_lastmod.strftime('%Y-%m-%d')
+      changefreq monthly
+      priority   0.5
