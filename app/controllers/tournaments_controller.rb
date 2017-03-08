@@ -11,6 +11,7 @@ class TournamentsController < ApplicationController
   # GET /tournaments/1
   # GET /tournaments/1.json
   def show
+    @tournament_groups = @tournament.groups.order(:name)
   end
 
   # GET /tournaments/new

@@ -1,4 +1,6 @@
 class SitemapController < ActionController::Base
+  protect_from_forgery with: :exception
+
   layout nil
 
   def index
