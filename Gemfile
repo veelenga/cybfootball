@@ -49,7 +49,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-rspec', require: false
   gem 'meta_request'
-  gem 'i18n-tasks'
 end
 
 group :test do
