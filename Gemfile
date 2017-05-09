@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.1'
 gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -15,7 +15,7 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 2'
 gem 'kaminari'
 gem 'font-awesome-rails'
-gem 'devise'
+gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
 gem 'cancancan', '~> 1.10', require: false
 gem 'i18n-js', '>= 3.0.0.rc11'
 gem 'rails-i18n', '~> 5.0.0'
@@ -49,7 +49,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-rspec', require: false
   gem 'meta_request'
-  gem 'i18n-tasks'
 end
 
 group :test do
@@ -62,4 +61,4 @@ gem 'rails_12factor', group: :production
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-ruby '2.3.3'
+ruby '2.4.1'

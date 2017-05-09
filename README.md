@@ -1,38 +1,40 @@
-## How to setup
+# Cybfootball [![Build Status](https://travis-ci.org/veelenga/cybfootball.svg?branch=master)](https://travis-ci.org/veelenga/cybfootball)
 
-  1. Install `ruby` of version **2.3.3**: https://www.ruby-lang.org/en/documentation/installation/
+## Setup
 
-  1. Install `postgresql` of version **9**: https://wiki.postgresql.org/wiki/Detailed_installation_guides
+1. Install `ruby` of version **2.4.1**: https://www.ruby-lang.org/en/documentation/installation/
 
-  1. Clone repo and go to app root dir:
+2. Install `postgresql` of version **9**: https://wiki.postgresql.org/wiki/Detailed_installation_guides
 
-  ```sh
-  $ git clone https://github.com/veelenga/cybfootball
-  $ cd cybfootball
-  ```
+3. Clone repo and go to app root dir:
 
-  1. Install `bundler` and all required dependencies:
+```sh
+$ git clone https://github.com/veelenga/cybfootball
+$ cd cybfootball
+```
 
-  ```sh
-  $ gem install bundler
-  $ bundle install
-  ```
+4. Install `bundler` and all required dependencies:
 
-  1. Create and migrate database, run tests:
+```sh
+$ gem install bundler
+$ bundle install
+```
 
-  ```sh
-  $ bundle exec rake db:create
-  $ bundle exec rake db:migrate
-  $ bundle exec rake db:seed
-  $ bundle exec rake db:migrate RAILS_ENV=test
-  $ bundle exec rspec
-  ```
+5. Create and migrate database, run tests:
 
-  1. Start app:
+```sh
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+$ bundle exec rake db:seed
+$ bundle exec rake db:migrate RAILS_ENV=test
+$ bundle exec rspec
+```
 
-  ```sh
-  $ bundle exec rails server
-  ```
+6. Start app:
+
+```sh
+$ bundle exec rails server
+```
 
 ## Data from the book
 The information about the players, teams and the tournaments is located by the link

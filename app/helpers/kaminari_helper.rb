@@ -1,4 +1,7 @@
 module KaminariHelper
+  include ActionView::Helpers
+  include Rails.application.routes.url_helpers
+
   PAGE_PARAM = :page
   PER_PAGE_PARAM = :per
   PER_PAGE_DEFAULT_VALUES = [8, 20, 40, 100]
